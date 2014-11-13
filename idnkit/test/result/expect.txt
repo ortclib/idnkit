@@ -1,0 +1,33 @@
+idn_success: success
+idn_notfound: not found
+idn_invalid_encoding: invalid encoding found
+idn_invalid_syntax: syntax error
+idn_invalid_name: invalid name
+idn_invalid_message: invalid message
+idn_invalid_action: invalid action
+idn_invalid_codepoint: invalid code point
+idn_buffer_overflow: buffer overflow
+idn_noentry: no such entry
+idn_nomemory: out of memory
+idn_nofile: no such file
+idn_nomapping: no mapping to output codeset
+idn_context_required: context information required
+idn_prohcheck_error: prohibited code point check failed
+idn_prohibited: prohibited code point check failed
+idn_unascheck_error: unassigned code point check failed
+idn_nfccheck_error: NFC validation check failed
+idn_prefcheck_error: ACE prefix check failed
+idn_hyphcheck_error: hyphen check failed
+idn_combcheck_error: combining character check failed
+idn_ctxjcheck_error: CONTEXTJ check failed
+idn_ctxocheck_error: CONTEXTO check failed
+idn_bidicheck_error: Bidi check failed
+idn_localcheck_error: local check failed
+idn_lencheck_error: label length check failed
+idn_invalid_length: label length check failed
+idn_rtcheck_error: round trip check failed
+idn_tr46check_error: TR #46 check failed
+idn_neq: not equivalent domain names
+idn_failure: generic failure
+-1: unknown result code
+idn_failure+1: unknown result code

@@ -1,0 +1,56 @@
+There are various test programs under this directory.
+The sub-directories contain tests about:
+
+    api/                functions of 'idn/api.h' module.
+    asclower/           IDN_ASCLOWER action.
+    auto/               automatically generated source files.
+    bidicheck/          IDN_BIDICHECK action.
+    checkname/          idn_res_checkname() function.
+    combcheck/          IDN_COMBCHECK action.
+    command/            idnconv2, idncmp and idncheck commands.
+    common/             (common test programs; no test case here.)
+    comparenames/       idn_res_comparenames() and idn_res_comparenames2()
+                        functions.
+    ctxjcheck/          IDN_CTXJCHECK action.
+    ctxocheck/          IDN_CTXOCHECK and IDN_CTXOLITECHECK actions.
+    decodename/         idn_res_decodename() function.
+    delimitermap/       'delimitermap' map procedure.
+    encodename/         idn_res_encodename() function.
+    hyphcheck/          IDN_HYPHCHECK action.
+    idnconv/            IDN_IDNCONV action.
+    language/           decision of the current language and reading
+                        'idnlang.conf' file.
+    languagelocal/      'language-local' map procedure and reading map files.
+    lencheck/           IDN_LENCHECK action.
+    libidnkitlite/      'libidnkitlite' library.
+    loadconf/           idn_res_loadfile() function and reading 'idn2.conf'
+                        and '.idn2rc' files.
+    localcheck/         IDN_LOCALCHECK action and reading local check files.
+    localconv/          IDN_LOCALCONV action.
+    localencoding/      decision of the local encoding and reading
+                        'idnalias.conf' file.
+    lowercase/          'lowercase' map procedure.
+    map/                IDN_MAP action.
+    misc/               tests not performed in other directories.
+    nfc/                'nfc' map procedure.
+    nfccheck/           IDN_NFCCHECK action.
+    nfkc/               'nfkc' map procedure.
+    normalization/      normalization tests provided as a part of Unicode
+                        Character Database (UCD).
+    overflow/           error code 'idn_buffer_overflow'.
+    prefcheck/          IDN_PREFCHECK action.
+    prohcheck/          IDN_PROHCHECK action.
+    result/             idn_result_tostring() function.
+    rtcheck/            IDN_RTCHECK action.
+    rtconv/             IDN_RTONV action.
+    tldlocal/           'tld-local' map procedure and reading map files.
+    tr46check/          'tr46-check' and 'tr46-check-deviation' map procedures.
+    tr46map/            'tr46-map' and 'tr46-map-deviation' map procedures.
+    unascheck/          IDN_UNASCHECK action.
+    undoiferr/		IDN_UNDOIFERR special action.
+    unicodeconv/        IDN_UNICODECONV action.
+    utf8/               validation of UTF-8 string.
+    version/            idn_version_getstring(), idn_version_idna(),
+			idn_version_unicode() and idn_version_libidn()
+			functions.
+    width/              'width' map procedure.

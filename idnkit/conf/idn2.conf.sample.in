@@ -1,0 +1,133 @@
+#
+# Sample for idnkit version 2 configuration file (idn2.conf).
+#
+
+#
+# 'language' entry specifies the "current language".
+# The current language is used when the idnkit library performs
+# language specific lowercase conversion and language-based local
+# mapping (described later).
+#
+# The entry can be specified only once. If the entry is not specified,
+# the library determines the current language from locale information.
+# 
+# syntax)
+#       language        <language>
+#
+# <language> must be an ISO639 language code. Both ISO639-1 (e.g. 'en'
+# for English) and ISO639-2 (e.g. 'eng') codes are recognized.
+#
+# language	en
+
+#
+# 'map' entry specifies mapping procedures.
+# Unlike IDNA2003, IDNA2008 doesn't define explicit mapping procedures.
+# The idnkit library performs mapping procedures according with the
+# entry.
+#
+# syntax)
+#       map             <procedure> ...
+#
+# The following procedures are currently available:
+#
+#       lowercase             Map uppercase letters to lowercase.
+#       width                 Decompose full-width and half-width characters.
+#       nfc                   Unicode Normalization Form C.
+#       nfkc                  Unicode Normalization Form KC.
+#       delimitermap          Map specific characters to '.' (U+002E).
+#       language-local        Language based local mapping.
+#       tld-local             TLD based local mapping.
+#       tr46-map              UTS #46 non-transitional mapping.
+#       tr46-map-deviation    UTS #46 transitional mapping.
+#       tr46-check            UTS #46 non-transitional validataion.
+#       tr46-check-deviation  UTS #46 transitional validataion.
+#       rfc5895               Apply 'lowercase', 'width', 'nfc' and
+#                             'delimitermap' in that order.
+#	resman-idna2008-mappings-01
+#	                      Same as 'rfc5895'.
+#       tr46-processing       Apply 'tr46-map', 'nfc' and 'tr46-check'
+#                             in that order.
+#       tr46-processing-deviation
+#                             Apply 'tr46-map-deviation', 'nfc' and
+#                             'tr46-check-deviation' in that order.
+#
+# The procedures are executed in the order listed in the entry.
+# The same procedure can be specified twice or more. Suppose that
+# 'map nfc language-local nfc' is specified, idnkit does Unicode
+# Normalization Form C, language based local mapping, and then 
+# performs NFC again.
+#
+# The entry can be specified only once. If the entry is not specified,
+# the library supposes that:
+#
+# 	rfc5895 language-local nfc
+#
+# is specified.
+#
+map	rfc5895 language-local nfc
+
+#
+# 'delimiters' specifies code points which should be mapped to '.'
+# (U+002E; FULL STOP) at delimitermap.
+#
+# Note that the mapping is applied only when 'delimitermap' is
+# specified in a 'map' entry.
+#
+# syntax)
+#	delimiters	<code point> ...
+#
+# <code point> is a hexadecimal integer of Unicode code point of
+# a delimiter (e.g. 3002), which can be preceded by "U+" (e.g. U+3002).
+#
+# The entry can be specified only once. If the entry is not specified,
+# the library assumes "3002" is specified.
+#
+delimiters	3002
+
+#
+# 'language-local' entry specifies language based local mapping.
+#
+# Note that the mapping procedure is applied only when 'language-local'
+# is specified in a 'map' entry.
+# 
+# syntax)
+#       language-local <language> <map file>
+#
+# If the current language matches <language>, a mapping specified by
+# <map file> is performed.  Otherwise no mapping is performed.
+#
+# <language> must be an ISO639 language code. Both ISO639-1 (e.g. 'en'
+# for English) and ISO639-2 (e.g. 'eng') codes are recognized.
+#
+# A local mapping with '*' as <language> is a default mapping.
+# When the current language is not matched to any <language>s of
+# 'language-local' entries, the mapping is applied.
+#
+#language-local *	/some/where/default.map
+#language-local tr	@pkgmapdir@/tr.map
+language-local ja	@pkgmapdir@/ja.map
+
+#
+# 'tld-local' entry specifies TLD (top level domain) based local mapping.
+#
+# Note that the mapping is applied only when 'tld-local' is specified
+# in a 'map' entry.
+# 
+# syntax)
+#       tld-local <tld> <map file>
+#
+# If the TLD of the domain name matches <tld>, a mapping specified by
+# <map file> is performed on the domain name. Otherwise no mapping
+# is performed.
+#
+# If <tld> is '*', the mapping is applied to domain names whose TLD
+# does not match any TLDs specified in 'tld-local' entries. If <tld> is 
+# '-', the mapping is applied to domain names without any dots.
+# 
+# For backward compatibility to idnkit-1.0, the entry name 'local-map'
+# can be used instead of 'tld-local'. The entry can be defined multiple
+# times.
+#
+#tld-local -	/some/where/local.map
+#tld-local *	/some/where/default.map
+tld-local jp	@pkgmapdir@/ja.map

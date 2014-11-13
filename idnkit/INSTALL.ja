@@ -1,0 +1,299 @@
+
+				idnkit
+		    コンパイルとインストールの方法
+		 株式会社日本レジストリサービス (JPRS)
+
+
+本パッケージのコンパイルおよびインストールは、次のようなステップで行
+います。
+
+    + 前準備: iconv() が利用できるようにする
+    + システム設定: configure スクリプトの実行
+    + コンパイル: 'make' の実行
+    + テスト: 'make check' の実行 (省略可)
+    + インストール: 'make install' の実行
+    + サイト毎の設定: 'idn2.conf' による設定
+    + 設定の確認 (省略可)
+    + 後片付け (省略可)
+
+idnkit バージョン 1.0 にパッチを当ててインストールしたい場合は、次の項
+も参照して下さい。
+
+    + idnkit バージョン 1.0 パッチの当て方
+
+
+0. 前準備
+  
+もしあなたがコード変換機能をサポートした通常の idnkit ライブラリをインス
+トールするつもりであり、またあなたが使用しているシステムのライブラリに 
+iconv() がない場合、あるいはあっても UTF-8 を扱うことができない場合には
+あらかじめ iconv() をインストールしておいてください。iconv() は、例えば 
+GNU libiconv と呼ばれるフリー (LGPL) の実装が
+
+	ftp://ftp.gnu.org/gnu/libiconv/
+	またはそのミラーサイト
+
+から入手可能です。
+
+ただし、コード変換を必要とせず、lite バージョンのライブラリのみをインス
+トールするのであれば、iconv() を含むライブラリは必要ありません。その場合、
+configure スクリプトの実行時に '--enable-liteonly' オプションの値を 
+"yes" にセットしてください。
+
+
+1. configure スクリプトの実行
+
+トップディレクトリにある configure スクリプトを実行してください。
+
+	% ./configure
+
+次のようなエラーメッセージ
+
+        configure: error: iconv function not available
+
+に遭遇した場合、GNU libiconv をインストールした上で、'configure' を再
+実行して下さい。このとき 'configure' には、次のように '--with-libiconv'
+オプションを付与します。
+
+        % ./configure --with-libiconv=/usr/local
+
+ここで '/usr/local' は、GNU libiconv のインストールされているパスを意味
+します。
+
+configure スクリプトには、数多くのオプションが用意されています。そのう
+ち重要と思われるものは次の通りです。
+
+    --prefix=PREFIX
+	idnkit をインストールするディレクトリのパスを指定します。デフォ
+	ルトは /usr/local です。
+
+    --with-libiconv=LIBICONV_PREFIX
+	インストール済みの GNU libiconv を idnkit にリンクさせる場合は、
+	このオプションを指定して下さい。引数 LIBICONV_PREFIX には、GNU
+	libiconv がインストールされている位置を指定します。引数を省略
+	すると、PREFIX (PREFIX の値は --prefix=PREFIX から導出されます)
+	を指定したものと見なされます。
+
+	--with-libiconv は GNU libiconv 用の短縮形のオプションで
+
+	    --with-libiconv=/usr/local
+
+	これは次と等価になります。
+
+	    --with-iconv-include='-I/usr/local/include'
+	    --with-iconv='-L/usr/local/lib -R/usr/local/lib -liconv'
+
+	短縮形のオプション (--with-libiconv) と通常用のオプション
+	(--with-iconv-include, --with-iconv) を両方とも指定した場合は、
+	通常用のオプションほうが優先されます。
+
+	このオプションは --enable-liteonly を "yes" にした場合は指定する
+	ことはできません。これは、libidnkitlite ライブラリが iconv サポー
+	トを必要としないためです。
+
+    --with-iconv-include=ICONV_INCDIR
+	C コンパイラが通常では検索しないディレクトリに "iconv.h" が置
+	かれている場合、次のようにしてそのディレクトリを指定します。
+	
+	    --with-iconv-include=/usr/local/include
+
+	このオプションは --enable-liteonly を "yes" にした場合は指定する
+	ことはできません。これは、libidnkitlite ライブラリが iconv サポー
+	トを必要としないためです。
+
+    --with-iconv=ICONV_LIB
+	libc に iconv が入っていない場合 (上記のパッケージを入れた
+	場合など) に、iconv のライブラリを指定します。例えば
+
+		--with-iconv="-L/usr/local/lib -liconv"
+
+	のように指定します。もし iconv が共有ライブラリになっている
+	場合には、さらにいくつかのオプションをCコンパイラに対して指定
+	する必要があるかもしれません。
+
+	このオプションは --enable-liteonly を "yes" にした場合は指定する
+	ことはできません。これは、libidnkitlite ライブラリが iconv サポー
+	トを必要としないためです。
+
+    --with-utf8=UTF8_NAME
+	iconv に utf-8 エンコーディングを指定する場合、本ライブラリは
+	デフォルトでは "UTF-8" という名前を指定します。もしあなたの
+	システムの iconv が "UTF-8" という名前を受け付けない場合には、
+	代りの名前を指定します。例えば "UTF-8" ではなく "utf8" の
+	場合には次のように指定します。
+
+		--with-utf8=utf8
+
+
+2. その他の configure のオプション
+
+それほどよく使うわけではありませんが、configure には前項のもの以外に
+も様々なオプションが用意されています。
+
+    --exec-prefix=EXEC_PREFIX
+	マシン固有のファイルをインストールするディレクトリのパスを指定
+	します。デフォルトは PREFIX (''--prefix=PREFIX'' によって指定
+	可能、PREFIX のデフォルトは /usr/local) になります。
+
+    --bindir=BINDIR
+	idnconv2, idncmp, idhceck コマンドをインストールするディレクトリ
+	を指定します。デフォルトでは EXEC_PREFIX/bin です。
+
+    --libdir=LIBDIR
+	ライブラリ (libidnkit および libidnkitlite) をインストールする
+	ディレクトリを指定します。デフォルトでは EXEC_PREFIX/lib です。
+
+    --includedir=INCDIR
+	ライブラリのヘッダファイルをインストールするディレクトリを指定
+	します。デフォルトでは PREFIX/include です。
+
+    --sysconfdir=SYSCONFDIR
+	ライブラリの設定ファイルのサンプルをインストールするディレクト
+	リを指定します。デフォルトでは PREFIX/etc です。
+
+    --mandir=MANDIR
+	オンラインマニュアルのインストールディレクトリを指定します。
+	デフォルトでは PREFIX/man です。
+
+    --datadir=DATADIR
+	異なるマシンで共有可能なファイルをインストールするディレクトリ
+	を指定します。デフォルトは PREFIX/share です。DATADIR/idnkit 
+	の下に、idnkit で使用する幾つかのデータファイルがインストール
+	されます。
+
+    --enable-shared
+	共有ライブラリを作成します。デフォルトは "yes" (作成する) です。
+
+    --enable-static
+	静的ライブラリを作成します。デフォルトは "yes" (作成する) です。
+
+    --enable-liteonly
+	libidnkitlite ライブラリのみを作成します。libidnkit ライブラリ、
+	idnconv2, idncmp, idncheck コマンドは作成しません。デフォルトは
+	"no" (それ以外のものも作成する) です。
+
+	このオプションの値を "yes" にする場合、'--with-libiconv',
+	'--with-iconv-include', '--with-iconv' は同時に指定することは
+	できません。
+
+configure には他にも多くのオプションがありますが、残りは一般的なオプショ
+ンなので説明は省きます。
+
+	% ./configure --help
+
+を実行するとオプションの一覧が表示されます。
+
+
+3. コンパイル
+
+configure を実行すると Makefile などが生成されますので、続けて makeを
+実行してコンパイルします。
+
+	% make
+
+
+4. テスト
+
+テストプログラムをコンパイルし、実行するには 'make check' を実行します
+(省略しても構いません)。
+
+	% make check
+
+テストプログラムを実行するには、次の条件を満たしている必要があります。
+
+    + configure 実行時に、'--enable-liteonly' オプションを指定しなかった
+    + Perlがそのシステムにインストールされている
+
+テストの中には、idnkitライブラリ内でエラーが発生することを期待するもの
+もありますので、idnkitライブラリ (libidnkit) は時々次のようにエラーを
+報告してきます。
+
+	16273: [ERROR] libidnkit: 'language' redefined, line 2
+
+	/bin/cp: cannot create regular file `/etc/idn2.conf': Permission denied
+
+こうしたメッセージは、テスト自体が失敗しない限り、idnkitライブラリに
+問題があること直ちに意味するわけではありません。テストが失敗したときは、
+
+	FAIL: language_0010.sh
+
+のように "FAIL:" で始まるメッセージが出力されます。
+
+
+5. インストール
+
+'sudo' コマンドを用いて 'make install' を実行するか、
+
+	% sudo make install
+
+あるいは、'su' コマンドであらかじめ root になってから、'make install'
+を実行します。
+
+	% su
+	# make install
+
+
+6. 設定と使用方法
+
+idnkit の正規化および変換規則をカスタマイズしするなら、設定ファイル
+'idn2.conf' を編集します。この設定ファイルの詳細については idn2.conf の
+オンラインマニュアルをご覧ください。また設定例が書かれたサンプルファイ
+ル (idn2.conf.sample) もインストールされますのでご利用ください。
+
+システムに設定ファイルが存在しなかった場合、このサンプルの設定ファイル
+は 'idn2.conf' としてもインストールされます。
+
+また、idnconv2、idncmp, idncheck といったツールのオンラインマニュアル
+も提供されています。これらのコマンドの使い方、設定方法に関してはそちら
+を参照してください。
+
+	% man idn2.conf
+	% man idnconv2
+	% man idncmp
+	% man idncheck
+
+
+7. 設定の確認
+
+idnslookup2 という簡単なシェルスクリプトが tools/idnconv ディレクトリ
+に用意されています。このスクリプトを使うと DNS サーバに対して国際化ド
+メイン名を問い合わせることができます。設定ファイルの確認に役立つかも知
+れません。
+
+idnslookup2 の使用方法は、次の通りです。
+
+	% tools/idnconv/idnslookup2 <domain-name> <dns-server>
+
+ここで <domain-name> はローカルコードセット (詳しくは idn2.conf の
+マニュアルの ''LOCAL CODESET'' を参照のこと) で書かれた国際化ドメイン
+名で、<dns-server> は DNS サーバのホスト名もしくは IP アドレスです。
+
+idnslookup2 は idnconv2 および nslookup コマンドを用いて、
+<dns-server> に対して <domain-name> を引きに行きます。設定に何か間違い
+があれば、idnconv2, nslookup あるいは idnslookup2 自身によるエラー
+メッセージが出力されます。
+
+
+8. 後片付け
+
+'make' および 'make check' によって生成されたファイルを idnkit のソー
+スディレクトリから削除するには、'make clean' を実行して下さい。
+('make install' の際にインストールされたファイルは、削除されません。)
+
+	% make clean
+
+configure で生成されたファイルも一緒に削除するなら、代わりに 'make
+distclean' を実行します。
+
+	% make distclean
+
+'make distclean' を行えば、このソースディレクトリを使って、前回とは別
+のシステム向けに configure および idnkit のコンパイルを行うことがで
+きるようになります。
+
+
+付録 A. idnkit バージョン 1.0 パッチの当て方
+
+この配布キットには、idnkitバージョン1.0に対するパッチが含まれています。
+パッチの当て方は、パッチファイルの先頭に書かれていますのでそちらを参照
+してください。

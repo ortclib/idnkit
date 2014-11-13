@@ -1,0 +1,107 @@
+idnkit internally uses Unicode codepoint tables derived from Unicode
+Character Database and IDNA2008-Tables.  This version of idnkit
+supports:
+
+   Unicode: 6.3.0
+   IDNA2008-Tables: updated 2011-11-14
+
+You can build idnkit with the tables of different versions.
+This document describes how to generate the tables of other versions.
+
+
+** How to generate Unicode codepoint tables.			
+
+0. Get data files for Unicode Character Database of a particular
+   version you would like to use for idnkit. You can obtain the data
+   file from:
+      http://www.unicode.org/ucd/
+
+   At least, the following data files are required:
+
+      UnicodeData.txt
+      SpecialCasing.txt
+      CompositionExclusions.txt
+      ArabicShaping.txt
+      Scripts.txt
+      DerivedCoreProperties.txt
+
+1. Get data files for UTS #46 of a particular Unicode version.
+   You can obtain the data file from:
+
+	http://www.unicode.org/Public/idna/
+
+   At least, the following data files are required:
+
+	IdnaMappingTable.txt
+
+   Please note that versions of data files for Unicode Character
+   Database and UTS #46 should be the same.
+
+2. Place the data files for Unicode Character Database and UTS #46
+   in the 'data' sub directory.  (You may choose another directory.
+   See the next section.)
+
+3. Go to the 'utils' sub directory and type:	
+
+      ./generate_unicodeall.sh UNICODE-VERSION
+
+   where UNICODE-VERSION is a version ID of Unicode Character Database
+   and UTS #46 ("6.0.0" for Unicode 6.0.0, for example). If you have put
+   the data files somewhere else than '../data', specify its location
+   using '-datadir' option.	
+
+      ./generate_unicodeall.sh -datadir /somewhere/else UNICODE-VERSION
+
+   Upon success, the script outputs the messages below.
+   
+      ** Generate Unicode version file
+      ** Generate Bidi class table
+      ** Generate Cased table
+      ** Generate Case_Ignorable table
+      ** Generate Combining character table
+      ** Generate Combining class table
+      ** Generate Composition table
+      ** Generate Decomposition table
+      ** Generate Joining type table
+      ** Generate Lowercase table
+      ** Generate Script table
+      ** Generate TR #46 casefold table
+      ** Generate TR #46 validation table
+      ** Generate Width table
+      ** Complete
+
+   C program files are created in '../lib/auto' and header files are
+   generated in '../include/idn/auto'. Compiling idnkit according with
+   description of the INSTALL file, the generated tables are used.
+
+** How to generate IDNA property table.			
+
+0. Get an XML edition of the IDNA Parameters file you would like
+   to use with idnkit. You can obtain the file from:
+
+     http://www.iana.org/assignments/idna-tables/idna-tables.xml
+
+   To generate a table for idnkit, XML::Simple Perl package is required.
+
+1. Place 'idnabis-tables.xml' file in the 'data' sub directory.
+   (You may choose another directory. See the next section.)
+
+2. Go to the 'utils' sub directory and type:
+
+      ./generate_idnaall.sh IDNA-VERSION
+
+   where IDNA-VERSION is a version ID of the IDNA table like 
+   "rfc6452 (2011-11-14)".  If you have put the data file somewhere
+   else than '../data', specify its location using '-datadir' option.
+
+      ./generate_idnaall.sh -datadir /somewhere/else IDNA-VERSION
+
+   Upon success, the script outputs the messages below.
+
+      ** Generate IDNA version file
+      ** Generate IDNA category table
+      ** Complete
+   
+   C program files are created in '../lib/auto' and header files are
+   generated in '../include/idn/auto'. Compiling idnkit according with
+   description of the INSTALL file, the generated tables are used.

@@ -1,0 +1,2174 @@
+#
+#                           TERMS AND CONDITIONS
+#                                   FOR
+#                         OPEN SOURCE CODE LICENSE
+#                               Version 1.1
+# 
+# Japan Registry Services Co., Ltd. ("JPRS"), a Japanese corporation
+# having its head office at Chiyoda First Bldg. East 13F 3-8-1 Nishi-Kanda,
+# Chiyoda-ku, Tokyo 101-0065, Japan, grants you the license for open source
+# code specified in EXHIBIT A the "Code" subject to the following Terms and
+# Conditions ("OSCL").
+# 
+# 1. License Grant.
+#   JPRS hereby grants you a worldwide, royalty-free, non-exclusive
+#   license, subject to third party intellectual property claims:
+#   (a) under intellectual property rights (other than patent or
+#       trademark) licensable by JPRS to use, reproduce, modify, display,
+#       perform, sublicense and distribute the Code (or portions thereof)
+#       with or without modifications, and/or as part of a derivative work;
+#       or
+#   (b) under claims of the infringement through the making, using,
+#       offering to sell and/or otherwise disposing the JPRS Revised Code
+#       (or portions thereof);
+#   (c) the licenses granted in this Section 1(a) and (b) are effective on
+#       the date JPRS first distributes the Code to you under the terms of
+#       this OSCL;
+#   (d) Notwithstanding the above stated terms, no patent license is
+#       granted:
+#       1)  for a code that you delete from the Code;
+#       2)  separate from the Code; or
+#       3)  for infringements caused by:
+#            i) modification of the Code; or
+#           ii) combination of the Code with other software or devices.
+# 
+# 2. Consents.
+#   You agree that:
+#   (a) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of the Code you distribute;
+#   (b) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of binary form of the Code in the
+#       documentation and/or other materials provided with the distribution;
+#   (c) you may not offer or impose any terms on any source code version
+#       that alters or restricts the applicable version of this OSCL or
+#       the recipients' rights hereunder.
+#   (d) If the terms and conditions are set forth in EXHIBIT A, you must
+#       comply with those terms and conditions.
+# 
+# 3. Proprietary Information.
+#   All trademarks, service marks, patents, copyrights, trade secrets, and
+#   other proprietary rights in or related to the Code are and will remain
+#   the exclusive property of JPRS or its licensors, whether or not
+#   specifically recognized or perfected under local law except specified
+#   in this OSCL; provided however you agree and understand that the JPRS
+#   name may not be used to endorse or promote this Code without prior
+#   written approval of JPRS.
+# 
+# 4. WARRANTY DISCLAIMER.
+#   JPRS MAKES NO REPRESENTATIONS AND WARRANTIES REGARDING THE USE OF THE
+#   CODE, NOR DOES JPRS MAKE ANY REPRESENTATIONS THAT THE CODE WILL BECOME
+#   COMMERCIALLY AVAILABLE. JPRS, ITS AFFILIATES, AND ITS SUPPLIERS DO NOT
+#   WARRANT OR REPRESENT THAT THE CODE IS FREE OF ERRORS OR THAT THE CODE
+#   IS SUITABLE FOR TRANSLATION AND/OR LOCALIZATION. THE CODE IS PROVIDED
+#   ON AN "AS IS" BASIS AND JPRS AND ITS SUPPLIERS HAVE NO OBLIGATION TO
+#   CORRECT ERRORS OR TO SUPPORT THE CODE UNDER THIS OSCL FOR ANY REASON.
+#   TO THE FULL EXTENT PERMITTED BY LAW, ALL OBLIGATIONS ARE HEREBY
+#   EXCLUDED WHETHER EXPRESS, STATUTORY OR IMPLIED UNDER LAW, COURSE OF
+#   DEALING, CUSTOM, TRADE USAGE, ORAL OR WRITTEN STATEMENT OR OTHERWISE,
+#   INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY
+#   OR FITNESS FOR A PARTICULAR PURPOSE CONCERNING THE CODE.
+# 
+# 5. NO LIABILITY.
+#   UNDER NO CIRCUMSTANCES SHALL JPRS AND/OR ITS AFFILIATES, LICENSORS, OR
+#   REPRESENTATIVES BE LIABLE FOR ANY DAMAGES INCLUDING BUT NOT LIMITED TO
+#   CONSEQUENTIAL, INDIRECT, SPECIAL, PUNITIVE OR INCIDENTAL DAMAGES,
+#   WHETHER FORESEEABLE OR UNFORESEEABLE, BASED ON YOUR CLAIMS, INCLUDING,
+#   BUT NOT LIMITED TO, CLAIMS FOR LOSS OF DATA, GOODWILL, PROFITS, USE OF
+#   MONEY, INTERRUPTION IN USE OR AVAILABILITY OF DATA, STOPPAGE, IMPLIED
+#   WARRANTY, BREACH OF CONTRACT, MISREPRESENTATION, NEGLIGENCE, STRICT
+#   LIABILITY IN TORT, OR OTHERWISE.
+# 
+# 6. Indemnification.
+#   You hereby agree to indemnify, defend, and hold harmless JPRS for any
+#   liability incurred by JRPS due to your terms of warranty, support,
+#   indemnity, or liability offered by you to any third party.
+# 
+# 7. Termination.
+# 7.1 This OSCL shall be automatically terminated in the events that:
+#   (a) You fail to comply with the terms herein and fail to cure such
+#       breach within 30 days of becoming aware of the breach;
+#   (b) You initiate patent or copyright infringement litigation against
+#       any party (including a cross-claim or counterclaim in a lawsuit)
+#       alleging that the Code constitutes a direct or indirect patent or
+#       copyright infringement, in such case, this OSCL to you shall
+#       terminate as of the date such litigation is filed;
+# 7.2 In the event of termination under Sections 7.1(a) or 7.1(b) above,
+#     all end user license agreements (excluding distributors and
+#     resellers) which have been validly granted by You or any distributor
+#     hereunder prior to termination shall survive termination.
+#
+# 
+# 8. General.
+#   This OSCL shall be governed by, and construed and enforced in
+#   accordance with, the laws of Japan. Any litigation or arbitration
+#   between the parties shall be conducted exclusively in Tokyo, Japan
+#   except written consent of JPRS provides other venue.
+# 
+# 
+#                                EXHIBIT A
+# 
+# The original open source code of idnkit-2 is idnkit-1.0 developed and
+# conceived by Japan Network Information Center ("JPNIC"), a Japanese
+# association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan, and JPRS modifies above original code
+# under following Terms and Conditions set forth by JPNIC.
+# 
+#                                  JPNIC
+# 
+# Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved.
+# 
+# By using this file, you agree to the terms and conditions set forth bellow.
+# 
+#                       LICENSE TERMS AND CONDITIONS
+# 
+# The following License Terms and Conditions apply, unless a different
+# license is obtained from Japan Network Information Center ("JPNIC"),
+# a Japanese association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan.
+# 
+# 1. Use, Modification and Redistribution (including distribution of any
+#    modified or derived work) in source and/or binary forms is permitted
+#    under this License Terms and Conditions.
+# 
+# 2. Redistribution of source code must retain the copyright notices as they
+#    appear in each source code file, this License Terms and Conditions.
+# 
+# 3. Redistribution in binary form must reproduce the Copyright Notice,
+#    this License Terms and Conditions, in the documentation and/or other
+#    materials provided with the distribution. For the purposes of binary
+#    distribution the "Copyright Notice" refers to the following language:
+#    "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# 
+# 4. The name of JPNIC may not be used to endorse or promote products
+#    derived from this Software without specific prior written approval of
+#    JPNIC.
+# 
+# 5. Disclaimer/Limitation of Liability: THIS SOFTWARE IS PROVIDED BY JPNIC
+#    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+#    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JPNIC BE LIABLE
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+#    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#    OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+# 
+# 
+#                        JPRS Public License Notice
+#                                   For
+#                                idnkit-2.
+# 
+# The contents of this file are subject to the Terms and Conditions for
+# the Open Source Code License (the "OSCL"). You may not use this file
+# except in compliance with above terms and conditions. A copy of the OSCL
+# is available at <http://jprs.co.jp/idn/>.
+# The JPRS Revised Code is idnkit-2.
+# The Initial Developer of the JPRS Revised Code is Japan Network
+# Information Center ("JPNIC"), a Japanese association,
+# Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda, Chiyoda-ku, Tokyo
+# 101-0047, Japan.
+# "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# "Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.  All rights reserved."
+# Contributor(s): ______________________________________.
+# 
+# If you wish to allow use of your version of this file only under the
+# above License(s) and not to allow others to use your version of this
+# file, please indicate your decision by deleting the relevant provisions
+# above and replacing them with the notice and other provisions required
+# by the above License(s). If you do not delete the relevant provisions,
+# a recipient may use your version of this file under either the above
+# License(s).
+#
+
+#
+# Tests about [IDNA2008-Bidi].
+#
+# The tests mainly use the following code points:
+#    U+0041   L     LATIN CAPITAL LETTER A
+#    U+202A   LRE   LEFT-TO-RIGHT EMBEDDING
+#    U+202D   LRO   LEFT-TO-RIGHT OVERRIDE
+#    U+05D0   R     HEBREW LETTER ALEF
+#    U+0627   AL    ARABIC LETTER ALEF
+#    U+202B   RLE   RIGHT-TO-LEFT EMBEDDING
+#    U+202E   RLO   RIGHT-TO-LEFT OVERRIDE
+#    U+202C   PDF   POP DIRECTIONAL FORMATTING
+#    U+0030   EN    DIGIT ZERO
+#    U+002B   ES    PLUS SIGN
+#    U+0025   ET    PERCENT SIGN
+#    U+0600   AN    ALABIC NUMBER SIGN
+#    U+002C   CS    COMMA
+#    U+0300   NSM   COMBINING GRAVE ACCENT
+#    U+1D173  BN    MUSICAL SYMBOL BEGIN BEAM
+#    U+2029   B     PARAGRAPH SEPARATOR
+#    U+001F   S     INFORMATION SEPARATOR ONE
+#    U+1680   WS    OGHAM SPACE MARK
+#    U+002A   ON    ASTERISK
+#
+--
+######################################################################
+# BIDI domain name inspection:
+#    A "BIDI domain name" is a domain name that contains at least one
+#    label that contains at least one character of type R, AL or AN. 
+#    The BIDI Rule is applied to BIDI domain names only.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+0041 (bidiclass: L).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+202A (bidiclass: LRE).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202a}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202a}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+202D (bidiclass: LRO).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202d}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202d}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+05D0 (bidiclass: R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+#
+# The input name is just U+0627 (bidiclass: AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{627}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+202B (bidiclass: RLE).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202b}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202b}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+202E (bidiclass: RLO).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202e}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202e}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+202C (bidiclass: PDF).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202c}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202c}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+0030 (bidiclass: EN).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 0
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: 0
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+002B (bidiclass: ES).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: +
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: +
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+0025 (bidiclass: ET).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: %
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: %
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+0600 (bidiclass: AN).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{600}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+002C (bidiclass: CS).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: ,
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: ,
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+0300 (bidiclass: NSM).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{300}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+070F (bidiclass: BN).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1d173}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1d173}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+2029 (bidiclass: B).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2029}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{2029}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+001F (bidiclass: S).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1f}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1f}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+1680 (bidiclass: WS).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1680}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1680}
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is just U+002A (bidiclass: ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: *
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: *
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0041 + ".*" (bidiclass: L . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+202A + ".*" (bidiclass: LRE . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202a}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202a}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+202D + ".*" (bidiclass: LRO . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202d}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202d}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+05D0 + ".*" (bidiclass: R . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0627 + ".*" (bidiclass: AL . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{627}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+202B + ".*" (bidiclass: RLE . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202b}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202b}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+202E + ".*" (bidiclass: RLO . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202e}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202e}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+202C + ".*" (bidiclass: PDF . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202c}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{202c}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0030 + ".*" (bidiclass: EN . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 0.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: 0.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+002B + ".*" (bidiclass: ES . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: +.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: +.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0025 + ".*" (bidiclass: ET . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: %.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: %.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0600 + ".*" (bidiclass: AN . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{600}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+002C + ".*" (bidiclass: CS . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: ,.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: ,.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+0300 + ".*" (bidiclass: NSM . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{300}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{300}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+070F + ".*" (bidiclass: BN . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1d173}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1d173}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+2029 + ".*" (bidiclass: B . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2029}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{2029}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+001F + ".*" (bidiclass: S . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1f}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1f}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+1680 + ".*" (bidiclass: WS . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1680}.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{1680}.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+# The input name is U+002A + ".*" (bidiclass: ON . ON).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: *.*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: *.*
+--
+#
+# Bidicheck test.
+# Check BIDI domain name inspection.
+#
+# The input name is "a" + U+05D0 (bidiclass: L + R).
+#
+# [IDNA2008-Bidi] defines the term "an RTL label" twice.
+# The "2. The BIDI Rule" chapter says "if it (= the first character)
+# has the R or AL property, it is an RTL label", while the
+# "1.4. Terminology" section says "an RTL label is a label that
+# contains at least one character of type R, AL or AN".
+#
+# The latter definition is used to define the term "BIDI domain name"
+# and "2. BIDI Rule" also says "the following rule, (snip), applies
+# to labels in BIDI domain names".
+#
+# The input name of this test is not "an RTL label" defined by
+# "2. The BIDI Rule", but it is a BIDI domain name. It must satisfy
+# "an LTR label" conditions described in "2. The BIDI Rule".
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+######################################################################
+# The BIDI rule 1.
+#    The first character must be a character with BIDI property L, R
+#    or AL.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0041 + "." + U+05D0 (bidiclass: L . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+202A + "." + U+05D0 (bidiclass: LRE . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202a}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+202D + "." + U+05D0 (bidiclass: LRO . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202d}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+05D0 + "." + U+05D0 (bidiclass: R . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0627 + "." + U+05D0 (bidiclass: AL . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{627}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{627}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+202B + "." + U+05D0 (bidiclass: RLE . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202b}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+202E + "." + U+05D0 (bidiclass: RLO . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202e}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+202C + "." + U+05D0 (bidiclass: PDF . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{202c}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0030 + "." + U+05D0 (bidiclass: EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+002B + "." + U+05D0 (bidiclass: ES . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: +.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0025 + "." + U+05D0 (bidiclass: ET . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: %.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0600 + "." + U+05D0 (bidiclass: AN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{600}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+002C + "." + U+05D0 (bidiclass: CS . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: ,.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+0300 + "." + U+05D0 (bidiclass: NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+070F + "." + U+05D0 (bidiclass: BN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1d173}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+2029 + "." + U+05D0 (bidiclass: B . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2029}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+001F + "." + U+05D0 (bidiclass: S . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1f}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+1680 + "." + U+05D0 (bidiclass: WS . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1680}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 1.
+# The input name is U+002A + "." + U+05D0 (bidiclass: ON . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: *.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+######################################################################
+# The BIDI Rule 2:
+#    In an RTL label, only characters with the BIDI properties R, AL,
+#    AN, EN, ES, CS, ET, ON, BN and NSM are allowed.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+0041 U+0627 (bidiclass: R L AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}A\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+202A U+0627 (bidiclass: R LRE AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{202a}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+202D U+0627 (bidiclass: R LRO AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{202d}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+202B U+0627 (bidiclass: R RLE AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{202b}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+202E U+0627 (bidiclass: R RLO AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{202e}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+202C U+0627 (bidiclass: R PDF AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{202c}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+0030 U+0627 (bidiclass: R EN AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}0\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}0\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+002B U+0627 (bidiclass: R ES AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}+\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}+\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+0025 U+0627 (bidiclass: R ET AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}%\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}%\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+0600 U+0627 (bidiclass: R AN AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{600}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{600}\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+002C U+0627 (bidiclass: R CS AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0},\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0},\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+0300 U+0627 (bidiclass: R NSM AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{300}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{300}\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+070F U+0627 (bidiclass: R BN AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{1d173}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{1d173}\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+2029 U+0627 (bidiclass: R B AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{2029}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+001F U+0627 (bidiclass: R S AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{1f}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+1680 U+0627 (bidiclass: R WS AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{1680}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 2.
+# The input name is U+05D0 U+002A U+0627 (bidiclass: R ON AL).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}*\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}*\u{627}
+--
+######################################################################
+# The BIDI Rule 3:
+#    In an RTL label, the end of the label must be a character with
+#    BIDI property R, AL, EN or AN, followed by zero or more
+#    characters with BIDI property NSM.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+05D0 (bidiclass: R R).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0627 (bidiclass: R AL).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{627}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{627}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0030 (bidiclass: R EN).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}0
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}0
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002B (bidiclass: R ES).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}+
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0025 (bidiclass: R ET).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}%
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0600 (bidiclass: R AN).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{600}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{600}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002C (bidiclass: R CS).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0},
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+070F (bidiclass: R BN).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{1d173}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002A (bidiclass: R ON).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}*
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+05D0 U+0300 (bidiclass: R R NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{5d0}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{5d0}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0627 U+0300 (bidiclass: R AL NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{627}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{627}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0030 U+0300 (bidiclass: R EN NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}0\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}0\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002B U+0300 (bidiclass: R ES NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}+\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0025 U+0300 (bidiclass: R ET NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}%\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0600 U+0300 (bidiclass: R AN NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{600}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{600}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002C U+0300 (bidiclass: R CS NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0},\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+070F U+0300 (bidiclass: R BN NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{1d173}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+002A U+0300 (bidiclass: R ON NSM).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}*\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+05D0 U+0300... (bidiclass: R R NSM{3}).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{5d0}\u{300}\u{300}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{5d0}\u{300}\u{300}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0627 U+0300... (bidiclass: R AL NSM{3}).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{627}\u{300}\u{300}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{627}\u{300}\u{300}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0030 U+0300... (bidiclass: R EN NSM{3}).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}0\u{300}\u{300}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}0\u{300}\u{300}\u{300}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 3.
+# The input name is U+05D0 U+0600 U+0300 (bidiclass: R AN NSM{3}).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{600}\u{300}\u{300}\u{300}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: \u{5d0}\u{600}\u{300}\u{300}\u{300}
+--
+######################################################################
+# The BIDI Rule 4:
+#    In an RTL label, if an EN is present, no AN may be present, and
+#    vice versa.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 4.
+# The input name is U+05D0 U+0600 U+0030 U+05D0 (bidiclass: R AN EN R).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}\u{600}0\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 4.
+# The input name is U+05D0 U+0600 U+0030 U+05D0 (bidiclass: R EN AN R).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{5d0}0\u{600}\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+######################################################################
+# The BIDI Rule 5:
+#    In an LTR label, only characters with the BIDI properties L, EN,
+#    ES, CS, ET, ON, BN and NSM are allowed.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202A U+0030 "." U+05D0
+# (bidiclass: L LRE EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{202a}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202D U+0030 "." U+05D0
+# (bidiclass: L LRO EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{202d}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202B U+0030 "." U+05D0
+# (bidiclass: L RLE EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{202b}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202E U+0030 "." U+05D0
+# (bidiclass: L RLO EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{202e}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+05D0 U+0030 "." U+05D0
+# (bidiclass: L R EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{5d0}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202E U+0030 "." U+05D0
+# (bidiclass: L AL EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{627}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+202C U+0030 "." U+05D0
+# (bidiclass: L PDF EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{202c}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+002B U+0030 "." U+05D0
+# (bidiclass: L ES EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A+0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A+0.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+0025 U+0030 "." U+05D0
+# (bidiclass: L ET EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A%0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A%0.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+0600 U+0030 "." U+05D0
+# (bidiclass: L AN EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{600}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+002C U+0030 "." U+05D0
+# (bidiclass: L CS EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A,0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A,0.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+0300 U+0030 "." U+05D0
+# (bidiclass: L NSM EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{300}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A\u{300}0.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+070F U+0030 "." U+05D0
+# (bidiclass: L BN EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{1d173}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A\u{1d173}0.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+2029 U+0030 "." U+05D0
+# (bidiclass: L B EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{2029}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+001F U+0030 "." U+05D0
+# (bidiclass: L S EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{1f}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+1680 U+0030 "." U+05D0
+# (bidiclass: L WS EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{1680}0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 5.
+# The input name is U+0041 U+002A U+0030 "." U+05D0
+# (bidiclass: L ON EN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A*0.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A*0.\u{5d0}
+--
+######################################################################
+# The BIDI Rule 6:
+#    In an LTR label, the end of the label must be a character with
+#    BIDI property L or EN, followed by zero or more characters with
+#    BIDI property NSM.
+######################################################################
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0041 "." U+05D0
+# (bidiclass: L L . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: AA.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: AA.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002B "." U+05D0
+# (bidiclass: L ES . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A+.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0025 "." U+05D0
+# (bidiclass: L ET . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A%.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002C "." U+05D0
+# (bidiclass: L CS . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A,.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+070F "." U+05D0
+# (bidiclass: L BN . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{1d173}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002A "." U+05D0
+# (bidiclass: L ON . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A*.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0041 U+0300 "." U+05D0
+# (bidiclass: L L NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: AA\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: AA\u{300}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0030 U+0300 "." U+05D0
+# (bidiclass: L EN NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A0\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A0\u{300}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002B U+0300 "." U+05D0
+# (bidiclass: L ES NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A+\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0025 U+0300 "." U+05D0
+# (bidiclass: L ET NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A%\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002C U+0300 "." U+05D0
+# (bidiclass: L CS NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A,\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+070F U+0300 "." U+05D0
+# (bidiclass: L BN NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A\u{1d173}\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+002A U+0300 "." U+05D0
+# (bidiclass: L ON NSM . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A*\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0041 U+0300... "." U+05D0
+# (bidiclass: L L NSM{3} . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: AA\u{300}\u{300}\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: AA\u{300}\u{300}\u{300}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Check the bidi rule 6.
+# The input name is U+0041 U+0030 U+0300... "." U+05D0
+# (bidiclass: L EN NSM{3} . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: A0\u{300}\u{300}\u{300}.\u{5d0}
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: A0\u{300}\u{300}\u{300}.\u{5d0}
+--
+######################################################################
+# Special inputs.
+######################################################################
+--
+#
+# Bidicheck test.
+# The input name is "..".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: ..
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: ..
+--
+#
+# Bidicheck test.
+# The input name is ".".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: .
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: .
+--
+#
+# Bidicheck test.
+# The input name is "".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: 
+--
+######################################################################
+# A domain name containing an A-label.
+#    Convert the A-label to U-label, and then test whether the input
+#    name is BIDI domain name or not. The order of the processes is
+#    significant.
+######################################################################
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+0030 U+0061 + "." + U+05D0 (bidiclass: EN L . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 0a.xn--4db
+         actions: IDN_ENCODE_LOOKUP
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+0030 U+00E0 + "." + U+05D0 (bidiclass: EN L . R).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--0-sfa.xn--4db
+         actions: IDN_ENCODE_LOOKUP
+          result: Bidi check failed
+              to: 
+--
+######################################################################
+# Tests using decodename.
+######################################################################
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+0030 U+0061 + "." + U+05D0 (bidiclass: EN L . R).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: 0a.xn--4db
+         actions: IDN_DECODE_LOOKUP
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+0030 U+00E0 + "." + U+05D0 (bidiclass: EN L . R).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--0-sfa.xn--4db
+         actions: IDN_DECODE_LOOKUP
+          result: Bidi check failed
+              to: 
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+00E0 + "." + U+05D0 (bidiclass: L . R).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{e0}.xn--4db
+         actions: IDN_DECODE_LOOKUP
+          result: success
+              to: \u{e0}.\u{5d0}
+--
+#
+# Bidicheck test.
+# Tests domain names containing an A-label.
+# The input name is U+00E0 + "." + U+05D0 (bidiclass: L . R).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--0ca.xn--4db
+         actions: IDN_DECODE_LOOKUP
+          result: success
+              to: \u{e0}.\u{5d0}
+--
+######################################################################
+# Special inputs to decodename.
+######################################################################
+--
+#
+# Bidicheck test.
+# The input name is "..".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: ..
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: ..
+--
+#
+# Bidicheck test.
+# The input name is ".".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: .
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: .
+--
+#
+# Bidicheck test.
+# The input name is "".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: 
+         actions: IDN_UNICODECONV IDN_BIDICHECK IDN_LOCALCONV
+          result: success
+              to: 
+--

@@ -1,0 +1,742 @@
+#
+#                           TERMS AND CONDITIONS
+#                                   FOR
+#                         OPEN SOURCE CODE LICENSE
+#                               Version 1.1
+# 
+# Japan Registry Services Co., Ltd. ("JPRS"), a Japanese corporation
+# having its head office at Chiyoda First Bldg. East 13F 3-8-1 Nishi-Kanda,
+# Chiyoda-ku, Tokyo 101-0065, Japan, grants you the license for open source
+# code specified in EXHIBIT A the "Code" subject to the following Terms and
+# Conditions ("OSCL").
+# 
+# 1. License Grant.
+#   JPRS hereby grants you a worldwide, royalty-free, non-exclusive
+#   license, subject to third party intellectual property claims:
+#   (a) under intellectual property rights (other than patent or
+#       trademark) licensable by JPRS to use, reproduce, modify, display,
+#       perform, sublicense and distribute the Code (or portions thereof)
+#       with or without modifications, and/or as part of a derivative work;
+#       or
+#   (b) under claims of the infringement through the making, using,
+#       offering to sell and/or otherwise disposing the JPRS Revised Code
+#       (or portions thereof);
+#   (c) the licenses granted in this Section 1(a) and (b) are effective on
+#       the date JPRS first distributes the Code to you under the terms of
+#       this OSCL;
+#   (d) Notwithstanding the above stated terms, no patent license is
+#       granted:
+#       1)  for a code that you delete from the Code;
+#       2)  separate from the Code; or
+#       3)  for infringements caused by:
+#            i) modification of the Code; or
+#           ii) combination of the Code with other software or devices.
+# 
+# 2. Consents.
+#   You agree that:
+#   (a) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of the Code you distribute;
+#   (b) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of binary form of the Code in the
+#       documentation and/or other materials provided with the distribution;
+#   (c) you may not offer or impose any terms on any source code version
+#       that alters or restricts the applicable version of this OSCL or
+#       the recipients' rights hereunder.
+#   (d) If the terms and conditions are set forth in EXHIBIT A, you must
+#       comply with those terms and conditions.
+# 
+# 3. Proprietary Information.
+#   All trademarks, service marks, patents, copyrights, trade secrets, and
+#   other proprietary rights in or related to the Code are and will remain
+#   the exclusive property of JPRS or its licensors, whether or not
+#   specifically recognized or perfected under local law except specified
+#   in this OSCL; provided however you agree and understand that the JPRS
+#   name may not be used to endorse or promote this Code without prior
+#   written approval of JPRS.
+# 
+# 4. WARRANTY DISCLAIMER.
+#   JPRS MAKES NO REPRESENTATIONS AND WARRANTIES REGARDING THE USE OF THE
+#   CODE, NOR DOES JPRS MAKE ANY REPRESENTATIONS THAT THE CODE WILL BECOME
+#   COMMERCIALLY AVAILABLE. JPRS, ITS AFFILIATES, AND ITS SUPPLIERS DO NOT
+#   WARRANT OR REPRESENT THAT THE CODE IS FREE OF ERRORS OR THAT THE CODE
+#   IS SUITABLE FOR TRANSLATION AND/OR LOCALIZATION. THE CODE IS PROVIDED
+#   ON AN "AS IS" BASIS AND JPRS AND ITS SUPPLIERS HAVE NO OBLIGATION TO
+#   CORRECT ERRORS OR TO SUPPORT THE CODE UNDER THIS OSCL FOR ANY REASON.
+#   TO THE FULL EXTENT PERMITTED BY LAW, ALL OBLIGATIONS ARE HEREBY
+#   EXCLUDED WHETHER EXPRESS, STATUTORY OR IMPLIED UNDER LAW, COURSE OF
+#   DEALING, CUSTOM, TRADE USAGE, ORAL OR WRITTEN STATEMENT OR OTHERWISE,
+#   INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY
+#   OR FITNESS FOR A PARTICULAR PURPOSE CONCERNING THE CODE.
+# 
+# 5. NO LIABILITY.
+#   UNDER NO CIRCUMSTANCES SHALL JPRS AND/OR ITS AFFILIATES, LICENSORS, OR
+#   REPRESENTATIVES BE LIABLE FOR ANY DAMAGES INCLUDING BUT NOT LIMITED TO
+#   CONSEQUENTIAL, INDIRECT, SPECIAL, PUNITIVE OR INCIDENTAL DAMAGES,
+#   WHETHER FORESEEABLE OR UNFORESEEABLE, BASED ON YOUR CLAIMS, INCLUDING,
+#   BUT NOT LIMITED TO, CLAIMS FOR LOSS OF DATA, GOODWILL, PROFITS, USE OF
+#   MONEY, INTERRUPTION IN USE OR AVAILABILITY OF DATA, STOPPAGE, IMPLIED
+#   WARRANTY, BREACH OF CONTRACT, MISREPRESENTATION, NEGLIGENCE, STRICT
+#   LIABILITY IN TORT, OR OTHERWISE.
+# 
+# 6. Indemnification.
+#   You hereby agree to indemnify, defend, and hold harmless JPRS for any
+#   liability incurred by JRPS due to your terms of warranty, support,
+#   indemnity, or liability offered by you to any third party.
+# 
+# 7. Termination.
+# 7.1 This OSCL shall be automatically terminated in the events that:
+#   (a) You fail to comply with the terms herein and fail to cure such
+#       breach within 30 days of becoming aware of the breach;
+#   (b) You initiate patent or copyright infringement litigation against
+#       any party (including a cross-claim or counterclaim in a lawsuit)
+#       alleging that the Code constitutes a direct or indirect patent or
+#       copyright infringement, in such case, this OSCL to you shall
+#       terminate as of the date such litigation is filed;
+# 7.2 In the event of termination under Sections 7.1(a) or 7.1(b) above,
+#     all end user license agreements (excluding distributors and
+#     resellers) which have been validly granted by You or any distributor
+#     hereunder prior to termination shall survive termination.
+#
+# 
+# 8. General.
+#   This OSCL shall be governed by, and construed and enforced in
+#   accordance with, the laws of Japan. Any litigation or arbitration
+#   between the parties shall be conducted exclusively in Tokyo, Japan
+#   except written consent of JPRS provides other venue.
+# 
+# 
+#                                EXHIBIT A
+# 
+# The original open source code of idnkit-2 is idnkit-1.0 developed and
+# conceived by Japan Network Information Center ("JPNIC"), a Japanese
+# association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan, and JPRS modifies above original code
+# under following Terms and Conditions set forth by JPNIC.
+# 
+#                                  JPNIC
+# 
+# Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved.
+# 
+# By using this file, you agree to the terms and conditions set forth bellow.
+# 
+#                       LICENSE TERMS AND CONDITIONS
+# 
+# The following License Terms and Conditions apply, unless a different
+# license is obtained from Japan Network Information Center ("JPNIC"),
+# a Japanese association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan.
+# 
+# 1. Use, Modification and Redistribution (including distribution of any
+#    modified or derived work) in source and/or binary forms is permitted
+#    under this License Terms and Conditions.
+# 
+# 2. Redistribution of source code must retain the copyright notices as they
+#    appear in each source code file, this License Terms and Conditions.
+# 
+# 3. Redistribution in binary form must reproduce the Copyright Notice,
+#    this License Terms and Conditions, in the documentation and/or other
+#    materials provided with the distribution. For the purposes of binary
+#    distribution the "Copyright Notice" refers to the following language:
+#    "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# 
+# 4. The name of JPNIC may not be used to endorse or promote products
+#    derived from this Software without specific prior written approval of
+#    JPNIC.
+# 
+# 5. Disclaimer/Limitation of Liability: THIS SOFTWARE IS PROVIDED BY JPNIC
+#    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+#    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JPNIC BE LIABLE
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+#    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#    OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+# 
+# 
+#                        JPRS Public License Notice
+#                                   For
+#                                idnkit-2.
+# 
+# The contents of this file are subject to the Terms and Conditions for
+# the Open Source Code License (the "OSCL"). You may not use this file
+# except in compliance with above terms and conditions. A copy of the OSCL
+# is available at <http://jprs.co.jp/idn/>.
+# The JPRS Revised Code is idnkit-2.
+# The Initial Developer of the JPRS Revised Code is Japan Network
+# Information Center ("JPNIC"), a Japanese association,
+# Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda, Chiyoda-ku, Tokyo
+# 101-0047, Japan.
+# "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# "Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.  All rights reserved."
+# Contributor(s): ______________________________________.
+# 
+# If you wish to allow use of your version of this file only under the
+# above License(s) and not to allow others to use your version of this
+# file, please indicate your decision by deleting the relevant provisions
+# above and replacing them with the notice and other provisions required
+# by the above License(s). If you do not delete the relevant provisions,
+# a recipient may use your version of this file under either the above
+# License(s).
+#
+
+#
+# Tests about mappings (IDN_MAP).
+#
+# Each mapping procedure ('lowercase', 'width', etc.) has its indivisual
+# test cases. 
+# 
+# The test cases in this file checks comprehensive IDN_MAP behaviors.
+#
+--
+#
+# Maaping test.
+# Perform NFC twice.
+#
+# The input name is "A" + U+0300 (grave).
+# It is converted to U+00C0 ("A" with grave) by NFC.
+# Then it is converted to "a" + U+0301 (acute) by language-local map.
+# Finally it is converted to U+00E1 ("a" with acute) NFC.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: map nfc language-local nfc
+            conf: delimiters 3002
+            conf: language-local ja @LOCALMAP_FILE1@
+       localmap1: 00C0; 0061 0301;
+            from: A\u{300}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e1}
+--
+#
+# Maaping test.
+# Like the default mapping procedures, but perform NFKC instead of
+# width map and NFC.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: map lowercase nfkc delimitermap language-local nfc
+            conf: delimiters 3002
+            conf: language-local ja @LOCALMAP_FILE1@
+       localmap1: 309B; 3099
+       localmap2: 309C; 309A
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}\u{30d1}\u{30f3}\u{30c0}.jp
+--
+#
+# Maaping test.
+# TR #46 mappings.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: language-local ja @LOCALMAP_FILE1@
+            conf: delimiters 3002
+            conf: map nfc delimitermap tr46-map tr46-check language-local nfc
+       localmap1: 309B; 3099
+       localmap2: 309C; 309A
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}\u{30d1}\u{30f3}\u{30c0}.jp
+--
+#
+# Maaping test.
+# In a configuration file, specify no mapping name.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: map
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+--
+#
+# Maaping test.
+# In a configuration file, specify invalid mapping name "NFC".
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: map NFC
+            from: aaa
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: idn_resconf_loadfile() ERROR: invalid name
+              to: 
+--
+#
+# Maaping test.
+# The input name is "".
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: map lowercase width nfc delimitermap language-local nfc
+            from: 
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: 
+--
+#
+# Maaping test.
+# No mapping scheme specified.
+# The input name is U+0061 (A) + U+0300 (grave).
+# It must be normalized and mapped to lowercase.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: map
+            from: A\u{300}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: A\u{300}
+--
+#
+# Maaping test.
+# No 'map' entry.
+# idnkit assumes "widthmap lowercase nfc delimitermap language-local nfc"
+# is specified.
+#
+# The input name is U+FF21 + U+0300 + U+3002 + U+FF8A + U+309B
+# (FULL WIDTH 'A' + grave + IDEOGRAPHIC FULL STOP + HALF WIDTH KATAKANA 'HA'
+# + VOICED SOUND MARK).
+#
+# 1. widthmap
+#    It converts U+FF21 to U+00041 and U+FF8A to U+30CF, respectively.
+#    The result is U+0041 U+0300 U+3002 U+30CF U+309B.
+# 
+# 2. lowercase
+#    It converts U+0041 to U+0061.
+#    The result is U+0061 U+0300 U+3002 U+30CF U+309B.
+#
+# 3. nfc
+#    It converts U+0061 + U+0300 to U+00E0.
+#    The result is U+00E0 U+3002 U+30CF U+309B.
+#
+# 4. delimitermap
+#    It converts U+3002 to U+002E.
+#    The result is U+00E0 U+002E U+30CF U+309B.
+#
+# 5. localmap
+#    It converts U+00E0 to U+0101 and U+309B to U+3099, respectively.
+#    The result is U+0101 U+002E U+30CF U+3099.
+#
+# 6. nfc (again)
+#    It converts U+30CF + U+3099 to U+30D0.
+#    The result is U+0101 U+002E U+30D0.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: delimiters 3002
+            conf: language-local * @LOCALMAP_FILE1@
+       localmap1: 309B; 3099
+       localmap1: 00E0; 0101
+            from: \u{ff21}\u{300}\u{3002}\u{ff8a}\u{309b}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{101}.\u{30d0}
+--
+#
+# Maaping test.
+# No configuration file.
+#
+# The input name is U+FF21 + U+0300 + U+3002 + U+FF8A + U+309B
+# (FULL WIDTH 'A' + grave + IDEOGRAPHIC FULL STOP + HALF WIDTH KATAKANA 'HA'
+# + VOICED SOUND MARK).
+#
+# 1. widthmap
+#    It converts U+FF21 to U+00041 and U+FF8A to U+30CF, respectively.
+#    The result is U+0041 U+0300 U+3002 U+30CF U+309B.
+# 
+# 2. lowercase
+#    It converts U+0041 to U+0061.
+#    The result is U+0061 U+0300 U+3002 U+30CF U+309B.
+#
+# 3. nfc
+#    It converts U+0061 + U+0300 to U+00E0.
+#    The result is U+00E0 U+3002 U+30CF U+309B.
+#
+# 4. delimitermap
+#    It converts U+3002 to U+002E.
+#    The result is U+00E0 U+002E U+30CF U+309B.
+#
+# 5. localmap
+#    No conversion occurs.
+#
+# 6. nfc (again)
+#    No conversion occurs.
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{ff21}\u{300}\u{3002}\u{ff8a}\u{309b}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{30cf}\u{309b}
+--
+#
+# Maaping test.
+# Two 'map' entries.
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map lowercase
+            conf: map lowercase
+            from: ABC
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: idn_resconf_loadfile() ERROR: syntax error
+              to: 
+--
+#
+# Maaping test.
+# Unidentified map procedure name.
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map x
+            from: ABC
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: idn_resconf_loadfile() ERROR: invalid name
+              to: 
+--
+#
+# Maaping test.
+# Combined map procedure name "rfc5895".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map rfc5895
+            from: \u{c0}\u{ff61}\u{c0}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{e0}
+--
+#
+# Maaping test.
+# Combined map procedure name "resman-idna2008-mappings-01".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map resman-idna2008-mappings-01
+            from: \u{c0}\u{ff61}\u{c0}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{e0}
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing".
+# The input name is U+0132 + U+0302 + U+3002 + U+00DF
+# (ligature IJ + circumflex + ideographic full stop + sharp S).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map tr46-processing
+            from: \u{132}\u{302}\u{3002}\u{df}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: i\u{135}.\u{df}
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing".
+# The input name is U+2132 (turned F).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map tr46-processing
+            from: \u{2132}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: TR #46 check failed
+              to: 
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing-deviation".
+# The input name is U+0132 + U+0302 + U+3002 + U+00DF
+# (ligature IJ + circumflex + ideographic full stop + sharp S).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map tr46-processing-deviation
+            from: \u{132}\u{302}\u{3002}\u{df}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: i\u{135}.ss
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing-deviation".
+# The input name is U+2132 (turned F).
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: map tr46-processing-deviation
+            from: \u{2132}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: TR #46 check failed
+              to: 
+--
+######################################################################
+# Tests using decodename.
+######################################################################
+--
+#
+# Maaping test.
+# Perform NFC twice.
+#
+# The input name is "A" + U+0300 (grave).
+# It is converted to U+00C0 ("A" with grave) by NFC.
+# Then it is converted to "a" + U+0301 (acute) by language-local map.
+# Finally it is converted to U+00E1 ("a" with acute) NFC.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: map nfc language-local nfc
+            conf: delimiters 3002
+            conf: language-local ja @LOCALMAP_FILE1@
+       localmap1: 00C0; 0061 0301;
+            from: A\u{300}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e1}
+--
+#
+# Maaping test.
+# Like the default mapping procedures, but perform NFKC instead of
+# width map and NFC.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: map lowercase nfkc delimitermap language-local nfc
+            conf: delimiters 3002
+            conf: language-local ja @LOCALMAP_FILE1@
+       localmap1: 309B; 3099
+       localmap2: 309C; 309A
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}\u{30d1}\u{30f3}\u{30c0}.jp
+--
+#
+# Maaping test.
+# TR #46 mappings.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: language ja
+            conf: language-local ja @LOCALMAP_FILE1@
+            conf: delimiters 3002
+            conf: map nfc delimitermap tr46-map tr46-check language-local nfc
+       localmap1: 309B; 3099
+       localmap2: 309C; 309A
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}\u{30d1}\u{30f3}\u{30c0}.jp
+--
+#
+# Maaping test.
+# In a configuration file, specify no mapping name.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: map
+            from: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{c0}\u{ff8a}\u{ff9f}\u{ff9d}\u{ff80}\u{ff9e}\u{3002}jp
+--
+#
+# Maaping test.
+# No 'map' entry.
+# idnkit assumes "widthmap lowercase nfc delimitermap language-local nfc"
+# is specified.
+#
+# The input name is U+FF21 + U+0300 + U+3002 + U+FF8A + U+309B
+# (FULL WIDTH 'A' + grave + IDEOGRAPHIC FULL STOP + HALF WIDTH KATAKANA 'HA'
+# + VOICED SOUND MARK).
+#
+# 1. widthmap
+#    It converts U+FF21 to U+00041 and U+FF8A to U+30CF, respectively.
+#    The result is U+0041 U+0300 U+3002 U+30CF U+309B.
+# 
+# 2. lowercase
+#    It converts U+0041 to U+0061.
+#    The result is U+0061 U+0300 U+3002 U+30CF U+309B.
+#
+# 3. nfc
+#    It converts U+0061 + U+0300 to U+00E0.
+#    The result is U+00E0 U+3002 U+30CF U+309B.
+#
+# 4. delimitermap
+#    It converts U+3002 to U+002E.
+#    The result is U+00E0 U+002E U+30CF U+309B.
+#
+# 5. localmap
+#    It converts U+00E0 to U+0101 and U+309B to U+3099, respectively.
+#    The result is U+0101 U+002E U+30CF U+3099.
+#
+# 6. nfc (again)
+#    It converts U+30CF + U+3099 to U+30D0.
+#    The result is U+0101 U+002E U+30D0.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: delimiters 3002
+            conf: language-local * @LOCALMAP_FILE1@
+       localmap1: 309B; 3099
+       localmap1: 00E0; 0101
+            from: \u{ff21}\u{300}\u{3002}\u{ff8a}\u{309b}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{101}.\u{30d0}
+--
+#
+# Maaping test.
+# No configuration file.
+#
+# The input name is U+FF21 + U+0300 + U+3002 + U+FF8A + U+309B
+# (FULL WIDTH 'A' + grave + IDEOGRAPHIC FULL STOP + HALF WIDTH KATAKANA 'HA'
+# + VOICED SOUND MARK).
+#
+# 1. widthmap
+#    It converts U+FF21 to U+00041 and U+FF8A to U+30CF, respectively.
+#    The result is U+0041 U+0300 U+3002 U+30CF U+309B.
+# 
+# 2. lowercase
+#    It converts U+0041 to U+0061.
+#    The result is U+0061 U+0300 U+3002 U+30CF U+309B.
+#
+# 3. nfc
+#    It converts U+0061 + U+0300 to U+00E0.
+#    The result is U+00E0 U+3002 U+30CF U+309B.
+#
+# 4. delimitermap
+#    It converts U+3002 to U+002E.
+#    The result is U+00E0 U+002E U+30CF U+309B.
+#
+# 5. localmap
+#    No conversion occurs.
+#
+# 6. nfc (again)
+#    No conversion occurs.
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{ff21}\u{300}\u{3002}\u{ff8a}\u{309b}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{30cf}\u{309b}
+--
+#
+# Maaping test.
+# In a configuration file, specify invalid mapping name "NFC".
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: map NFC
+            from: aaa
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: idn_resconf_loadfile() ERROR: invalid name
+              to: 
+--
+#
+# Maaping test.
+# The input name is "".
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: map lowercase width nfc delimitermap language-local nfc
+            from: 
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: 
+--
+#
+# Maaping test.
+# Combined map procedure name "rfc5895".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map rfc5895
+            from: \u{c0}\u{ff61}\u{c0}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{e0}
+--
+#
+# Maaping test.
+# Combined map procedure name "resman-idna2008-mappings-01".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map resman-idna2008-mappings-01
+            from: \u{c0}\u{ff61}\u{c0}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: \u{e0}.\u{e0}
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing".
+# The input name is U+0132 + U+0302 + U+3002 + U+00DF
+# (ligature IJ + circumflex + ideographic full stop + sharp S).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map tr46-processing
+            from: \u{132}\u{302}\u{3002}\u{df}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: i\u{135}.\u{df}
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing".
+# The input name is U+2132 (turned F).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map tr46-processing
+            from: \u{2132}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: TR #46 check failed
+              to: 
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing-deviation".
+# The input name is U+0132 + U+0302 + U+3002 + U+00DF
+# (ligature IJ + circumflex + ideographic full stop + sharp S).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map tr46-processing-deviation
+            from: \u{132}\u{302}\u{3002}\u{df}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: success
+              to: i\u{135}.ss
+--
+#
+# Maaping test.
+# Combined map procedure name "tr46-processing-deviation".
+# The input name is U+2132 (turned F).
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: map tr46-processing-deviation
+            from: \u{2132}
+         actions: IDN_UNICODECONV IDN_MAP IDN_LOCALCONV
+          result: TR #46 check failed
+              to: 
+--

@@ -1,0 +1,292 @@
+
+                                idnkit
+                     Compilation and Installation
+                Japan Registry Services Co., Ltd.(JPRS)
+
+
+This file explains how to compile and install the source package.
+These procedures take the following steps:
+
+    + Prerequisite: making iconv() available
+    + System Configuration: running 'configure' script
+    + Compilation: running 'make'
+    + Test: running 'make check' (optional)
+    + Installation: running 'make install'
+    + Site Configuration: tailoring 'idn2.conf'
+    + Configuration Check (optional)
+    + Clean up (optional)
+
+See also the following section if you'd like to apply patch and install
+idnkit version 1.0.
+
+    + Applying a patch for idnkit version 1.0
+
+0. Prerequisite
+
+If you want to install generic idnkit library with code conversion
+support, and also if your system's library does not have iconv()
+function, which is a general codeset conversion utility, install iconv
+as an external library.  You also need external library if the
+system's implementation cannot handle UTF-8 encoding, or it doesn't
+support some encodings which your client applications uses.
+
+You can get a free version of iconv() implementation (under LGPL
+license, aka GNU libiconv) from:
+
+	ftp://ftp.gnu.org/gnu/libiconv/
+	and mirrors of that site.
+
+But if you don't want code conversion support and you want to install
+idnkitlite library without iconv support alone, you have not install
+external library.  Instead, set '--enable-liteonly' value to "yes" at
+configure script execution.
+
+
+1. Running configure script
+
+Run 'configure' script in the top directory.  This checks various
+characteristics of your system and it will create Makefiles and
+config.h appropriate for your system.
+
+	% ./configure
+
+If you see the error message:
+
+	configure: error: iconv function not available
+
+please install GNU libiconv and then execute 'configure' again with
+'--with-libiconv' option, like:
+
+	% ./configure --with-libiconv=/usr/local
+
+where '/usr/local' is the install prefix of GNU libiconv.
+
+'configure' accepts many options.  Here is a list of some important
+options.
+
+    --prefix=PREFIX
+	Specifies the prefix of install directories of idnkit.  The
+	default is /usr/local.  
+
+    --with-libiconv=LIBICONV_PREFIX
+	If you have installed GNU libiconv and would like to link it
+	to idnkit, specify this option.  The argument LIBICONV_PREFIX
+	is install prefix of GNU libiconv.  If the argument is omitted,
+	PREFIX (derived from --prefix=PREFIX option) is assumed.
+
+	--with-libiconv is shorthand option for GNU libiconv.
+
+	    --with-libiconv=/usr/local
+
+	This is equivalent to:
+
+	    --with-iconv-include='-I/usr/local/include'
+	    --with-iconv='-L/usr/local/lib -R/usr/local/lib -liconv'
+
+	If both the shorthand option (--with-libiconv) and longhand
+	options (--with-iconv-include and/or --with-iconv) are specified,
+	the longhand options have priority.
+
+	You cannot set this option when --enable-liteonly is set
+	"yes", because libidnkitlite library doesn't need iconv
+	support.
+
+    --with-iconv-include=ICONV_INCDIR
+	If the header file "iconv.h" resides in a directory where your
+	C compiler doesn't search by default, specify the directory as
+	DIR like this:
+	
+	    --with-iconv-include=/usr/local/include
+
+	You cannot set this option when '--enable-liteonly' is set
+	"yes", because libidnkitlite library doesn't need iconv
+	support.
+
+    --with-iconv=ICONV_LIB
+	If your libc doesn't contain iconv(), specify the library
+	that contains iconv().  For example, if iconv() is libiconv
+	in /usr/local/lib, you should specify:
+
+	    --with-iconv="-L/usr/local/lib -liconv"
+
+	Note that if the library is a shared one, you might also want
+	to specify more opotions to the C compiler.
+
+	You cannot set this option when '--enable-liteonly' is set
+	"yes", because libidnkitlite library doesn't need iconv
+	support.
+
+    --with-utf8=UTF8_NAME
+	If your iconv() (precisely, iconv_open()) does not accept
+	"UTF-8" as the name of UTF-8 encoding, specify the name for
+	it.  For example if your iconv() uses "utf8" instead, you
+	should specify:
+
+	    --with-utf8=utf8
+
+
+2. Other configure options
+
+The configure script has many other options though they are not widely
+used:
+
+    --exec-prefix=EXEC_PREFIX
+	Specifies the prefix of install directories for machine-specific
+	files.  The default is PREFIX (derived from '--prefix=PREFIX'
+	and its default is /usr/local).
+
+    --bindir=BINDIR
+	Specifies the install directory for 'idnconv2', 'idncmp' and
+	'idhcheck' command.  The default is EXEC_PREFIX/bin.
+
+    --libdir=LIBDIR
+	Specifies the install directory for the libraries (libidnkit
+	and libidnkitlite).  The default is EXEC_PREFIX/lib.
+
+    --includedir=INCDIR
+	Specifies the install directory for the header files of the
+	libraries.  The default is PREFIX/include.
+
+    --sysconfdir=SYSCONFDIR
+	Specifies the install directory for sample configuration files
+	of the libraries.  The default is PREFIX/etc.
+
+    --mandir=MANDIR
+	Specifies the base install directory for online manuals.
+	The default is PREFIX/man.
+
+    --datadir=DATADIR
+	Specifies the base install directory for machine independent
+	data files.  The default is PREFIX/share.  Some data files for
+	idnkit will be put under the DATADIR/idnkit directory.
+
+    --enable-shared
+	Build shared library.  The fault is "yes".
+
+    --enable-static
+	Build static library.  The fault is "yes".
+
+    --enable-liteonly
+        Build the 'libidnlkitite' library only.  Do not build the
+	'libidnkit' library, 'idnconv2', 'idncmp' or 'idncheck'
+	command.  The fault is "no".
+
+	If you want to set "yes" to this option, you cannot specify it
+	together with '--with-libiconv', '--with-iconv-include' or
+	'--with-iconv'.
+
+To see the list of available options, you should run it with --help
+option.
+
+	% ./configure --help
+
+
+3. Compiling
+
+Run 'make' for compilation.
+
+	% make
+
+
+4. Test
+
+Optionally, type 'make check' to compile and run test programs.
+
+	% make check
+
+To execute the test programs, the conditions listed below must be
+fulfilled.
+
+    + '--enable-liteonly' option has NOT been specified at executing
+      'configure'.
+    + Perl has been installed on the system.
+
+Since some tests expect that an error occurs in the idnkit library,
+errors are sometimes reported by the idnkit library (libidnkit), like:
+
+	16273: [ERROR] libidnkit: 'language' redefined, line 2
+and
+	/bin/cp: cannot create regular file `/etc/idn2.conf': Permission denied
+
+Those error messages do not mean directly that the idnkit library has
+something wrong, unless an test itself fails.  When a test fails,
+a message beginning with "FAIL:" is reported.
+
+	FAIL: language_0010.sh
+
+
+5. Installation
+
+Run 'make install' using 'sudo'
+
+	% sudo make install
+
+or try becoming root using 'su' and then run 'make install'.
+
+	% su
+	# make install
+
+
+6. Configuration and usage
+
+Edit the 'idn2.conf' configuration file if you'd like to customize
+conversion/normalization rules of idnkit.  Please refer the manual
+for 'idn2.conf' for details.  A sample configuration ('idn2.conf.sample')
+is also provided for your convenience.
+
+The sample configuration file has also been installed as 'idn2.conf'
+if it has not exist on your system.
+
+Also online manuals for 'idnconv2', 'idncmp' and 'idncheck' commands
+are available.  Please refer them for the usage and configuration of
+these commands.
+
+	% man idn2.conf
+	% man idnconv2
+	% man idncmp
+	% man idncheck
+
+
+7. Check your configuration
+
+A simple shell script 'idnslookup2' is available in the directory
+'tools/idnconv', with which you can make queries for internationalized
+domain names.  It may help you check your configuration.
+
+The usage of 'idnslookup2' is:
+
+	% tools/idnconv/idnslookup2 <domain-name> <dns-server>
+
+Suppose that <domain-name> is an internationalized domain name written
+in the local codeset (see ''LOCAL CODESET'' in the 'idn2.conf' man page
+for details), and <dns-server> is a hostname or IP address of DNS
+server.
+
+'idnslookup2' inquires <idn-domain-name> from <dns-server>, using
+'idnconv2' and 'nslookup' commands.  If something is wrong, you will
+see an error message output by 'idnconv2', 'nslookup' or 'idnslookup2'
+itself.
+
+
+8. Clean up
+
+Run 'make clean' to delete files generated by 'make' and 'make check'
+from the idnkit source directory.  (Files installed by 'make install'
+are not removed.)
+
+	% make clean
+
+Run 'make distclean' instead to also delete files generated by
+'configure'.
+
+	% make distclean
+
+After 'make distclean', you can run 'configure' and compile idnkit for
+another system using the source directory.
+
+
+Appendix A. Applying a patch for idnkit version 1.0
+
+This distribution also contains patches for idnkit version 1.0.
+The top of these patch files describe how to apply the patch and
+(re)install.

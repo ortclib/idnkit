@@ -1,0 +1,450 @@
+.\"
+.\"                           TERMS AND CONDITIONS
+.\"                                   FOR
+.\"                         OPEN SOURCE CODE LICENSE
+.\"                               Version 1.1
+.\" 
+.\" Japan Registry Services Co., Ltd. ("JPRS"), a Japanese corporation
+.\" having its head office at Chiyoda First Bldg. East 13F 3-8-1 Nishi-Kanda,
+.\" Chiyoda-ku, Tokyo 101-0065, Japan, grants you the license for open source
+.\" code specified in EXHIBIT A the "Code" subject to the following Terms and
+.\" Conditions ("OSCL").
+.\" 
+.\" 1. License Grant.
+.\"   JPRS hereby grants you a worldwide, royalty-free, non-exclusive
+.\"   license, subject to third party intellectual property claims:
+.\"   (a) under intellectual property rights (other than patent or
+.\"       trademark) licensable by JPRS to use, reproduce, modify, display,
+.\"       perform, sublicense and distribute the Code (or portions thereof)
+.\"       with or without modifications, and/or as part of a derivative work;
+.\"       or
+.\"   (b) under claims of the infringement through the making, using,
+.\"       offering to sell and/or otherwise disposing the JPRS Revised Code
+.\"       (or portions thereof);
+.\"   (c) the licenses granted in this Section 1(a) and (b) are effective on
+.\"       the date JPRS first distributes the Code to you under the terms of
+.\"       this OSCL;
+.\"   (d) Notwithstanding the above stated terms, no patent license is
+.\"       granted:
+.\"       1)  for a code that you delete from the Code;
+.\"       2)  separate from the Code; or
+.\"       3)  for infringements caused by:
+.\"            i) modification of the Code; or
+.\"           ii) combination of the Code with other software or devices.
+.\" 
+.\" 2. Consents.
+.\"   You agree that:
+.\"   (a) you must include a copy of this OSCL and the notice set forth in
+.\"       EXHIBIT A with every copy of the Code you distribute;
+.\"   (b) you must include a copy of this OSCL and the notice set forth in
+.\"       EXHIBIT A with every copy of binary form of the Code in the
+.\"       documentation and/or other materials provided with the distribution;
+.\"   (c) you may not offer or impose any terms on any source code version
+.\"       that alters or restricts the applicable version of this OSCL or
+.\"       the recipients' rights hereunder.
+.\"   (d) If the terms and conditions are set forth in EXHIBIT A, you must
+.\"       comply with those terms and conditions.
+.\" 
+.\" 3. Proprietary Information.
+.\"   All trademarks, service marks, patents, copyrights, trade secrets, and
+.\"   other proprietary rights in or related to the Code are and will remain
+.\"   the exclusive property of JPRS or its licensors, whether or not
+.\"   specifically recognized or perfected under local law except specified
+.\"   in this OSCL; provided however you agree and understand that the JPRS
+.\"   name may not be used to endorse or promote this Code without prior
+.\"   written approval of JPRS.
+.\" 
+.\" 4. WARRANTY DISCLAIMER.
+.\"   JPRS MAKES NO REPRESENTATIONS AND WARRANTIES REGARDING THE USE OF THE
+.\"   CODE, NOR DOES JPRS MAKE ANY REPRESENTATIONS THAT THE CODE WILL BECOME
+.\"   COMMERCIALLY AVAILABLE. JPRS, ITS AFFILIATES, AND ITS SUPPLIERS DO NOT
+.\"   WARRANT OR REPRESENT THAT THE CODE IS FREE OF ERRORS OR THAT THE CODE
+.\"   IS SUITABLE FOR TRANSLATION AND/OR LOCALIZATION. THE CODE IS PROVIDED
+.\"   ON AN "AS IS" BASIS AND JPRS AND ITS SUPPLIERS HAVE NO OBLIGATION TO
+.\"   CORRECT ERRORS OR TO SUPPORT THE CODE UNDER THIS OSCL FOR ANY REASON.
+.\"   TO THE FULL EXTENT PERMITTED BY LAW, ALL OBLIGATIONS ARE HEREBY
+.\"   EXCLUDED WHETHER EXPRESS, STATUTORY OR IMPLIED UNDER LAW, COURSE OF
+.\"   DEALING, CUSTOM, TRADE USAGE, ORAL OR WRITTEN STATEMENT OR OTHERWISE,
+.\"   INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY
+.\"   OR FITNESS FOR A PARTICULAR PURPOSE CONCERNING THE CODE.
+.\" 
+.\" 5. NO LIABILITY.
+.\"   UNDER NO CIRCUMSTANCES SHALL JPRS AND/OR ITS AFFILIATES, LICENSORS, OR
+.\"   REPRESENTATIVES BE LIABLE FOR ANY DAMAGES INCLUDING BUT NOT LIMITED TO
+.\"   CONSEQUENTIAL, INDIRECT, SPECIAL, PUNITIVE OR INCIDENTAL DAMAGES,
+.\"   WHETHER FORESEEABLE OR UNFORESEEABLE, BASED ON YOUR CLAIMS, INCLUDING,
+.\"   BUT NOT LIMITED TO, CLAIMS FOR LOSS OF DATA, GOODWILL, PROFITS, USE OF
+.\"   MONEY, INTERRUPTION IN USE OR AVAILABILITY OF DATA, STOPPAGE, IMPLIED
+.\"   WARRANTY, BREACH OF CONTRACT, MISREPRESENTATION, NEGLIGENCE, STRICT
+.\"   LIABILITY IN TORT, OR OTHERWISE.
+.\" 
+.\" 6. Indemnification.
+.\"   You hereby agree to indemnify, defend, and hold harmless JPRS for any
+.\"   liability incurred by JRPS due to your terms of warranty, support,
+.\"   indemnity, or liability offered by you to any third party.
+.\" 
+.\" 7. Termination.
+.\" 7.1 This OSCL shall be automatically terminated in the events that:
+.\"   (a) You fail to comply with the terms herein and fail to cure such
+.\"       breach within 30 days of becoming aware of the breach;
+.\"   (b) You initiate patent or copyright infringement litigation against
+.\"       any party (including a cross-claim or counterclaim in a lawsuit)
+.\"       alleging that the Code constitutes a direct or indirect patent or
+.\"       copyright infringement, in such case, this OSCL to you shall
+.\"       terminate as of the date such litigation is filed;
+.\" 7.2 In the event of termination under Sections 7.1(a) or 7.1(b) above,
+.\"     all end user license agreements (excluding distributors and
+.\"     resellers) which have been validly granted by You or any distributor
+.\"     hereunder prior to termination shall survive termination.
+.\"
+.\" 
+.\" 8. General.
+.\"   This OSCL shall be governed by, and construed and enforced in
+.\"   accordance with, the laws of Japan. Any litigation or arbitration
+.\"   between the parties shall be conducted exclusively in Tokyo, Japan
+.\"   except written consent of JPRS provides other venue.
+.\" 
+.\" 
+.\"                                EXHIBIT A
+.\" 
+.\" The original open source code of idnkit-2 is idnkit-1.0 developed and
+.\" conceived by Japan Network Information Center ("JPNIC"), a Japanese
+.\" association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+.\" Chiyoda-ku, Tokyo 101-0047, Japan, and JPRS modifies above original code
+.\" under following Terms and Conditions set forth by JPNIC.
+.\" 
+.\"                                  JPNIC
+.\" 
+.\" Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved.
+.\" 
+.\" By using this file, you agree to the terms and conditions set forth bellow.
+.\" 
+.\"                       LICENSE TERMS AND CONDITIONS
+.\" 
+.\" The following License Terms and Conditions apply, unless a different
+.\" license is obtained from Japan Network Information Center ("JPNIC"),
+.\" a Japanese association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+.\" Chiyoda-ku, Tokyo 101-0047, Japan.
+.\" 
+.\" 1. Use, Modification and Redistribution (including distribution of any
+.\"    modified or derived work) in source and/or binary forms is permitted
+.\"    under this License Terms and Conditions.
+.\" 
+.\" 2. Redistribution of source code must retain the copyright notices as they
+.\"    appear in each source code file, this License Terms and Conditions.
+.\" 
+.\" 3. Redistribution in binary form must reproduce the Copyright Notice,
+.\"    this License Terms and Conditions, in the documentation and/or other
+.\"    materials provided with the distribution. For the purposes of binary
+.\"    distribution the "Copyright Notice" refers to the following language:
+.\"    "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+.\" 
+.\" 4. The name of JPNIC may not be used to endorse or promote products
+.\"    derived from this Software without specific prior written approval of
+.\"    JPNIC.
+.\" 
+.\" 5. Disclaimer/Limitation of Liability: THIS SOFTWARE IS PROVIDED BY JPNIC
+.\"    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+.\"    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+.\"    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JPNIC BE LIABLE
+.\"    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+.\"    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+.\"    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+.\"    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+.\"    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+.\"    OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+.\"    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+.\" 
+.\" 
+.\"                        JPRS Public License Notice
+.\"                                   For
+.\"                                idnkit-2.
+.\" 
+.\" The contents of this file are subject to the Terms and Conditions for
+.\" the Open Source Code License (the "OSCL"). You may not use this file
+.\" except in compliance with above terms and conditions. A copy of the OSCL
+.\" is available at <http://jprs.co.jp/idn/>.
+.\" The JPRS Revised Code is idnkit-2.
+.\" The Initial Developer of the JPRS Revised Code is Japan Network
+.\" Information Center ("JPNIC"), a Japanese association,
+.\" Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda, Chiyoda-ku, Tokyo
+.\" 101-0047, Japan.
+.\" "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+.\" "Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.  All rights reserved."
+.\" Contributor(s): ______________________________________.
+.\" 
+.\" If you wish to allow use of your version of this file only under the
+.\" above License(s) and not to allow others to use your version of this
+.\" file, please indicate your decision by deleting the relevant provisions
+.\" above and replacing them with the notice and other provisions required
+.\" by the above License(s). If you do not delete the relevant provisions,
+.\" a recipient may use your version of this file under either the above
+.\" License(s).
+.\"
+.TH idn2.conf 5 "Sep 21, 2012"
+.\"
+.SH NAME
+idn2.conf, .idn2rc \- configuration files for idnkit version 2
+.\"
+.SH SYNOPSIS
+@sysconfdir@/idn2.conf
+.br
+~/.idn2rc
+.\"
+.SH DESCRIPTION
+\fBidn2.conf\fR and \fB.idn2rc\fR are default configuration files for
+the idnkit library version 2 which is a toolkit for handling
+internationalized domain names.
+idnkit version 2 supports IDNA2008 only. For IDNA2003, use idnkit version 1.
+idnkit version 2 also supports UTS #46, but it is restrictive
+and experimental (see ``UTS #46 SUPPORT'').
+.PP
+If a path to the configuration file is specified explicitly by
+an application, the idnkit library tries to read the file.
+Otherwise, the idnkit library tries to load the user's configuration file
+~/.idn2rc first, and then tries the system configuration file 
+@sysconfdir@/idn2.conf.
+Note that idnkit library loads either, not both.
+.PP
+If no default configuration file exists on the system, the idnkit library
+assumes the configuration file is empty.
+.\"
+.SH SYNTAX
+The configuration file is a simple text file, and each line in the file
+(other than comment lines, which begin with ``#'', and empty lines)
+forms an entry of the following format:
+.PP
+.RS 4
+.nf
+\fIkeyword\fP\ \fIvalue..\fP
+.fi
+.RE
+\."
+.SH "LANGUAGE ENTRY"
+``language'' entry specifies the ``current language''.
+The current language is used when the idnkit library performs
+lowercase conversion (see ``MAP ENTRY'') and language-based local
+mapping (see ``LANGUAGE-LOCAL ENTRY'').
+.PP
+The entry can be specified only once. If the entry is not specified,
+the library determines the current language from locale information.
+.PP
+syntax)
+.RS 4
+.nf
+\f(CWlanguage  \fP\fIlanguage\fP
+.fi
+.RE
+.PP
+\fIlanguage\fP must be an ISO639 language code. Both ISO639-1 (e.g. ``en''
+for English) and ISO639-2 (e.g. ``eng'') codes are recognized.
+.\"
+.SH "MAP ENTRY"
+``map'' entry specifies mapping procedures.
+Unlike IDNA2003, IDNA2008 doesn't define explicit mapping procedures.
+The idnkit library performs mapping procedures according with the
+entry.
+.PP
+syntax)
+.RS 4
+.nf
+\f(CWmap  \fP\fIprocedure\fP ...
+.fi
+.RE
+.PP
+The following procedures are currently available:
+.RS 4
+.IP \fIlowercase\fP
+Map uppercase letters to lowercase.
+.IP \fIwidth\fP
+Decompose full-width and half-width characters.
+.IP \fInfc\fP
+Unicode Normalization Form C.
+.IP \fInfkc\fP
+Unicode Normalization Form KC.
+.IP \fIdelimitermap\fP
+Map specific characters to ``.'' (U+002E; FULL STOP).
+.IP \fItr46-map\fP
+UTS #46 non-transitional mapping.
+.IP \fItr46-map-deviation\fP
+UTS #46 transitional mapping.
+.IP \fItr46-check\fP
+UTS #46 non-transitional validation.
+.IP \fItr46-check-deviation\fP
+UTS #46 transitional validation.
+.IP \fIlanguage-local\fP
+Language based local mapping.
+.IP \fItld-local\fP
+TLD based local mapping.
+.IP \fIrfc5895\fP
+Apply ``lowercase'', ``width'', ``nfc'' and ``delimitermap'' in that order.
+.IP \fIresman-idna2008-mappings-01\fP
+Same as ``rfc5895''.
+.IP \fItr46-processing\fP
+Apply ``tr46-map'', ``nfc'' and ``tr46-check'' in that order.
+.IP \fItr46-processing-deviation\fP
+Apply ``tr46-map-deviation'', ``nfc'' and ``tr46-check-deviation''
+in that order.
+.RE
+.PP
+The procedures are executed in the order listed in the entry.
+The same procedure can be specified twice or more. Suppose that
+``map nfc language-local nfc'' is specified, idnkit does Unicode
+Normalization Form C, language based local mapping, and then 
+performs NFC again.
+.PP
+The entry can be specified only once. If the entry is not specified,
+the library supposes that:
+.PP
+.RS 4
+.nf
+map rfc5895 language-local nfc
+.fi
+.RE
+.PP
+is specified.
+.\"
+.SH "DELIMITERS ENTRY"
+``delimiters'' specifies code points which should be mapped to ``.''
+(U+002E; FULL STOP) at delimitermap.
+.PP
+The mapping is applied only when ``delimitermap'' is specified in
+a ``map'' entry.
+.PP
+syntax)
+.RS 4
+.nf
+\f(CWdelimitermap  \fP\fIcode-point\fP ...
+.fi
+.RE
+.PP
+\fIcode-point\fP is a hexadecimal integer of Unicode code point of
+a delimiter (e.g. 3002), which can be preceded by ``U+'' (e.g. U+3002).
+.PP
+The entry can be specified only once. If the entry is not specified,
+the library assumes "3002" is specified.
+.\"
+.SH "LANGUAGE-LOCAL ENTRY"
+``language-local'' entry specifies language based local mapping.
+.PP
+The mapping procedure is applied only when ``language-local'' is
+specified in a ``map'' entry.
+.PP
+syntax)
+.RS 4
+.nf
+\f(CWlanguage-local  \fP\fIlanguage  map-file\fP
+.fi
+.RE
+.PP
+If the current language matches \fIlanguage\fP, mapping specified by
+\fImap-file\fP is performed.  Otherwise no mappings are performed.
+.PP
+\fIlanguage\fP must be an ISO639 language code. Both ISO639-1 (e.g. ``en''
+for English) and ISO639-2 (e.g. ``eng'') codes are recognized.
+.PP
+A local mapping with ``*'' as \fIlanguage\fP is a default mapping.
+When the current language is not matched to any \fIlanguage\fP\fRs\fP of
+``language-local'' entries, the default mapping is applied.
+.\"
+.SH "TLD-LOCAL ENTRY"
+``tld-local'' entry specifies TLD (top level domain) based local mapping.
+.PP
+The mapping is applied only when ``tld-local'' is specified in
+a ``map'' entry.
+.PP
+syntax)
+.RS 4
+.nf
+\f(CWtld-local  \fP\fItld  map-file\fP
+.fi
+.RE
+.PP
+If a TLD of a domain name matches \fItld\fP, mapping specified by
+\fImap-file\fP is performed on the domain name. Otherwise no mappings
+are performed.
+.PP
+If \fItld\fP is ``*'', mapping is applied to domain names whose TLD
+does not match any TLDs specified in ``tld-local'' entries. If \fItld\fP is
+``-'', the mapping is applied to domain names without any dots.
+.PP
+For backward compatibility to idnkit version 1.0, the entry name
+``local-map'' can be used instead of ``tld-local''.
+The entry can be defined multiple times.
+.\"
+.SH "LOCAL ENCODING"
+\fBidn2.conf\fR or \fB~/.idn2rc\fR doesn't have an entry to specify the
+local encoding, since it is determined from the application's current
+locale information.
+That is to say each application can use different local encoding.
+.PP
+Though idnkit tries hard to find out the local encoding, sometimes it
+fails.  For example, there are applications which use non-ASCII encoding
+but work in C locale.  In this case, you can specify the application's
+local encoding by an environment variable ``\fBIDN_LOCAL_CODESET\fR''.
+Just set the encoding name (or its alias name) to the variable, and
+idnkit will use the encoding as the local one, regardless of the locale
+setting.
+.\"
+.SH "UTS #46 SUPPORT"
+idnkit version 2 also supports UTS (Unicode Technical Standard) #46, 
+but it is restrictive since the goal of idnkit version 2 is to support
+IDNA2008.
+.PP
+idnkit version 2 provides four mapping procedures for UTS #46:
+.RS 4
+.IP \fItr46-map\fP
+.IP \fItr46-map-deviation\fP
+.IP \fItr46-check\fP
+.IP \fItr46-check-deviation\fP
+.RE
+.PP
+Input of the mapping procedure is a whole domain name, not a list of
+labels, and the domain name may contains A-labels.
+``tr46-check'' and ``tr46-check-deviation'' themselves don't split
+the domain name into labels or convert A-labels in it to U-labels.
+That is to say that idnkit cannot apply ``tr46-check'' or
+``tr46-check-deviation'' to A-labels.
+.\"
+.SH "SAMPLE CONFIGURATION"
+The following shows a sample configuration file.
+.PP
+.RS 4
+.ft CW
+.nf
+#
+# a sample configuration.
+#
+
+# The current language.
+language ja
+
+# Mapping procedures.
+map lowercase width nfc delimitermap language-local nfc
+
+# Register delimiters
+delimiters 3002 ff0e ff61
+
+# Register language-specific mappings for Japanese and Turkish.
+language-local ja /usr/local/share/idnkit/map/ja.map
+language-local tr /usr/local/share/idnkit/map/tr.map
+.fi
+.ft R
+.RE
+.\"
+.SH FILES
+.I @sysconfdir@/idn2.conf
+.br
+.I ~/.idn2rc
+.br
+.I @sysconfdir@/idn2.conf.sample
+\- sample configuration with comments
+.\"
+.SH "SEE ALSO"
+idncheck(1),
+idncmp(1),
+idnconv2(1),
+iconv(3),
+libidnkit(3),
+idnalias.conf(5),
+idnlang.conf(5)

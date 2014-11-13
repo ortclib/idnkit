@@ -1,0 +1,30 @@
+This is a patch file for idnkit-1.0 to fix some bugs.
+
+To apply this patch, you should go to the top directory of the source
+distribution of idnkit-1.0 (where you see `README' file), then invoke
+`patch' command like this:
+
+	% patch -p0 < this-file
+
+--- lib/aliaslist.sh	Sun Mar 16 04:41:46 2003 +0000
++++ lib/aliaslist.sh	Tue May 18 09:44:36 2010 +0900
+@@ -8,7 +8,7 @@
+ 
+ cat <<EOF
+ *.ISO_8859-1	ISO-8859-1
+-*.ISO_8859-2	ISO-8859-1
++*.ISO_8859-2	ISO-8859-2
+ *.SJIS		Shift_JIS
+ *.Shift_JIS	Shift_JIS
+ ja_JP.EUC	EUC-JP
+--- lib/unormalize.c	Sun Mar 16 04:41:46 2003 +0000
++++ lib/unormalize.c	Tue May 18 09:44:36 2010 +0900
+@@ -301,7 +301,7 @@
+ 		unsigned long c;
+ 		int cl = class[i];
+ 
+-		if ((last_class < cl || cl == 0) &&
++		if ((last_class < cl || (i - nvoids == 1 && cl == 0)) &&
+ 		    idn__unicode_compose(ver, ucs4[0], ucs4[i],
+ 					 &c) == idn_success) {
+ 			/*

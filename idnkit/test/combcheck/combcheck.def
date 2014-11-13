@@ -1,0 +1,968 @@
+#
+#                           TERMS AND CONDITIONS
+#                                   FOR
+#                         OPEN SOURCE CODE LICENSE
+#                               Version 1.1
+# 
+# Japan Registry Services Co., Ltd. ("JPRS"), a Japanese corporation
+# having its head office at Chiyoda First Bldg. East 13F 3-8-1 Nishi-Kanda,
+# Chiyoda-ku, Tokyo 101-0065, Japan, grants you the license for open source
+# code specified in EXHIBIT A the "Code" subject to the following Terms and
+# Conditions ("OSCL").
+# 
+# 1. License Grant.
+#   JPRS hereby grants you a worldwide, royalty-free, non-exclusive
+#   license, subject to third party intellectual property claims:
+#   (a) under intellectual property rights (other than patent or
+#       trademark) licensable by JPRS to use, reproduce, modify, display,
+#       perform, sublicense and distribute the Code (or portions thereof)
+#       with or without modifications, and/or as part of a derivative work;
+#       or
+#   (b) under claims of the infringement through the making, using,
+#       offering to sell and/or otherwise disposing the JPRS Revised Code
+#       (or portions thereof);
+#   (c) the licenses granted in this Section 1(a) and (b) are effective on
+#       the date JPRS first distributes the Code to you under the terms of
+#       this OSCL;
+#   (d) Notwithstanding the above stated terms, no patent license is
+#       granted:
+#       1)  for a code that you delete from the Code;
+#       2)  separate from the Code; or
+#       3)  for infringements caused by:
+#            i) modification of the Code; or
+#           ii) combination of the Code with other software or devices.
+# 
+# 2. Consents.
+#   You agree that:
+#   (a) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of the Code you distribute;
+#   (b) you must include a copy of this OSCL and the notice set forth in
+#       EXHIBIT A with every copy of binary form of the Code in the
+#       documentation and/or other materials provided with the distribution;
+#   (c) you may not offer or impose any terms on any source code version
+#       that alters or restricts the applicable version of this OSCL or
+#       the recipients' rights hereunder.
+#   (d) If the terms and conditions are set forth in EXHIBIT A, you must
+#       comply with those terms and conditions.
+# 
+# 3. Proprietary Information.
+#   All trademarks, service marks, patents, copyrights, trade secrets, and
+#   other proprietary rights in or related to the Code are and will remain
+#   the exclusive property of JPRS or its licensors, whether or not
+#   specifically recognized or perfected under local law except specified
+#   in this OSCL; provided however you agree and understand that the JPRS
+#   name may not be used to endorse or promote this Code without prior
+#   written approval of JPRS.
+# 
+# 4. WARRANTY DISCLAIMER.
+#   JPRS MAKES NO REPRESENTATIONS AND WARRANTIES REGARDING THE USE OF THE
+#   CODE, NOR DOES JPRS MAKE ANY REPRESENTATIONS THAT THE CODE WILL BECOME
+#   COMMERCIALLY AVAILABLE. JPRS, ITS AFFILIATES, AND ITS SUPPLIERS DO NOT
+#   WARRANT OR REPRESENT THAT THE CODE IS FREE OF ERRORS OR THAT THE CODE
+#   IS SUITABLE FOR TRANSLATION AND/OR LOCALIZATION. THE CODE IS PROVIDED
+#   ON AN "AS IS" BASIS AND JPRS AND ITS SUPPLIERS HAVE NO OBLIGATION TO
+#   CORRECT ERRORS OR TO SUPPORT THE CODE UNDER THIS OSCL FOR ANY REASON.
+#   TO THE FULL EXTENT PERMITTED BY LAW, ALL OBLIGATIONS ARE HEREBY
+#   EXCLUDED WHETHER EXPRESS, STATUTORY OR IMPLIED UNDER LAW, COURSE OF
+#   DEALING, CUSTOM, TRADE USAGE, ORAL OR WRITTEN STATEMENT OR OTHERWISE,
+#   INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY
+#   OR FITNESS FOR A PARTICULAR PURPOSE CONCERNING THE CODE.
+# 
+# 5. NO LIABILITY.
+#   UNDER NO CIRCUMSTANCES SHALL JPRS AND/OR ITS AFFILIATES, LICENSORS, OR
+#   REPRESENTATIVES BE LIABLE FOR ANY DAMAGES INCLUDING BUT NOT LIMITED TO
+#   CONSEQUENTIAL, INDIRECT, SPECIAL, PUNITIVE OR INCIDENTAL DAMAGES,
+#   WHETHER FORESEEABLE OR UNFORESEEABLE, BASED ON YOUR CLAIMS, INCLUDING,
+#   BUT NOT LIMITED TO, CLAIMS FOR LOSS OF DATA, GOODWILL, PROFITS, USE OF
+#   MONEY, INTERRUPTION IN USE OR AVAILABILITY OF DATA, STOPPAGE, IMPLIED
+#   WARRANTY, BREACH OF CONTRACT, MISREPRESENTATION, NEGLIGENCE, STRICT
+#   LIABILITY IN TORT, OR OTHERWISE.
+# 
+# 6. Indemnification.
+#   You hereby agree to indemnify, defend, and hold harmless JPRS for any
+#   liability incurred by JRPS due to your terms of warranty, support,
+#   indemnity, or liability offered by you to any third party.
+# 
+# 7. Termination.
+# 7.1 This OSCL shall be automatically terminated in the events that:
+#   (a) You fail to comply with the terms herein and fail to cure such
+#       breach within 30 days of becoming aware of the breach;
+#   (b) You initiate patent or copyright infringement litigation against
+#       any party (including a cross-claim or counterclaim in a lawsuit)
+#       alleging that the Code constitutes a direct or indirect patent or
+#       copyright infringement, in such case, this OSCL to you shall
+#       terminate as of the date such litigation is filed;
+# 7.2 In the event of termination under Sections 7.1(a) or 7.1(b) above,
+#     all end user license agreements (excluding distributors and
+#     resellers) which have been validly granted by You or any distributor
+#     hereunder prior to termination shall survive termination.
+#
+# 
+# 8. General.
+#   This OSCL shall be governed by, and construed and enforced in
+#   accordance with, the laws of Japan. Any litigation or arbitration
+#   between the parties shall be conducted exclusively in Tokyo, Japan
+#   except written consent of JPRS provides other venue.
+# 
+# 
+#                                EXHIBIT A
+# 
+# The original open source code of idnkit-2 is idnkit-1.0 developed and
+# conceived by Japan Network Information Center ("JPNIC"), a Japanese
+# association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan, and JPRS modifies above original code
+# under following Terms and Conditions set forth by JPNIC.
+# 
+#                                  JPNIC
+# 
+# Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved.
+# 
+# By using this file, you agree to the terms and conditions set forth bellow.
+# 
+#                       LICENSE TERMS AND CONDITIONS
+# 
+# The following License Terms and Conditions apply, unless a different
+# license is obtained from Japan Network Information Center ("JPNIC"),
+# a Japanese association, Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda,
+# Chiyoda-ku, Tokyo 101-0047, Japan.
+# 
+# 1. Use, Modification and Redistribution (including distribution of any
+#    modified or derived work) in source and/or binary forms is permitted
+#    under this License Terms and Conditions.
+# 
+# 2. Redistribution of source code must retain the copyright notices as they
+#    appear in each source code file, this License Terms and Conditions.
+# 
+# 3. Redistribution in binary form must reproduce the Copyright Notice,
+#    this License Terms and Conditions, in the documentation and/or other
+#    materials provided with the distribution. For the purposes of binary
+#    distribution the "Copyright Notice" refers to the following language:
+#    "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# 
+# 4. The name of JPNIC may not be used to endorse or promote products
+#    derived from this Software without specific prior written approval of
+#    JPNIC.
+# 
+# 5. Disclaimer/Limitation of Liability: THIS SOFTWARE IS PROVIDED BY JPNIC
+#    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+#    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JPNIC BE LIABLE
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+#    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#    OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+# 
+# 
+#                        JPRS Public License Notice
+#                                   For
+#                                idnkit-2.
+# 
+# The contents of this file are subject to the Terms and Conditions for
+# the Open Source Code License (the "OSCL"). You may not use this file
+# except in compliance with above terms and conditions. A copy of the OSCL
+# is available at <http://jprs.co.jp/idn/>.
+# The JPRS Revised Code is idnkit-2.
+# The Initial Developer of the JPRS Revised Code is Japan Network
+# Information Center ("JPNIC"), a Japanese association,
+# Kokusai-Kougyou-Kanda Bldg 6F, 2-3-4 Uchi-Kanda, Chiyoda-ku, Tokyo
+# 101-0047, Japan.
+# "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+# "Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.  All rights reserved."
+# Contributor(s): ______________________________________.
+# 
+# If you wish to allow use of your version of this file only under the
+# above License(s) and not to allow others to use your version of this
+# file, please indicate your decision by deleting the relevant provisions
+# above and replacing them with the notice and other provisions required
+# by the above License(s). If you do not delete the relevant provisions,
+# a recipient may use your version of this file under either the above
+# License(s).
+#
+
+#
+# Tests about Combining character check (IDN_COMBCHECK).
+#
+# We use the code points below in the test cases.
+#
+#    0080; Cc (<control>)
+#    00A0; Zs (NO-BREAK SPACE)
+#    00A1; Po (INVERTED EXCLAMATION MARK)
+#    00A2; Sc (CENT SIGN)
+#    00A6; So (BROKEN BAR)
+#    00A8; Sk (DIAERESIS)
+#    00AA; Ll (FEMININE ORDINAL INDICATOR)
+#    00AB; Pi (LEFT-POINTING DOUBLE ANGLE QUOTATION MARK)
+#    00AC; Sm (NOT SIGN)
+#    00AD; Cf (SOFT HYPHEN)
+#    00B2; No (SUPERSCRIPT TWO)
+#    00BB; Pf (RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK)
+#    00C0; Lu (LATIN CAPITAL LETTER A WITH GRAVE)
+#    01BB; Lo (LATIN LETTER TWO WITH STROKE)
+#    01C5; Lt (LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON)
+#    02B0; Lm (MODIFIER LETTER SMALL H)
+#    034F; Mn (COMBINING GRAPHEME JOINER)
+#    0488; Me (COMBINING CYRILLIC HUNDRED THOUSANDS SIGN)
+#    058A; Pd (ARMENIAN HYPHEN)
+#    0660; Nd (ARABIC-INDIC DIGIT ZERO)
+#    0903; Mc (DEVANAGARI SIGN VISARGA)
+#    0F3A; Ps (TIBETAN MARK GUG RTAGS GYON)
+#    0F3B; Pe (TIBETAN MARK GUG RTAGS GYAS)
+#    16EE; Nl (RUNIC ARLAUG SYMBOL)
+#    2028; Zl (LINE SEPARATOR)
+#    2029; Zp (PARAGRAPH SEPARATOR)
+#    203F; Pc (UNDERTIE)
+#    E000; Co (<Private Use, First>)
+#
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0080 (General_Category=Cc).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{80}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{80}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A0 (General_Category=Zs).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{a0}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A1 (General_Category=Po).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{a1}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a1}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A2 (General_Category=Sc).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{a2}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a2}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A6 (General_Category=So).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{a6}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a6}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A8 (General_Category=Sk).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{a8}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a8}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AA (General_Category=Ll).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{aa}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{aa}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AB (General_Category=Pi).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{ab}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ab}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AC (General_Category=Sm).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{ac}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ac}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AD (General_Category=Cf).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{ad}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ad}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00B2 (General_Category=No).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{b2}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{b2}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00BB (General_Category=Pf).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{bb}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{bb}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00C0 (General_Category=Lu).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{c0}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{c0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+01BB (General_Category=Lo).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1bb}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{1bb}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+01C5 (General_Category=Lt).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{1c5}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{1c5}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+02B0 (General_Category=Lm).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2b0}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2b0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+034F (General_Category=Mn).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{34f}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0488 (General_Category=Me).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{488}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+058A (General_Category=Pd).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{58a}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{58a}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0660 (General_Category=Nd).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{660}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{660}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0903 (General_Category=Mc).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{903}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0F3A (General_Category=Ps).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{f3a}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{f3a}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0F3B (General_Category=Pe).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{f3b}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{f3b}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+16EE (General_Category=Nl).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{16ee}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{16ee}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+2028 (General_Category=Zl).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2028}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2028}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+2029 (General_Category=Zp).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{2029}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2029}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+203F (General_Category=Pc).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{203f}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{203f}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+E000 (General_Category=Co).
+#
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: \u{e000}
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{e000}
+--
+#
+# Combining character check test.
+# The input name is "..".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: ..
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: ..
+--
+#
+# Combining character check test.
+# The input name is ".".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: .
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: .
+--
+#
+# Combining character check test.
+# The input name is "".
+# 
+             api: encodename
+  local_encoding: U-escape
+            conf: 
+            from: 
+         actions: IDN_UNICODECONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: 
+--
+######################################################################
+# Tests using decodename.
+######################################################################
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0080 (General_Category=Cc).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--a
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{80}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A0 (General_Category=Zs).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--6a
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A1 (General_Category=Po).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--7a
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a1}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A2 (General_Category=Sc).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--8a
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a2}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A6 (General_Category=So).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--dba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a6}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00A8 (General_Category=Sk).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--fba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{a8}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AA (General_Category=Ll).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--hba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{aa}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AB (General_Category=Pi).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--iba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ab}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AC (General_Category=Sm).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--jba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ac}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00AD (General_Category=Cf).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--kba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{ad}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00B2 (General_Category=No).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--pba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{b2}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00BB (General_Category=Pf).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--yba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{bb}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+00C0 (General_Category=Lu).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--3ba
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{c0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+01BB (General_Category=Lo).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--9ia
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{1bb}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+01C5 (General_Category=Lt).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--kja
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{1c5}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+02B0 (General_Category=Lm).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--9pa
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2b0}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+034F (General_Category=Mn).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--tua
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0488 (General_Category=Me).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--r3a
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+058A (General_Category=Pd).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--4bb
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{58a}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0660 (General_Category=Nd).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--8hb
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{660}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0903 (General_Category=Mc).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--j1b
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: combining character check failed
+              to: 
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0F3A (General_Category=Ps).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--zcd
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{f3a}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+0F3B (General_Category=Pe).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--0cd
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{f3b}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+16EE (General_Category=Nl).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--cye
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{16ee}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+2028 (General_Category=Zl).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--tvg
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2028}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+2029 (General_Category=Zp).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--uvg
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{2029}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+203F (General_Category=Pc).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--hwg
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{203f}
+--
+#
+# Combining character check test.
+# The first character of the input name is U+E000 (General_Category=Co).
+#
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: xn--0y0c
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: \u{e000}
+--
+#
+# Combining character check test.
+# The input name is "..".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: ..
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: ..
+--
+#
+# Combining character check test.
+# The input name is ".".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: .
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: .
+--
+#
+# Combining character check test.
+# The input name is "".
+# 
+             api: decodename
+  local_encoding: U-escape
+            conf: 
+            from: 
+         actions: IDN_IDNCONV IDN_COMBCHECK IDN_LOCALCONV
+          result: success
+              to: 
+--
+

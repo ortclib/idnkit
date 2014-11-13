@@ -1,0 +1,164 @@
+
+                                idnkit
+                  -- 国際化ドメイン名ツールキット --
+                              バージョン2
+　　　　　       株式会社日本レジストリサービス (JPRS)
+
+
+このファイルの目次:
+
+  1. 概要
+  2. 本キットの内容
+  3. ディレクトリ構成
+  4. 本キットが対応しているシステム
+  5. 本キットに関する最新情報、問い合わせについて
+
+コンパイルおよびインストール方法については、INSTALL.jaというファイルを
+ご覧下さい。このバージョンでの主な変更点については、(英文ですが) NEWS 
+というファイルをご覧下さい。Unicodeの文字データベース (UCD) やIDNAパラ
+メタから導出されたコードポイント表の更新方法については、(これも英文です
+が) UPDATE-TABLESというファイルをご覧下さい。
+
+
+1. 概要
+
+idnkit (旧称 mDNkit) とは国際化ドメイン名を扱うためのツールキットです。
+
+idnkitバージョン1 (バージョン1.0) はIDNA2003に対応しています。IDNA2003
+は次のRFCから構成されています。
+
+    + RFC3454: Preparation of Internationalized Strings ("stringprep")
+    + RFC3490: Internationalizing Domain Names in Applications (IDNA)
+    + RFC3491: Nameprep: A Stringprep Profile for Internationalized Domain
+               Names (IDN)
+    + RFC3492: Punycode: A Bootstring encoding of Unicode 
+               for Internationalized Domain Names in Applications (IDNA)
+
+idnkitバージョン2 (2.0, 2.1, ...) はIDNA2008に対応しています。IDNA2008は
+次のRFCから構成されています。
+
+    + RFC3492: Punycode: A Bootstring encoding of Unicode 
+               for Internationalized Domain Names in Applications (IDNA)
+    + RFC5890: Internationalized Domain Names for Applications (IDNA):
+               Definitions anda Document Framework
+    + RFC5891: Internationalized Domain Names for Applications (IDNA):
+               Background, Explanation, and Rationale
+    + RFC5892: The Unicode code points and IDNA
+    + RFC5893: Right-to-left scripts for IDNA
+    + RFC5894: Internationalized Domain Names in Applications (IDNA):
+               Protocol
+    + RFC5895: Mapping Characters in IDNA2008
+    + RFC6452: The Unicode Code Points and Internationalized Domain Names
+               for Applications (IDNA) - Unicode 6.0
+
+idnkitバージョン2はIDNA2003への対応を止めていますので、ご注意下さい。
+
+
+2. 本キットの内容
+
+この配布キットには次のようなものが含まれます。
+
+・国際化ドメイン名を処理するためのライブラリ (libidnkit, libidnkitlite)
+　　これらのライブラリでは、国際化ドメイン名のエンコード/デコード機能を
+　　実装しています。アプリケーションが国際化ドメイン名を簡単に扱えるため
+　　のAPIを提供します。
+
+　　どちらのライブラリも、ほとんど同じAPIを提供します。両者の相違点は、
+　　libidnkitではiconv()関数を用いてUTF-8とローカルエンコーディング
+　　(iso-8859-1など、通常はlocaleから決定されます) との間の変換機能を
+　　提供している点です。本ツールキット付属のidncheck, idncmpおよび
+　　idnconv2 コマンドはlibidnkitを使用しています。
+
+　　libidnkitliteはlibidnkitの軽量版です。ローカルエンコーディングは常に
+　　UTF-8であると仮定しているため、iconv()は使用しません。
+
+　　またライブラリには、アプリケーションが国際化ドメイン名を扱う際に便利
+　　なように、いくつかの機能を提供しています。詳しくはオンラインマニュアル
+　　libidnkit(3)を参照して下さい。
+
+・idnconv2コマンド
+　　ローカルエンコーディング (たとえばEUC-JP) で書かれた国際化ドメイン
+　　名から Punycodeへの変換や、その逆変換を行えるコマンドです。
+
+　　BIND用のnamed.confやゾーンマスタファイルを変換することも可能です。
+
+　　idnkitバージョン1と2を同一のシステム上にインストールしたい利用者の
+    ために、idnkitバージョン2ではコマンド名が 'idnconv' から 'idnconv2'
+    に変わりました。
+
+・idncmpコマンド
+　　このコマンドは、コマンド行引数としてドメイン名を2つ受け取り、その
+　　ドメイン名同士がIDNA2008の下で一致するものかどうかを調べます。結果
+　　は標準エラー出力に出力されます。
+
+・idncheckコマンド
+　　このコマンドは、コマンド行引数としてドメイン名を1つ受け取り、その
+　　ドメイン名が国際化ドメイン名として (もしくは伝統的なASCIIドメイン
+　　名として) 正しいかどうかチェックします。結果は標準エラー出力に出力
+　　されます。
+
+・idnkitバージョン1.0へのパッチ
+　　idnkitバージョン1.0の不具合を修正するパッチです。
+
+
+3. ディレクトリ構成
+
+配布キットのディレクトリ構成と、主要なファイルを示します。
+
+    +README             英語版のREADME
+    +README.ja          このファイル
+    +INSTALL            英語版のINSTALL
+    +INSTALL.ja         コンパイルとインストール方法
+    +LICENSE.txt        使用許諾
+    +UPDATE-TABLES      コードポイント表の更新方法
+    +NEWS               主な変更
+    +ChangeLog          変更詳細
+    +configure          configureスクリプト
+    +conf/              設定ファイルのサンプル
+    +data/              コードポイント表の生成元データ
+    +man/               オンラインマニュアル
+    +map/               マップファイルのサンプル
+    +include/
+    |   +idn/           libidnkit, libidnkitliteのヘッダファイル
+    |       +auto/      自動生成されたヘッダファイル
+    +lib/               libidnkit, libidnkitliteのソース
+    |       +auto/      自動生成されたソース
+    +patch/             idnkit バージョン1.0向けのパッチファイル
+    +test/              テスト一式
+    +tools/
+    |   +idncheck/      idncheckコマンドのソース
+    |   +idncmp/        idncmpコマンドのソース
+    |   +idnconv/       idnconvコマンドのソース
+    +util/              コードポイント表を生成するスクリプト
+
+
+4. 本キットが対応しているシステム
+
+次のシステムでの動作確認を行っています。
+
+    ----------------------------------------------------------------------
+    OS                              iconvライブラリ  configureのオプション
+    ======================================================================
+    CentOS release 5.4              標準ライブラリ   (なし)
+    for Intel x86                   (glibc)
+    ----------------------------------------------------------------------
+    Cygwin 1.7.5                    GNU libiconv     (なし)
+    (Windows XP Professional SP3)
+    for Intel x86                   1.13
+    ----------------------------------------------------------------------
+    Solaris 10                      options          (なし)
+    for Sparc                       (libc)
+    ----------------------------------------------------------------------
+
+
+5. 本キットに関する最新情報、問い合わせについて
+
+最新バージョンおよびidnkitの情報については、
+
+	http://jprs.co.jp/idn/
+
+を参照してください。不具合の報告およびご意見は、
+
+	idnkit-info@jprs.co.jp
+
+へお願いします。

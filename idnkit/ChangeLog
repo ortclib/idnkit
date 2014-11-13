@@ -1,0 +1,305 @@
+2013-12-27
+	* idnkit 2.3 release.
+
+	* NEWS: Add description about Major changes in idnkit version 2.3.
+
+	* UPDATE-TABLES: Change the supported Unicode version from 6.0.0
+	to 6.3.0.
+
+	* lib/res_prefcheck.c: Support rfc5891.
+
+2012-09-21
+	* idnkit 2.2 release.
+
+	* NEWS: add description about Major changes in idnkit version 2.2.
+	* README, README.ja: Add RFC6452 to the list of RFCs.
+
+	* UPDATE-TABLES: Change the supported Unicode version from 5.2.0
+	to 6.0.0 and the supported IDNA2008-Tables version from
+	'draft-ietf-idnabis-tables-09' to 'rfc6452 (2011-11-14)'.
+	* UPDATE-TABLES: Update URI of the IDNA Parameters file.
+	* UPDATE-TABLES: The IDNA-VERSION argument of 'generate_idnaall.sh'
+	script is now mandatory.
+
+	* compile, config.guess, config.sub, depcomp, install-sh,
+	missing, mkinstalldirs: Imported from Automake 1.12.2.
+	* ltmain.sh: Imported from libtool 2.4.2.
+
+	* util/IDNATables.pm: Support the latest format of 'idna-tables.xml'
+	(formerly known as 'idnabis-tables.xml').
+	* util/generate_idnaall.sh: Fix a bug that it cannot handle
+	version argument which contains a whitespace.
+	* util/generate_idnaversion.pl: Don't construct version ID of
+	IDNA-table using 'idna-tables.xml' ('idnabis-tables.xml').
+	Since multiple dates and RFC numbers are listed in the XML file,
+	we cannot get an appropriate version ID any longer.
+
+	* test/auto/gen_tr46category_exp.pl: Recognize the category
+	name 'disallowed_STD3_valid' and 'disallowed_STD3_mapped'.
+	* test/bidicheck/bidicheck.def: Instead of U+070F, use U+1D173
+	for a codepoint with the BIDI property BN.  In Unicode 6.0.0,
+	the BIDI property of U+070F is changed from BN to AN.
+	* test/languagelocal/languagelocal.def: Use the local name
+	'ja_JP.UTF-8' instead of 'ja_JP'.  Since some operating systems
+	cannot recognize locale names without a character encoding.
+
+	* tools/idncheck/Makefile.am: Set 'idncheck_LDFLAGS' to
+	'-rpath $(libdir)'.  On some operating systems, ld.so were not
+	able to find the libidnkit shared library when an user executed
+	'idncheck' at BINDIR.
+	* tools/idncmp/Makefile.am: Set 'idncmp_LDFLAGS' to
+	'-rpath $(libdir)'.
+	* tools/idnconv/Makefile.am: Set 'idnconv_LDFLAGS' to
+	'-rpath $(libdir)'.
+
+	* LICENSE.txt, configure.ac: Modify the license.
+	include/idn/api.h, include/idn/assert.h,
+	include/idn/ctxrule.h, include/idn/debug.h, 
+	include/idn/delimitermap.h, include/idn/encodingalias.h,
+	include/idn/export.h, include/idn/foreignmap.h,
+	include/idn/foreignset.h, include/idn/labellist.h,
+	include/idn/lang.h, include/idn/langalias.h,
+	include/idn/langlocalmap.h, include/idn/localconverter.h,
+	include/idn/localencoding.h, include/idn/log.h,
+	include/idn/logmacro.h, include/idn/lowercasemap.h,
+	include/idn/maplist.h, include/idn/normalizer.h,
+	include/idn/punycode.h, include/idn/res.h,
+	include/idn/res_internal.h, include/idn/resconf.h,
+	include/idn/resconf_internal.h, include/idn/result.h,
+	include/idn/strhash32.h, include/idn/strhash8.h,
+	include/idn/tldlocalmap.h, include/idn/tr46check.h,
+	include/idn/tr46map.h, include/idn/utf32.h,
+	include/idn/utf8.h, include/idn/util.h,
+	include/idn/version.h.in, include/idn/widthmap.h: Likewise.
+	lib/api.c, lib/ctxrule.c, lib/debug.c, lib/delimitermap.c,
+	lib/encodingalias.c, lib/foreignmap.c, lib/foreignset.c,
+	lib/labellist.c, lib/lang.c, lib/langalias.c, lib/langlocalmap.c, 
+	lib/localconverter.c, lib/localencoding.c, lib/log.c,
+	lib/lowercasemap.c, lib/maplist.c, lib/normalizer.c, lib/punycode.c, 
+	lib/res.c, lib/res_asclower.c, lib/res_bidicheck.c, 
+	lib/res_combcheck.c, lib/res_ctxjcheck.c, lib/res_ctxocheck.c, 
+	lib/res_hyphcheck.c, lib/res_idnconv_decode.c, 
+	lib/res_idnconv_encode.c, lib/res_joinlabels.c, lib/res_lencheck.c, 
+	lib/res_localcheck.c, lib/res_localconv.c, lib/res_map.c, 
+	lib/res_nfccheck.c, lib/res_prefcheck.c, lib/res_prohcheck.c, 
+	lib/res_rtcheck_decode.c, lib/res_rtcheck_encode.c, 
+	lib/res_tr46check.c, lib/res_unascheck.c, lib/res_unicodeconv.c,
+	lib/res_utf32toutf8.c, lib/res_utf8toutf32.c, lib/resconf.c,
+	lib/result.c, lib/strhash32.c, lib/strhash8.c, lib/tldlocalmap.c, 
+	lib/tr46check.c, lib/tr46map.c, lib/utf32.c, lib/utf8.c, lib/util.c, 
+	lib/version.c, lib/widthmap.c: Likewise.
+	man/idn2.conf.5.in, man/idn_checkname.3, man/idn_comparenames.3,
+	man/idn_decodename.3, man/idn_encodename.3, man/idn_nameinit.3,
+	man/idn_result_tostring.3, man/idn_setlanguage.3,
+	man/idn_setlocalcheckfile.3, man/idn_setlocalencoding.3,
+	man/idn_version_getstring.3, man/idnalias.conf.5.in,
+	man/idncheck.1.in, man/idncmp.1.in, man/idnconv2.1.in,
+	man/idnlang.conf.5.in: Likewise.
+	man/libidnkit.3, map/tr.map: Likewise.
+	test/api/api.def, test/api/test_api_checkname.c, 
+	test/api/test_api_comparenames.c, test/api/test_api_comparenames2.c, 
+	test/api/test_api_decodename.c, test/api/test_api_decodename2.c, 
+	test/api/test_api_enable.c, test/api/test_api_encodename.c, 
+	test/api/test_api_nameinit0.c, test/api/test_api_nameinit1.c, 
+	test/asclower/asclower.def, test/auto/gen_bidiclass_exp.pl, 
+	test/auto/gen_bidiclass_out.c, test/auto/gen_cased_exp.pl, 
+	test/auto/gen_cased_out.c, test/auto/gen_caseignorable_exp.pl, 
+	test/auto/gen_caseignorable_out.c, 
+	test/auto/gen_combiningcharacter_exp.pl, 
+	test/auto/gen_combiningcharacter_out.c, 
+	test/auto/gen_combiningclass_exp.pl, 
+	test/auto/gen_combiningclass_out.c, 
+	test/auto/gen_decomposition_exp.pl, test/auto/gen_decomposition_out.c, 
+	test/auto/gen_idnacategory_exp.pl, test/auto/gen_idnacategory_out.c, 
+	test/auto/gen_joiningtype_exp.pl, test/auto/gen_joiningtype_out.c, 
+	test/auto/gen_lowercase_exp.pl, test/auto/gen_lowercase_out.c, 
+	test/auto/gen_script_exp.pl, test/auto/gen_script_out.c, 
+	test/auto/gen_tr46casefold_exp.pl, test/auto/gen_tr46casefold_out.c, 
+	test/auto/gen_tr46category_exp.pl, test/auto/gen_tr46category_out.c, 
+	test/auto/gen_width_exp.pl, test/auto/gen_width_out.c, 
+	test/auto/test_bidiclass.sh, 	test/auto/test_cased.sh, 
+	test/auto/test_caseignorable.sh, test/auto/test_combiningcharacter.sh, 
+	test/auto/test_combiningclass.sh, test/auto/test_composition.sh, 
+	test/auto/test_decomposition.sh, test/auto/test_idnacategory.sh, 
+	test/auto/test_joiningtype.sh, test/auto/test_lowercase.sh, 
+	test/auto/test_script.sh, test/auto/test_tr46casefold.sh, 
+	test/auto/test_tr46category.sh, test/auto/test_width.sh, 
+	test/bidicheck/bidicheck.def, test/checkname/checkname.def, 
+	test/combcheck/combcheck.def, test/command/idncheck.def, 
+	test/command/idncmp.def, test/command/idnconv2.def, 
+	test/common/test_checkname.c, test/common/test_comparenames.c, 
+	test/common/test_comparenames2.c, test/common/test_decodename.c, 
+	test/common/test_decodename2.c, test/common/test_encodename.c, 
+	test/common/test_language.c, test/common/test_localencoding.c, 
+	test/common/test_result.c, test/common/test_version.c, 
+	test/comparenames/comparenames.def, 
+	test/comparenames/comparenames2.def, test/ctxjcheck/ctxjcheck.def, 
+	test/ctxjcheck/zerowidthjoiner.def, 
+	test/ctxjcheck/zerowidthnonjoiner.def, 
+	test/ctxocheck/arabicindicdigits.def, test/ctxocheck/ctxocheck.def, 
+	test/ctxocheck/ctxolitecheck.def, 
+	test/ctxocheck/extendedarabicindicdigits.def, 
+	test/ctxocheck/greeklowernumeralsign.def, 
+	test/ctxocheck/hebrewpunctuationgeresh.def, 
+	test/ctxocheck/hebrewpunctuationgershayim.def, 
+	test/ctxocheck/katakanamiddledot.def, test/ctxocheck/middledot.def, 
+	test/decodename/decodename.def, test/decodename/decodename2.def, 
+	test/delimitermap/delimitermap.def, test/encodename/encodename.def, 
+	test/hyphcheck/hyphcheck.def, test/idnconv/idnconv.def, 
+	test/language/language.def, test/languagelocal/languagelocal.def, 
+	test/lencheck/lencheck.def, test/libidnkitlite/libidnkitlite.def, 
+	test/loadconf/loadconf.def, test/localcheck/localcheck.def, 
+	test/localconv/localconv_iso8859_1.def, 
+	test/localconv/localconv_utf8.def, 
+	test/localencoding/localencoding.def, test/lowercase/afteri.def, 
+	test/lowercase/finalsigma.def, test/lowercase/lowercase.def, 
+	test/lowercase/moreabove.def, test/lowercase/notbeforedot.def, 
+	test/lowercase/u00cc.def, test/lowercase/u00cd.def, 
+	test/lowercase/u0128.def, test/lowercase/u0130.def, 
+	test/map/map.def, test/misc/misc.def, 
+	test/misc/test_decodeapp.c, test/misc/test_decodequery.c, 
+	test/misc/test_decodestored.c, test/misc/test_enable.c, 
+	test/misc/test_encodeapp.c, test/misc/test_encodequery.c, 
+	test/misc/test_encodestored.c, test/nfc/nfc.def, 
+	test/nfccheck/nfccheck.def, test/nfkc/nfkc.def, 
+	test/normalization/gen_c12345.pl, 
+	test/normalization/gen_normalization.c, 
+	test/normalization/test_nfc.sh, test/normalization/test_nfkc.sh, 
+	test/overflow/test_overflow_delimitermap.c, 
+	test/overflow/test_overflow_delimitermap.sh, 
+	test/overflow/test_overflow_formc.c, 
+	test/overflow/test_overflow_formc.sh, 
+	test/overflow/test_overflow_formkc.c, 
+	test/overflow/test_overflow_formkc.sh, 
+	test/overflow/test_overflow_idndecode.c, 
+	test/overflow/test_overflow_idndecode.sh, 
+	test/overflow/test_overflow_idnencode.c, 
+	test/overflow/test_overflow_idnencode.sh, 
+	test/overflow/test_overflow_labellist.c, 
+	test/overflow/test_overflow_labellist.sh, 
+	test/overflow/test_overflow_localconverter.c, 
+	test/overflow/test_overflow_localconverter.sh, 
+	test/overflow/test_overflow_lowercasemap.c, 
+	test/overflow/test_overflow_lowercasemap.sh, 
+	test/overflow/test_overflow_tr46map.c, 
+	test/overflow/test_overflow_tr46map.sh, 
+	test/overflow/test_overflow_utf32fromutf8.c, 
+	test/overflow/test_overflow_utf32fromutf8.sh, 
+	test/overflow/test_overflow_utf32strcat.c, 
+	test/overflow/test_overflow_utf32strcat.sh, 
+	test/overflow/test_overflow_utf32strcpy.c, 
+	test/overflow/test_overflow_utf32strcpy.sh, 
+	test/overflow/test_overflow_utf32strncat.c, 
+	test/overflow/test_overflow_utf32strncat.sh, 
+	test/overflow/test_overflow_utf32strncpy.c, 
+	test/overflow/test_overflow_utf32strncpy.sh, 
+	test/overflow/test_overflow_utf32toutf8.c, 
+	test/overflow/test_overflow_utf32toutf8.sh, 
+	test/overflow/test_overflow_widthmap.c, 
+	test/overflow/test_overflow_widthmap.sh, 
+	test/prefcheck/prefcheck.def, test/prohcheck/prohcheck.def, 
+	test/result/test_result.sh, test/rtcheck/rtcheck.def, 
+	test/rtconv/rtconv.def, test/tldlocal/tldlocal.def, 
+	test/tr46check/tr46check.def, test/tr46check/tr46checkdeviation.def, 
+	test/tr46map/tr46map.def, test/unascheck/unascheck.def, 
+	test/undoiferr/undoiferr.def, 
+	test/unicodeconv/unicodeconv_iso8859_1.def, 
+	test/unicodeconv/unicodeconv_sjis.def, 
+	test/unicodeconv/unicodeconv_utf8.def, test/unicodeconv/x,
+	test/utf8/utf8.def, test/version/test_version.sh, 
+	test/width/width.def: Likewise. 
+	tools/idncheck/idncheck.c, tools/idncmp/idncmp.c, 
+	tools/idnconv/idnconv.c, tools/idnconv/selectiveencode.c, 
+	tools/idnconv/selectiveencode.h, tools/idnconv/strbuf.c, 
+	tools/idnconv/strbuf.h: Likewise. 
+	util/CprogHash.pm, util/CprogList.pm, util/IDNATables.pm, 
+	util/IDNATables.pm.orig, util/ISO639Tables.pm, util/SparseMap.pm, 
+	util/TR46Tables.pm, util/UCD.pm, util/WindowsLCIDTables.pm, 
+	util/check_tracemsg.pl, util/generate_bidiclass.pl, 
+	util/generate_cased.pl, util/generate_caseignorable.pl, 
+	util/generate_combiningcharacter.pl, util/generate_combiningclass.pl, 
+	util/generate_common.pl, util/generate_composition.pl, 
+	util/generate_decomposition.pl, util/generate_idnaall.sh, 
+	util/generate_idnacategory.pl, util/generate_idnalias.sh, 
+	util/generate_idnaversion.pl, util/generate_iso639lang.pl, 
+	util/generate_joiningtype.pl, util/generate_lowercase.pl, 
+	util/generate_script.pl, util/generate_test.pl, 
+	util/generate_testall.sh, util/generate_testam.pl, 
+	util/generate_tr46casefold.pl, util/generate_tr46category.pl, 
+	util/generate_unicodeall.sh, util/generate_unicodeversion.pl, 
+	util/generate_width.pl, util/generate_windowslang.pl: Likewise.
+
+2011-01-07
+	* idnkit 2.1 release.
+
+	* lib/res_prefcheck.c: Don't return 'idn_prefcheck_error' when
+	the first or second character is in the range U+0080 through
+	U+10FFFF.
+
+	* map/ja.map: Map U+2212 (MINUS SIGN) to U+002D (HYPHEN-MINUS),
+	not U+FF0D (FULL WIDTH HYPHEN-MINUS).
+
+	* lib/localencoding.c, lib/resconf.c: Delete declarations of
+	unused varibales.
+
+2010-12-08
+	* idnkit 2.1 release.
+
+	* configure.ac: Set AC_INIT version to '2.1'.
+	Set LIB_VERSION_INFO to '2:2:0'.
+
+	* lib/version.c: Change the format of the string returned from
+	idn_version_getstring().  Use the prefix "libidnkit version:",
+	instead of "libidn version".
+
+2010-11-24
+	* tools/idnconv/idnconv.c: Don't output "library version:" prefix
+	when it shows version information.
+	* tools/idncmp/idncmp.c: Likewise.
+	* tools/idncheck/idncheck.c: Likewise.
+
+	* util/generate_tr46category.pl: Recognize status values
+	'disallowed_STD3_valid' and 'disallowed_STD3_mapped' in
+	IdnaMappingTable.txt.
+
+	* lib/resconf.c: Fix a bug in parse_confline() that it doesn't
+	remove quotation marks at end of arguments.
+
+2010-11-01
+	* include/config.h.win32: Removed.
+	* include/Makefile.am: Remove 'config.h.win32' from EXTRA_DIST.
+
+	* lib/util.c: Set REGISTRY_SUBKEY to "Software\\idnkit2 x64"
+	in case of 64-bit platform.
+
+2010-09-29
+	* lib/res_combcheck.c: Fix arguments passed to TRACE().
+
+2010-09-17
+	* idnkit 2.0.1 release.
+
+	* configure.ac: Set AC_INIT version to '2.0.1'.
+	Set LIB_VERSION_INFO to '2:1:0'.
+
+2010-09-15
+	* lib/resconf.c, include/idn/resconf.h: Recognize new map procedure
+	named 'rfc5895'.
+
+2010-09-06
+	* lib/lang.c, lib/localencoding.c, lib/resconf.c: Revise Win32
+	support codes.
+	* include/config.h.win32: Added.
+	* include/Makefile.am: Add 'config.h.win32' to EXTRA_DIST.
+
+2010-09-01
+	* lib/resconf.c: idn_resconf_loadfile() read the standard
+	configuration file, when the 'file' argument is empty.
+
+2010-07-08
+	* idnkit 2.0 release.
+
+	* configure.ac: detect libiconv and set ICONVINC and ICONVLIB
+	automatically.
+
+2010-06-24
+	* idnkit 2.0rc1 release.
