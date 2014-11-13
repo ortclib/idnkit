@@ -1824,6 +1824,8 @@
 		00AA74CC1A1525C300815878 /* TR46Tables.pm */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = TR46Tables.pm; sourceTree = "<group>"; };
 		00AA74CD1A1525C300815878 /* UCD.pm */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = UCD.pm; sourceTree = "<group>"; };
 		00AA74CE1A1525C300815878 /* WindowsLCIDTables.pm */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = WindowsLCIDTables.pm; sourceTree = "<group>"; };
+		00AA75551A152EE500815878 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		00D8C5701A1531B700D5333D /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1928,6 +1930,7 @@
 		00AA6DE81A1525BE00815878 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				00AA75551A152EE500815878 /* config.h */,
 				00AA6DE91A1525BE00815878 /* config.h.in */,
 				00AA6DEA1A1525BE00815878 /* idn */,
 				00AA6E211A1525BE00815878 /* Makefile.am */,
@@ -1974,6 +1977,7 @@
 				00AA6E1C1A1525BE00815878 /* utf32.h */,
 				00AA6E1D1A1525BE00815878 /* utf8.h */,
 				00AA6E1E1A1525BE00815878 /* util.h */,
+				00D8C5701A1531B700D5333D /* version.h */,
 				00AA6E1F1A1525BE00815878 /* version.h.in */,
 				00AA6E201A1525BE00815878 /* widthmap.h */,
 			);
