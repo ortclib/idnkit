@@ -64,7 +64,7 @@
 		00AA75071A1525DA00815878 /* res_utf32toutf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E601A1525BF00815878 /* res_utf32toutf8.c */; };
 		00AA75081A1525DA00815878 /* res_utf8toutf32.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E611A1525BF00815878 /* res_utf8toutf32.c */; };
 		00AA75091A1525DA00815878 /* resconf.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E621A1525BF00815878 /* resconf.c */; };
-		00AA750A1A1525DA00815878 /* result.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E631A1525BF00815878 /* result.c */; };
+		00AA750A1A1525DA00815878 /* result.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E631A1525BF00815878 /* result.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		00AA750B1A1525DA00815878 /* strhash32.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E641A1525BF00815878 /* strhash32.c */; };
 		00AA750C1A1525DA00815878 /* strhash8.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E651A1525BF00815878 /* strhash8.c */; };
 		00AA750D1A1525DA00815878 /* tldlocalmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 00AA6E661A1525BF00815878 /* tldlocalmap.c */; };
