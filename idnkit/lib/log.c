@@ -183,6 +183,13 @@
  */
 
 #include <config.h>
+#include <platform.h>
+
+#ifdef _WIN32
+#undef ERROR
+#include <windows.h>
+#undef ERROR
+#endif /* _WIN32 */
 
 #include <stddef.h>
 #include <stdarg.h>
@@ -283,20 +290,35 @@ idn_log_setproc(idn_log_proc_t proc) {
 
 static void
 initialize(void) {
-	char *s;
+#if defined(HAVE_DUPENV_S) || defined(HAVE_GETENV)
+  char *s = NULL;
+#ifdef HAVE_DUPENV_S
+  size_t elements = 0;
+#endif //HAVE_DUPENV_S
+#endif /* defined(HAVE_DUPENV_S) || defined(HAVE_GETENV) */
 
 	if (log_level < 0) {
+#ifdef HAVE_DUPENV_S
+    if (0 == _dupenv_s(&s, &elements, LOGLEVEL_ENV)) {
+#elif defined(HAVE_GETENV)
 		if ((s = getenv(LOGLEVEL_ENV)) != NULL) {
-			int level = atoi(s);
-			if (level >= 0)
-				log_level = level;
-		}
+#endif //HAVE_DUPENV_S
+#if defined(HAVE_DUPENV_S) || defined(HAVE_GETENV)
+      int level = atoi(s);
+      if (level >= 0)
+        log_level = level;
+  }
+#endif /* defined(HAVE_DUPENV_S) || defined(HAVE_GETENV) */
 		if (log_level < 0)
 			log_level = DEFAULT_LOG_LEVEL;
 	}
 
 	if (log_proc == NULL)
 		log_proc = log_to_stderr;
+
+#if defined(HAVE_DUPENV_S)
+  free(s);
+#endif /* HAVE_DUPENV_S */
 }
 
 static void
@@ -308,7 +330,9 @@ output_log(int level, const char *fmt, va_list args) {
 	if (log_level < level)
 		return;
 
-#if HAVE_VSNPRINTF
+#ifdef HAVE_VSPRINTF_S
+  (void)vsprintf_s(buf, sizeof(buf), fmt, args);
+#elif HAVE_VSNPRINTF
 	(void)vsnprintf(buf, sizeof(buf), fmt, args);
 #else
 	/* Let's hope 1024 is enough.. */
@@ -342,9 +366,17 @@ log_to_stderr(int level, const char *buf) {
 		title = "DUMP";
 		break;
 	default:
+#ifdef HAVE_SPRINTF_S
+    (void)sprintf_s(tmp, sizeof(tmp), "LEVEL%d", level);
+#else
 		(void)sprintf(tmp, "LEVEL%d", level);
+#endif /* HAVE_PRINTF_S */
 		title = tmp;
 		break;
 	}
+#ifdef _WIN32
+  fprintf(stderr, "%u: [%s] %s", (unsigned int)GetCurrentProcessId(), title, buf);
+#else
 	fprintf(stderr, "%u: [%s] %s", (unsigned int)getpid(), title, buf);
+#endif /* _WIN32 */
 }

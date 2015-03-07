@@ -185,250 +185,69 @@
 #include <config.h>
 #include <platform.h>
 
-#include <stddef.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include <idn/assert.h>
-#include <idn/debug.h>
-#include <idn/logmacro.h>
-#include <idn/result.h>
-#include <idn/foreignset.h>
-#include <idn/utf32.h>
+#ifdef IDNKIT_WINRT
 
 /*
- * Maximum byte length of every line in a map definition file.
+ * WINRT specific utilities.
  */
-#define MAX_MAPFILE_LINE_LENGTH		255
+#undef ERROR
 
+#include <windows.h>
+#include <string>
+#include <locale>
+#include <codecvt>
+
+static int idn__util_winrt_extractfromstoragefolder(Windows::Storage::StorageFolder ^storageFolder, char *value, size_t len)
+{
+  if (nullptr == storageFolder) return 0;
+  auto path = storageFolder->Path;
+  if (nullptr == path) return 0;
+
+  auto data = path->Data();
+  if (NULL == data) return 0;
+
+  std::wstring wstr(data);
+  std::wstring_convert< std::codecvt_utf8<wchar_t>, wchar_t> converter;
+
+  std::string str = converter.to_bytes(wstr);
+
+  strcpy_s(value, len, str.c_str());
+  return 1;
+}
+
+static int idn__util_winrt_getlocalappfolder(char *value, size_t len)
+{
+  auto current = Windows::Storage::ApplicationData::Current;
+  if (nullptr == current) return 0;
+  return idn__util_winrt_extractfromstoragefolder(current->LocalFolder, value, len);
+}
+
+static int idn__util_winrt_getinstalledappfolder(char *value, size_t len)
+{
+  auto current = Windows::ApplicationModel::Package::Current;
+  if (nullptr == current) return 0;
+  return idn__util_winrt_extractfromstoragefolder(current->InstalledLocation, value, len);
+}
+
+extern "C" {
+  
 /*
- * Foreignset object.
+ * Get user directory.
  */
-struct idn__foreignset {
-	unsigned char set[UTF32_MAX / 8 + 1];
-};
 
-static char *		parse_utf32(char *p, unsigned long *vp);
-
-/*
- * Create a foreignset object.
- */
-idn_result_t
-idn__foreignset_create(idn__foreignset_t *ctxp) {
-	idn_result_t r = idn_success;
-	idn__foreignset_t ctx = NULL;
-
-	assert(ctxp != NULL);
-
-	TRACE(("idn__foreignset_create()\n"));
-
-	ctx = (idn__foreignset_t)malloc(sizeof(struct idn__foreignset));
-	if (ctx == NULL) {
-		WARNING(("idn__foreignset_create: malloc failed\n"));
-		r = idn_nomemory;
-		goto ret;
-	}
-
-	memset(ctx->set, 0, sizeof(ctx->set));
-	*ctxp = ctx;
-
-ret:
-	if (r != idn_success)
-		free(ctx);
-	TRACE(("idn__foreignset_create(): %s\n", idn_result_tostring(r)));
-	return (r);
+int
+idn__util_win32getuserdirectory(char *value, size_t len) {
+  return idn__util_winrt_getlocalappfolder(value, len);
 }
 
 /*
- * Release all the memory allocated for 'ctx'.
+ * Get SYSCONFDIR from the registry.
  */
-void
-idn__foreignset_destroy(idn__foreignset_t ctx) {
-	assert(ctx != NULL);
-
-	TRACE(("idn__foreignset_destroy()\n"));
-	free(ctx);
-	TRACE(("idn__foreignset_destroy(): the object is destroyed\n"));
+int
+idn__util_win32getsysconfdir(char *value, size_t len) {
+  return idn__util_winrt_getinstalledappfolder(value, len);
 }
 
-/*
- * Add a mapping to 'ctx'.
- */
-idn_result_t
-idn__foreignset_add(idn__foreignset_t ctx, unsigned long min_codepoint,
-		    unsigned long max_codepoint) {
-	idn_result_t r = idn_success;
-	unsigned long i;
+} /* extern "C" */
 
-	assert(ctx != NULL);
-
-	TRACE(("idn__foreignset_add(min=\\x%lx, max=\\x%lx)\n", 
-	       min_codepoint, max_codepoint));
-
-	if (min_codepoint > UTF32_MAX ||
-	    max_codepoint > UTF32_MAX ||
-	    min_codepoint > max_codepoint) {
-		r = idn_invalid_codepoint;
-		goto ret;
-	}
-
-	i = min_codepoint;
-	while (i <= max_codepoint && (i & 7) != 0) {
-		ctx->set[i >> 3] |= 1 << (i & 7);
-		i++;
-	}
-	while (i + 8 <= max_codepoint) {
-		ctx->set[i >> 3] = 0xff;
-		i += 8;
-	}
-	while (i <= max_codepoint) {
-		ctx->set[i >> 3] |= 1 << (i & 7);
-		i++;
-	}
-
-ret:
-	TRACE(("idn__foreignset_add(): %s\n", idn_result_tostring(r)));
-	return (r);
-}
-
-/*
- * Read a mapping definition file and add mappings in it to 'ctx'.
- */
-idn_result_t
-idn__foreignset_addfromfile(idn__foreignset_t ctx, const char *file) {
-	idn_result_t r = idn_success;
-	FILE *fp = NULL;
-	char line[MAX_MAPFILE_LINE_LENGTH + 1];
-	unsigned long min_codepoint;
-	unsigned long max_codepoint;
-	int lineno = 0;
-
-#ifdef HAVE_FOPEN_S
-  errno_t error = 0;
-#endif /* HAVE_FOPEN_S */
-
-	assert(ctx != NULL && file != NULL);
-
-	TRACE(("idn__foreignset_addfromfile(file=\"%s\")\n",
-	       idn__debug_xstring(file)));
-
-	if (strncmp(file, "fileset:", 8) == 0)
-		file += 8;
-#ifdef HAVE_FOPEN_S
-	error = fopen_s(&fp, file, "r");
-#else
-  fp = fopen(file, "r");
-#endif /* HAVE_FOPEN_S */
-  if (fp == NULL) {
-    r = idn_nofile;
-		goto ret;
-	}
-
-	while (fgets(line, sizeof(line), fp) != NULL) {
-		char *p = line;
-
-		lineno++;
-		while (isspace(*p))
-			p++;
-		if (*p == '\0' || *p == '#')
-			continue;
-
-		/*
-		 * Parse a code point.
-		 */
-		while (isspace((unsigned char)*p))
-			p++;
-		p = parse_utf32(p, &min_codepoint);
-		if (p == NULL) {
-			r = idn_invalid_syntax;
-			goto ret;
-		}
-		if (*p == '.' && *(p + 1) == '.') {
-			p += 2;
-			p = parse_utf32(p, &max_codepoint);
-			if (p == NULL) {
-				r = idn_invalid_syntax;
-				goto ret;
-			}
-		} else {
-			max_codepoint = min_codepoint;
-		}
-
-		while (isspace(*p))
-			p++;
-		if (*p != '\0' && *p != '#' && *p != ';') {
-			r = idn_invalid_syntax;
-			goto ret;
-		}
-
-		/*
-		 * Add a region (min..max) to 'ctx'.
-		 */
-		r = idn__foreignset_add(ctx, min_codepoint, max_codepoint);
-		if (r != idn_success)
-			goto ret;
-	}
-
-ret:
-	TRACE(("idn__foreignset_addfromfile(): %s\n", idn_result_tostring(r)));
-	if (fp != NULL)
-		fclose(fp);
-	return (r);
-}
-
-/*
- * Parse an Unicode code point.
- */
-static char *
-parse_utf32(char *p, unsigned long *vp) {
-	char *endp;
-
-	/* Skip optional 'U+' */
-	if (strncmp(p, "U+", 2) == 0)
-		p += 2;
-	if (!isxdigit(*p))
-		return (NULL);
-	*vp = strtoul(p, &endp, 16);
-	if (p == endp || endp - p > 6)
-		return (NULL);
-	p = endp;
-
-	return p;
-}
-
-/*
- * Check a label.
- */
-idn_result_t
-idn__foreignset_check(idn__foreignset_t ctx, const unsigned long *name) {
-	idn_result_t r = idn_success;
-	const unsigned long *p;
-	int flag;
-
-	assert(ctx != NULL && name != NULL);
-
-	TRACE(("idn__foreignset_check(name=\"%s\")\n", 
-	       idn__debug_utf32xstring(name)));
-
-	for (p = name; *p != '\0'; p++) {
-		flag = ctx->set[*p >> 3] & (1 << (*p & 7));
-		if (!flag) {
-			r = idn_invalid_codepoint;
-			goto ret;
-		}
-	}
-
-ret:
-	if (r == idn_success) {
-		TRACE(("idn__foreignset_check(): success\n"));
-	} else if (r == idn_invalid_codepoint) {
-		TRACE(("idn__foreignset_check(): %s (code=\\x%lx)\n",
-		       idn_result_tostring(r), *p));
-	} else {
-		TRACE(("idn__foreignset_check(): %s\n",
-		       idn_result_tostring(r)));
-	}
-	return (r);
-}
+#endif /* ndef IDNKIT_WINRT */

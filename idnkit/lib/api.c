@@ -267,7 +267,7 @@ ret:
 idn_result_t
 idn_encodename(idn_action_t actions, const char *from, char *to, size_t tolen) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 
 	assert(from != NULL && to != NULL);
 
@@ -293,7 +293,7 @@ ret:
 idn_result_t
 idn_decodename(idn_action_t actions, const char *from, char *to, size_t tolen) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 
 	assert(from != NULL && to != NULL);
 
@@ -320,7 +320,7 @@ idn_result_t
 idn_decodename2(idn_action_t actions, const char *from, char *to, size_t tolen,
 		const char *auxencoding) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 
 	assert(from != NULL && to != NULL);
 
@@ -356,8 +356,8 @@ idn_result_t
 idn_comparenames2(idn_action_t actions1, const char *name1, 
 		  idn_action_t actions2, const char *name2) {
 	idn_result_t r = idn_success;
-	char actions1_string[ACTION_STRING_BUFSIE];
-	char actions2_string[ACTION_STRING_BUFSIE];
+	char actions1_string[ACTION_STRING_BUFSIZE];
+	char actions2_string[ACTION_STRING_BUFSIZE];
 
 	assert(name1 != NULL && name2 != NULL);
 
@@ -388,7 +388,7 @@ ret:
 idn_result_t
 idn_checkname(idn_action_t actions, const char *name) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 
 	assert(name != NULL);
 

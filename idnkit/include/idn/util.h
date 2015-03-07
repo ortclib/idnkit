@@ -222,7 +222,7 @@ idn__util_strncasecmp(const char *str1, const char *str2, size_t n);
 /*
  * WIN32 specific functions.
  */
-#ifdef WIN32
+#ifdef _WIN32
 extern int
 idn__util_win32getuserdirectory(char *value, size_t len);
 

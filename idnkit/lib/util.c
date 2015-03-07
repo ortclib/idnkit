@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -388,13 +389,16 @@ idn__util_strncasecmp(const char *str1, const char *str2, size_t n) {
 	return (0);
 }
 
+#ifndef IDNKIT_WINRT
+
 /*
  * WIN32 specific utilities.
  */
-#ifdef WIN32
+#ifdef _WIN32
+#undef ERROR
+
 #include <windows.h>
 #include <userenv.h>
-#undef ERROR
 
 #ifdef __WIN64__
 #define REGISTRY_SUBKEY		"Software\\idnkit2 x64"
@@ -416,7 +420,7 @@ idn__util_win32getuserdirectory(char *value, size_t len) {
 
 	if (!OpenProcessToken(GetCurrentProcess(), TOKEN_READ, &hToken))
 		return (0);
-	if (!GetUserProfileDirectory(hToken, value, &l)) {
+	if (!GetUserProfileDirectoryA(hToken, value, &l)) {
 		CloseHandle(hToken);
 		return (0);
 	}
@@ -446,7 +450,7 @@ idn__util_win32getregistrystring(const char *name, char *value, size_t len) {
 	assert(name != NULL && value != NULL);
 
 	for (i = 0; i < sizeof(keys) / sizeof(HKEY); i++) {
-		stat = RegOpenKeyEx(keys[i], REGISTRY_SUBKEY, 0, KEY_READ,
+		stat = RegOpenKeyExA(keys[i], REGISTRY_SUBKEY, 0, KEY_READ,
 				    &hk);
 		if (stat != ERROR_SUCCESS)
 			continue;
@@ -461,4 +465,6 @@ idn__util_win32getregistrystring(const char *name, char *value, size_t len) {
 	return (0);
 }
 
-#endif /* WIN32 */
+#endif /* _WIN32 */
+
+#endif /* ndef IDNKIT_WINRT */

@@ -213,7 +213,7 @@ idn__res_actionstostring(idn_action_t actions, char *string);
  * 'string' argument of idn__res_actionstostring() must have at
  * least following size.
  */
-#define ACTION_STRING_BUFSIE 256
+#define ACTION_STRING_BUFSIZE 256
 
 /*
  * Perform IDN_UNICODECONV action.

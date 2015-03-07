@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <ctype.h>
@@ -713,7 +714,11 @@ localconverter_uescape_convfromutf8(idn__localconverter_t ctx, void *privdata,
 			char tmp[20];
 			int len;
 
-			(void)sprintf(tmp, "\\u{%lx}", v);
+#ifdef HAVE_SPRINTF_S
+			(void)sprintf_s(tmp, sizeof(tmp), "\\u{%lx}", v);
+#else
+      (void)sprintf(tmp, "\\u{%lx}", v);
+#endif /* HAVE_SPRINTF_S */
 			len = strlen(tmp);
 			if (tolen < len) {
 				r = idn_buffer_overflow;

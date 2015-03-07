@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <ctype.h>
@@ -379,6 +380,9 @@ idn__foreignmap_addfromfile(idn__foreignmap_t ctx, const char *file) {
 	unsigned long to[MAX_MAP_RESULT_LENGTH + 1];
 	size_t tolen;
 	int lineno = 0;
+#ifdef HAVE_FOPEN_S
+  errno_t error = 0;
+#endif /* HAVE_FOPEN_S */
 
 	assert(ctx != NULL && file != NULL);
 
@@ -387,7 +391,11 @@ idn__foreignmap_addfromfile(idn__foreignmap_t ctx, const char *file) {
 
 	if (strncmp(file, "filemap:", 8) == 0)
 		file += 8;
-	fp = fopen(file, "r");
+#ifdef HAVE_FOPEN_S
+	error = fopen_s(&fp, file, "r");
+#else
+  fp = fopen(file, "r");
+#endif /* HAVE_FOPEN_S */
 	if (fp == NULL) {
 		r = idn_nofile;
 		goto ret;

@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <sys/types.h>
@@ -635,8 +636,11 @@ idn__resconf_getmaplist(idn_resconf_t ctx) {
 static idn_result_t
 open_userconffile(FILE **fpp) {
 	char filepath[PATH_MAX + 1];
+#ifdef HAVE_FOPEN_S
+  errno_t error = 0;
+#endif /* HAVE_FOPEN_S */
 
-#ifdef WIN32
+#ifdef _WIN32
 	{
 		char dir[PATH_MAX + 1];
 
@@ -644,7 +648,11 @@ open_userconffile(FILE **fpp) {
 			return (idn_nofile);
 		if (strlen(dir) + strlen(USER_CONF_FILE) + 1 > PATH_MAX)
 			return (idn_nofile);
-		sprintf(filepath, "%s/%s", dir, USER_CONF_FILE);
+#ifdef HAVE_SPRINTF_S
+		sprintf_s(filepath, sizeof(filepath), "%s\\%s", dir, USER_CONF_FILE);
+#else
+    sprintf(filepath, "%s\\%s", dir, USER_CONF_FILE);
+#endif / * HAVE_SPRINTF_S */
 	}
 #else
 	{
@@ -659,7 +667,11 @@ open_userconffile(FILE **fpp) {
 	}
 #endif
 
-	*fpp = fopen(filepath, "r");
+#ifdef HAVE_FOPEN_S
+	error = fopen_s(fpp, filepath, "r");
+#else
+  *fpp = fopen(filepath, "r");
+#endif /* HAVE_FOPEN_S */
 	if (*fpp == NULL)
 		return (idn_nofile);
 
@@ -672,8 +684,11 @@ open_userconffile(FILE **fpp) {
 static idn_result_t
 open_systemconffile(FILE **fpp) {
 	char filepath[PATH_MAX + 1];
+#ifdef HAVE_FOPEN_S
+  errno_t error = 0;
+#endif /* HAVE_FOPEN_S */
 
-#ifdef WIN32
+#ifdef _WIN32
 	{
 		char dir[PATH_MAX + 1];
 
@@ -681,7 +696,11 @@ open_systemconffile(FILE **fpp) {
 			return (idn_nofile);
 		if (strlen(dir) + strlen(SYSTEM_CONF_FILE) + 1 > PATH_MAX)
 			return (idn_nofile);
-		sprintf(filepath, "%s/%s", dir, SYSTEM_CONF_FILE);
+#ifdef HAVE_SPRINTF_S
+    sprintf_s(filepath, sizeof(filepath), "%s\\%s", dir, SYSTEM_CONF_FILE);
+#else
+		sprintf(filepath, "%s\\%s", dir, SYSTEM_CONF_FILE);
+#endif /* HAVE_SPRINTF_S */
 	}
 #else
 	{
@@ -692,7 +711,11 @@ open_systemconffile(FILE **fpp) {
 	}
 #endif
 
+#ifdef HAVE_FOPEN_S
+  error = fopen_s(fpp, filepath, "r");
+#else
 	*fpp = fopen(filepath, "r");
+#endif /* HAVE_FOPEN_S */
 	if (*fpp == NULL)
 		return (idn_nofile);
 
@@ -705,6 +728,9 @@ open_systemconffile(FILE **fpp) {
 static idn_result_t
 open_conffile(const char *file, FILE **fpp) {
 	idn_result_t r = idn_success;
+#ifdef HAVE_FOPEN_S
+  errno_t error = 0;
+#endif /* HAVE_FOPEN_S */
 
 	if (file == NULL || *file == '\0') {
 		r = open_userconffile(fpp);
@@ -723,7 +749,11 @@ open_conffile(const char *file, FILE **fpp) {
 		TRACE(("cannot open the default configuraiton file\n"));
 		r = idn_nofile;
 	} else {
-		*fpp = fopen(file, "r");
+#ifdef HAVE_FOPEN_S
+		error = fopen_s(fpp, file, "r");
+#else
+    *fpp = fopen(file, "r");
+#endif /* HAVE_FOPEN_S */
 		if (*fpp != NULL)
 			return (idn_success);
 		TRACE(("cannot open a configuraiton file: file=\"%s\"\n",

@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <ctype.h>
@@ -315,13 +316,20 @@ idn__encodingalias_addfromfile(idn__encodingalias_t ctx, const char *file) {
 	FILE *fp = NULL;
 	int line_no;
 	char line[200], pattern[200], encoding[200];
+#ifdef HAVE_FOPEN_S
+  errno_t error = 0;
+#endif /* HAVE_FOPEN_S */
 
 	assert(file != NULL);
 
 	TRACE(("idn__encodingalias_addfromfile(file=\"%s\")\n",
 	       idn__debug_xstring(file)));
 
-	fp = fopen(file, "r");
+#ifdef HAVE_FOPEN_S
+	error = fopen_s(&fp, file, "r");
+#else
+  fp = fopen(file, "r");
+#endif /* HAVE_FOPEN_S */
 	if (fp == NULL) {
 		r = idn_nofile;
 		goto ret;
@@ -334,7 +342,11 @@ idn__encodingalias_addfromfile(idn__encodingalias_t ctx, const char *file) {
 			p++;
 		if (*p == '#' || *p == '\n' || *p == '\0')
 			continue;
-		if (sscanf((char *)p, "%s %s", pattern, encoding) == 2) {
+#ifdef HAVE_SSCANF_S
+		if (sscanf_s((char *)p, "%s %s", pattern, sizeof(pattern), encoding, sizeof(encoding)) == 2) {
+#else
+    if (sscanf((char *)p, "%s %s", pattern, encoding) == 2) {
+#endif /* HAVE_SSCANF_S */
 			r = idn__encodingalias_add(ctx, pattern, encoding);
 			if (r != idn_success)
 				goto ret;

@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <ctype.h>
@@ -272,13 +273,17 @@ idn__lang_initialize(void) {
 	if (r != idn_success)
 		goto ret;
 
-#ifdef WIN32
+#ifdef _WIN32
 	{
 		char dir[PATH_MAX + 1];
 
 		if (idn__util_win32getsysconfdir(dir, sizeof(dir)) &&
 		    strlen(dir) + strlen(LANGALIAS_FILE) + 1 <= PATH_MAX)
-			sprintf(filepath, "%s/%s", dir, LANGALIAS_FILE);
+#ifdef HAVE_SPRINTF_S
+			sprintf_s(filepath, sizeof(filepath), "%s\\%s", dir, LANGALIAS_FILE);
+#else
+        sprintf(filepath, "%s\\%s", dir, LANGALIAS_FILE);
+#endif /* HAVE_SPRINTF_S */
 	}
 #else
 	{
@@ -386,12 +391,14 @@ idn__lang_getname(idn__lang_t ctx) {
 #ifdef HAVE_SETLOCALE
 		locale_info = setlocale(LC_CTYPE, NULL);
 #endif
+#ifdef HAVE_GETENV
 		if (locale_info == NULL)
 			locale_info = getenv("LC_ALL");
 		if (locale_info == NULL)
 			locale_info = getenv("LC_CTYPE");
 		if (locale_info == NULL)
 			locale_info = getenv("LANG");
+#endif /* HAVE_GETENV */
 		if (locale_info == NULL)
 			locale_info = "";
 

@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -232,7 +233,7 @@ idn_result_t
 idn_res_encodename(idn_resconf_t ctx, idn_action_t actions, const char *from,
 		   char *to, size_t tolen) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 	char *utf8_from = NULL;
 	unsigned long *utf32_from = NULL;
 	unsigned long *utf32_to = NULL;
@@ -482,7 +483,7 @@ idn_result_t
 idn_res_decodename(idn_resconf_t ctx, idn_action_t actions, const char *from,
 		    char *to, size_t tolen) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 	char *utf8_from = NULL;
 	unsigned long *utf32_from = NULL;
 	unsigned long *utf32_to = NULL;
@@ -718,7 +719,7 @@ idn_result_t
 idn_res_decodename2(idn_resconf_t ctx, idn_action_t actions, const char *from,
 		    char *to, size_t tolen, const char *auxencoding) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 	idn_resconf_t auxctx = NULL;
 	char *utf8_from = NULL;
 
@@ -778,8 +779,8 @@ idn_res_comparenames2(idn_resconf_t ctx,
 		      idn_action_t actions1, const char *name1, 
 		      idn_action_t actions2, const char *name2) {
 	idn_result_t r = idn_success;
-	char actions1_string[ACTION_STRING_BUFSIE];
-	char actions2_string[ACTION_STRING_BUFSIE];
+  char actions1_string[ACTION_STRING_BUFSIZE];
+  char actions2_string[ACTION_STRING_BUFSIZE];
 	char *to1 = NULL;
 	char *to2 = NULL;
 	size_t tolen1 = 256;  /* may be large enough. */
@@ -853,7 +854,7 @@ ret:
 idn_result_t
 idn_res_checkname(idn_resconf_t ctx, idn_action_t actions, const char *name) {
 	idn_result_t r = idn_success;
-	char actions_string[ACTION_STRING_BUFSIE];
+	char actions_string[ACTION_STRING_BUFSIZE];
 	char *to = NULL;
 	size_t tolen = 256;  /* may be large enough. */
 
@@ -987,7 +988,11 @@ idn__res_actionstostring(idn_action_t actions, char *string) {
 	*string = '\0';
 	for (t = combined_action_name_table; t->name != NULL; t++) {
 		if ((actions | aux_actions) == (t->action | aux_actions)) {
-			strcpy(string, t->name);
+#ifdef HAVE_STRCPY_S
+      strcpy_s(string, sizeof(char)*ACTION_STRING_BUFSIZE, t->name);
+#else
+      strcpy(string, t->name);
+#endif /* HAVE_STRCPY_S */
 			actions &= ~t->action;
 			break;
 		}
@@ -996,8 +1001,13 @@ idn__res_actionstostring(idn_action_t actions, char *string) {
 	for (t = single_action_name_table; t->name != NULL; t++) {
 		if (actions & t->action) {
 			if (*string != '\0')
-				strcat(string, "|");
-			strcat(string, t->name);
+#ifdef HAVE_STRCAT_S
+        strcat_s(string, ACTION_STRING_BUFSIZE, "|");
+      strcat_s(string, ACTION_STRING_BUFSIZE, t->name);
+#else
+        strcat(string, "|");
+      strcat(string, t->name);
+#endif /* HAVE_STRCAT_S */
 		}
 	}
 }

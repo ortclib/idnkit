@@ -1,3 +1,7 @@
 xcuserdata
 projects/android/libs
 projects/android/obj
+[Dd]ebug/
+[Rr]elease/
+*.opensdf
+*.sdf

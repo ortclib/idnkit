@@ -183,13 +183,16 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#ifdef WIN32
+#ifdef _WIN32
+#undef ERROR
 #include <windows.h>
+#undef ERROR
 #endif
 
 #ifdef HAVE_LOCALE_H
@@ -259,13 +262,17 @@ idn__localencoding_initialize(void) {
 	if (r != idn_success)
 		goto ret;
 
-#ifdef WIN32
+#ifdef _WIN32
 	{
 		char dir[PATH_MAX + 1];
 
 		if (idn__util_win32getsysconfdir(dir, sizeof(dir)) &&
 		    strlen(dir) + strlen(ENCODINGALIAS_FILE) + 1 <= PATH_MAX)
-			sprintf(filepath, "%s/%s", dir, ENCODINGALIAS_FILE);
+#ifdef HAVE_SPRINTF_S
+        sprintf_s(filepath, sizeof(filepath), "%s\\%s", dir, ENCODINGALIAS_FILE);
+#else
+			sprintf(filepath, "%s\\%s", dir, ENCODINGALIAS_FILE);
+#endif /* HAVE_SPRINTF_S */
 	}
 #else
 	{
@@ -353,21 +360,37 @@ idn__localencoding_setname(idn__localencoding_t ctx, const char *name) {
 const char *
 idn__localencoding_getname(idn__localencoding_t ctx) {
 	const char *key = NULL;
-#ifdef WIN32
-	char cp_str[40];	/* enough */
-#endif
+#ifdef HAVE_DUPENV_S
+  char *env1 = NULL;
+  char *env2 = NULL;
+  char *env3 = NULL;
+  char *env4 = NULL;
+  size_t elements = 0;
+#endif /* HAVE_DUPENV_S */
+#if defined(_WIN32) && !defined(IDNKIT_WINRT)
+  char cp_str[40];	/* enough */
+#endif /* defined(_WIN32) && !defined(IDNKIT_WINRT) */
 
 	assert(ctx != NULL);
 	TRACE(("idn__localencoding_getname()\n"));
 
 	if (!ctx->is_static) {
-		key = getenv(IDN_LOCALCS_ENV);
-#ifdef WIN32
-		if (key == NULL) {
-			sprintf(cp_str, "CP%u", GetACP());
+#ifdef HAVE_DUPENV_S
+    _dupenv_s(&env1, &elements, IDN_LOCALCS_ENV);
+    key = env1;
+#elif defined(HAVE_GETENV)
+    key = getenv(IDN_LOCALCS_ENV);
+#endif //HAVE_DUPENV_S
+#if defined(_WIN32) && !defined(IDNKIT_WINRT)
+    if (key == NULL) {
+#ifdef HAVE_SPRINTF_S
+			sprintf_s(cp_str, sizeof(cp_str), "CP%u", GetACP());
+#else
+      sprintf(cp_str, "CP%u", GetACP());
+#endif /* HAVE_SPRINTF_S */
 			key = cp_str;
 		}
-#endif
+#endif /* defined(_WIN32) && !defined(IDNKIT_WINRT) */
 #if defined(HAVE_NL_LANGINFO) && defined(CODESET)
 		if (key == NULL)
 			key = nl_langinfo(CODESET);
@@ -376,14 +399,27 @@ idn__localencoding_getname(idn__localencoding_t ctx) {
 		if (key == NULL)
 			key = setlocale(LC_CTYPE, NULL);
 #endif
+#ifdef HAVE_DUPENV_S
+    if (key == NULL) {
+      _dupenv_s(&env2, &elements, "LC_ALL");
+      key = env2;
+    }
+    if (key == NULL) {
+      _dupenv_s(&env3, &elements, "LC_CTYPE");
+      key = env3;
+    }
+    if (key == NULL) {
+      _dupenv_s(&env4, &elements, "LANG");
+      key = env4;
+    }
+#elif defined(HAVE_GETENV)
 		if (key == NULL)
 			key = getenv("LC_ALL");
 		if (key == NULL)
 			key = getenv("LC_CTYPE");
 		if (key == NULL)
 			key = getenv("LANG");
-		if (key == NULL)
-			key = getenv("LANG");
+#endif /* HAVE_DUPENV_S */
 		if (key == NULL)
 			key = IDN__UTF8_ENCODINGNAME;
 		idn__util_strcpy(ctx->name, sizeof(ctx->name),
@@ -392,5 +428,12 @@ idn__localencoding_getname(idn__localencoding_t ctx) {
 
 	TRACE(("idn__localencoding_getname(): success "
 	       "(name=\"%s\")\n", idn__debug_xstring(ctx->name)));
-	return (ctx->name);
+
+#ifdef HAVE_DUPENV_S
+  free(env1);
+  free(env2);
+  free(env3);
+  free(env4);
+#endif /* HAVE_DUPENV_S */
+  return (ctx->name);
 }

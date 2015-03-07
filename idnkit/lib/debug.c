@@ -183,6 +183,7 @@
  */
 
 #include <config.h>
+#include <platform.h>
 
 #include <stddef.h>
 #include <stdarg.h>
@@ -222,7 +223,11 @@ idn__debug_hexstring(const char *s) {
 	}
 
 	if (i >= STRING_MAXBYTES)
+#ifdef HAVE_STRCPY_S
+    strcpy_s(p, sizeof(bufs[0])-(p - buf), "...");
+#else
 		strcpy(p, "...");
+#endif /* HAVE_STRCPY_S */
 	else
 		*p = '\0';
 
@@ -262,7 +267,11 @@ idn__debug_xstring(const char *s) {
 	}
 
 	if (i >= STRING_MAXBYTES)
+#ifdef HAVE_STRCPY_S
+    strcpy_s(p, sizeof(bufs[0])-(p-buf), "...");
+#else
 		strcpy(p, "...");
+#endif HAVE_STRCPY_S
 	else
 		*p = '\0';
 
@@ -317,7 +326,11 @@ idn__debug_utf32xstring(const unsigned long *s) {
 	}
 
 	if (i >= STRING_MAXBYTES)
-		strcpy(p, "...");
+#ifdef HAVE_STRCPY_S
+		strcpy_s(p, sizeof(bufs[0]) - (p-buf), "...");
+#else
+    strcpy(p, "...");
+#endif /* HAVE_STRCPY_S */
 	else
 		*p = '\0';
 
@@ -358,7 +371,11 @@ idn__debug_utf16xstring(const unsigned short *s) {
 	}
 
 	if (i >= STRING_MAXBYTES)
+#ifdef HAVE_STRCPY_S
+    strcpy_s(p, sizeof(bufs[0])-(p-buf), "...");
+#else
 		strcpy(p, "...");
+#endif /* HAVE_STRCPY_S */
 	else
 		*p = '\0';
 
