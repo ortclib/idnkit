@@ -271,7 +271,7 @@ idn__debug_xstring(const char *s) {
     strcpy_s(p, sizeof(bufs[0])-(p-buf), "...");
 #else
 		strcpy(p, "...");
-#endif HAVE_STRCPY_S
+#endif /* HAVE_STRCPY_S */
 	else
 		*p = '\0';
 
