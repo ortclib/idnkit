@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "idnkit", "idnkit", "{2B3E619F-42B7-48D2-949B-E869A6529A9E}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idnkit.Shared", "idnkit\idnkit.Shared\idnkit.Shared.vcxitems", "{DE21ECB4-5A23-43B0-8313-6CD7BF6E3B37}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idnkit.Win32", "idnkit\idnkit.Win32\idnkit.Win32.vcxproj", "{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idnkit.Windows", "idnkit\idnkit.Windows\idnkit.Windows.vcxproj", "{BFD348B9-016F-43BD-B92F-88DA057B8FA8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idnkit.WindowsPhone", "idnkit\idnkit.WindowsPhone\idnkit.WindowsPhone.vcxproj", "{9F611411-F4BD-4687-BE22-B16AF16C62FD}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idnkit.Win32", "idnkit\idnkit.Win32\idnkit.Win32.vcxproj", "{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -29,6 +27,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|ARM.ActiveCfg = Debug|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|Win32.Build.0 = Debug|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|x64.ActiveCfg = Debug|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|ARM.ActiveCfg = Release|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|Win32.ActiveCfg = Release|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|Win32.Build.0 = Release|Win32
+		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|x64.ActiveCfg = Release|Win32
 		{BFD348B9-016F-43BD-B92F-88DA057B8FA8}.Debug|ARM.ActiveCfg = Debug|ARM
 		{BFD348B9-016F-43BD-B92F-88DA057B8FA8}.Debug|ARM.Build.0 = Debug|ARM
 		{BFD348B9-016F-43BD-B92F-88DA057B8FA8}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -51,22 +57,8 @@ Global
 		{9F611411-F4BD-4687-BE22-B16AF16C62FD}.Release|Win32.ActiveCfg = Release|Win32
 		{9F611411-F4BD-4687-BE22-B16AF16C62FD}.Release|Win32.Build.0 = Release|Win32
 		{9F611411-F4BD-4687-BE22-B16AF16C62FD}.Release|x64.ActiveCfg = Release|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|ARM.ActiveCfg = Debug|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|Win32.ActiveCfg = Debug|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|Win32.Build.0 = Debug|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Debug|x64.ActiveCfg = Debug|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|ARM.ActiveCfg = Release|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|Win32.ActiveCfg = Release|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|Win32.Build.0 = Release|Win32
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{DE21ECB4-5A23-43B0-8313-6CD7BF6E3B37} = {2B3E619F-42B7-48D2-949B-E869A6529A9E}
-		{BFD348B9-016F-43BD-B92F-88DA057B8FA8} = {2B3E619F-42B7-48D2-949B-E869A6529A9E}
-		{9F611411-F4BD-4687-BE22-B16AF16C62FD} = {2B3E619F-42B7-48D2-949B-E869A6529A9E}
-		{EA7F7B95-2BEA-43F4-B456-F8D740F9C9C8} = {2B3E619F-42B7-48D2-949B-E869A6529A9E}
 	EndGlobalSection
 EndGlobal
