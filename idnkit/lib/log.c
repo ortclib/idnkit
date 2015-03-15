@@ -300,6 +300,7 @@ initialize(void) {
 	if (log_level < 0) {
 #ifdef HAVE_DUPENV_S
     if (0 == _dupenv_s(&s, &elements, LOGLEVEL_ENV)) {
+      if (s) {
 #elif defined(HAVE_GETENV)
 		if ((s = getenv(LOGLEVEL_ENV)) != NULL) {
 #endif //HAVE_DUPENV_S
@@ -307,9 +308,12 @@ initialize(void) {
       int level = atoi(s);
       if (level >= 0)
         log_level = level;
-  }
+    }
 #endif /* defined(HAVE_DUPENV_S) || defined(HAVE_GETENV) */
-		if (log_level < 0)
+#ifdef HAVE_DUPENV_S
+      }
+#endif //HAVE_DUPENV_S
+    if (log_level < 0)
 			log_level = DEFAULT_LOG_LEVEL;
 	}
 
