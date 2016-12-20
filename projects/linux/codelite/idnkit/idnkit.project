@@ -1,0 +1,1941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="idnkit" InternalType="Library">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="idnkit">
+    <VirtualDirectory Name="conf">
+      <File Name="../../../../idnkit/conf/Makefile.am"/>
+      <File Name="../../../../idnkit/conf/Makefile.in"/>
+      <File Name="../../../../idnkit/conf/idn2.conf.sample.in"/>
+      <File Name="../../../../idnkit/conf/idnlang.conf.windows"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="data">
+      <File Name="../../../../idnkit/data/ArabicShaping.txt"/>
+      <File Name="../../../../idnkit/data/CompositionExclusions.txt"/>
+      <File Name="../../../../idnkit/data/DerivedCoreProperties.txt"/>
+      <File Name="../../../../idnkit/data/IdnaMappingTable.txt"/>
+      <File Name="../../../../idnkit/data/Makefile.am"/>
+      <File Name="../../../../idnkit/data/Makefile.in"/>
+      <File Name="../../../../idnkit/data/NormalizationTest.txt"/>
+      <File Name="../../../../idnkit/data/Scripts.txt"/>
+      <File Name="../../../../idnkit/data/SpecialCasing.txt"/>
+      <File Name="../../../../idnkit/data/UnicodeData.txt"/>
+      <File Name="../../../../idnkit/data/idna-tables.xml"/>
+      <File Name="../../../../idnkit/data/iso639.txt"/>
+      <File Name="../../../../idnkit/data/windows-lcid.txt"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="include">
+      <VirtualDirectory Name="idn">
+        <VirtualDirectory Name="auto">
+          <File Name="../../../../idnkit/include/idn/auto/bidiclass.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/cased.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/caseignorable.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/combiningcharacter.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/combiningclass.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/composition.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/decomposition.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/idnacategory.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/idnaversion.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/iso639lang.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/joiningtype.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/lowercase.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/script.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/tr46casefold.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/tr46category.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/unicodeversion.h"/>
+          <File Name="../../../../idnkit/include/idn/auto/width.h"/>
+        </VirtualDirectory>
+        <File Name="../../../../idnkit/include/idn/api.h"/>
+        <File Name="../../../../idnkit/include/idn/assert.h"/>
+        <File Name="../../../../idnkit/include/idn/ctxrule.h"/>
+        <File Name="../../../../idnkit/include/idn/debug.h"/>
+        <File Name="../../../../idnkit/include/idn/delimitermap.h"/>
+        <File Name="../../../../idnkit/include/idn/encodingalias.h"/>
+        <File Name="../../../../idnkit/include/idn/export.h"/>
+        <File Name="../../../../idnkit/include/idn/foreignmap.h"/>
+        <File Name="../../../../idnkit/include/idn/foreignset.h"/>
+        <File Name="../../../../idnkit/include/idn/labellist.h"/>
+        <File Name="../../../../idnkit/include/idn/lang.h"/>
+        <File Name="../../../../idnkit/include/idn/langalias.h"/>
+        <File Name="../../../../idnkit/include/idn/langlocalmap.h"/>
+        <File Name="../../../../idnkit/include/idn/localconverter.h"/>
+        <File Name="../../../../idnkit/include/idn/localencoding.h"/>
+        <File Name="../../../../idnkit/include/idn/log.h"/>
+        <File Name="../../../../idnkit/include/idn/logmacro.h"/>
+        <File Name="../../../../idnkit/include/idn/lowercasemap.h"/>
+        <File Name="../../../../idnkit/include/idn/maplist.h"/>
+        <File Name="../../../../idnkit/include/idn/normalizer.h"/>
+        <File Name="../../../../idnkit/include/idn/punycode.h"/>
+        <File Name="../../../../idnkit/include/idn/res.h"/>
+        <File Name="../../../../idnkit/include/idn/res_internal.h"/>
+        <File Name="../../../../idnkit/include/idn/resconf.h"/>
+        <File Name="../../../../idnkit/include/idn/resconf_internal.h"/>
+        <File Name="../../../../idnkit/include/idn/result.h"/>
+        <File Name="../../../../idnkit/include/idn/strhash8.h"/>
+        <File Name="../../../../idnkit/include/idn/strhash32.h"/>
+        <File Name="../../../../idnkit/include/idn/tldlocalmap.h"/>
+        <File Name="../../../../idnkit/include/idn/tr46check.h"/>
+        <File Name="../../../../idnkit/include/idn/tr46map.h"/>
+        <File Name="../../../../idnkit/include/idn/utf8.h"/>
+        <File Name="../../../../idnkit/include/idn/utf32.h"/>
+        <File Name="../../../../idnkit/include/idn/util.h"/>
+        <File Name="../../../../idnkit/include/idn/version.h"/>
+        <File Name="../../../../idnkit/include/idn/version.h.in"/>
+        <File Name="../../../../idnkit/include/idn/widthmap.h"/>
+      </VirtualDirectory>
+      <File Name="../../../../idnkit/include/Makefile.am"/>
+      <File Name="../../../../idnkit/include/Makefile.in"/>
+      <File Name="../../../../idnkit/include/config.h"/>
+      <File Name="../../../../idnkit/include/config.h.in"/>
+      <File Name="../../../../idnkit/include/platform.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="lib">
+      <VirtualDirectory Name="auto">
+        <File Name="../../../../idnkit/lib/auto/bidiclass.c"/>
+        <File Name="../../../../idnkit/lib/auto/cased.c"/>
+        <File Name="../../../../idnkit/lib/auto/caseignorable.c"/>
+        <File Name="../../../../idnkit/lib/auto/combiningcharacter.c"/>
+        <File Name="../../../../idnkit/lib/auto/combiningclass.c"/>
+        <File Name="../../../../idnkit/lib/auto/composition.c"/>
+        <File Name="../../../../idnkit/lib/auto/decomposition.c"/>
+        <File Name="../../../../idnkit/lib/auto/idnacategory.c"/>
+        <File Name="../../../../idnkit/lib/auto/iso639lang.c"/>
+        <File Name="../../../../idnkit/lib/auto/joiningtype.c"/>
+        <File Name="../../../../idnkit/lib/auto/lowercase.c"/>
+        <File Name="../../../../idnkit/lib/auto/script.c"/>
+        <File Name="../../../../idnkit/lib/auto/tr46casefold.c"/>
+        <File Name="../../../../idnkit/lib/auto/tr46category.c"/>
+        <File Name="../../../../idnkit/lib/auto/width.c"/>
+      </VirtualDirectory>
+      <File Name="../../../../idnkit/lib/Makefile.am"/>
+      <File Name="../../../../idnkit/lib/Makefile.in"/>
+      <File Name="../../../../idnkit/lib/api.c"/>
+      <File Name="../../../../idnkit/lib/ctxrule.c"/>
+      <File Name="../../../../idnkit/lib/debug.c"/>
+      <File Name="../../../../idnkit/lib/delimitermap.c"/>
+      <File Name="../../../../idnkit/lib/encodingalias.c"/>
+      <File Name="../../../../idnkit/lib/foreignmap.c"/>
+      <File Name="../../../../idnkit/lib/foreignset.c"/>
+      <File Name="../../../../idnkit/lib/labellist.c"/>
+      <File Name="../../../../idnkit/lib/lang.c"/>
+      <File Name="../../../../idnkit/lib/langalias.c"/>
+      <File Name="../../../../idnkit/lib/langlocalmap.c"/>
+      <File Name="../../../../idnkit/lib/localconverter.c"/>
+      <File Name="../../../../idnkit/lib/localencoding.c"/>
+      <File Name="../../../../idnkit/lib/log.c"/>
+      <File Name="../../../../idnkit/lib/lowercasemap.c"/>
+      <File Name="../../../../idnkit/lib/maplist.c"/>
+      <File Name="../../../../idnkit/lib/normalizer.c"/>
+      <File Name="../../../../idnkit/lib/punycode.c"/>
+      <File Name="../../../../idnkit/lib/res.c"/>
+      <File Name="../../../../idnkit/lib/res_asclower.c"/>
+      <File Name="../../../../idnkit/lib/res_bidicheck.c"/>
+      <File Name="../../../../idnkit/lib/res_combcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_ctxjcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_ctxocheck.c"/>
+      <File Name="../../../../idnkit/lib/res_hyphcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_idnconv_decode.c"/>
+      <File Name="../../../../idnkit/lib/res_idnconv_encode.c"/>
+      <File Name="../../../../idnkit/lib/res_joinlabels.c"/>
+      <File Name="../../../../idnkit/lib/res_lencheck.c"/>
+      <File Name="../../../../idnkit/lib/res_localcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_localconv.c"/>
+      <File Name="../../../../idnkit/lib/res_map.c"/>
+      <File Name="../../../../idnkit/lib/res_nfccheck.c"/>
+      <File Name="../../../../idnkit/lib/res_prefcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_prohcheck.c"/>
+      <File Name="../../../../idnkit/lib/res_rtcheck_decode.c"/>
+      <File Name="../../../../idnkit/lib/res_rtcheck_encode.c"/>
+      <File Name="../../../../idnkit/lib/res_unascheck.c"/>
+      <File Name="../../../../idnkit/lib/res_unicodeconv.c"/>
+      <File Name="../../../../idnkit/lib/res_utf8toutf32.c"/>
+      <File Name="../../../../idnkit/lib/res_utf32toutf8.c"/>
+      <File Name="../../../../idnkit/lib/resconf.c"/>
+      <File Name="../../../../idnkit/lib/result.c"/>
+      <File Name="../../../../idnkit/lib/strhash8.c"/>
+      <File Name="../../../../idnkit/lib/strhash32.c"/>
+      <File Name="../../../../idnkit/lib/tldlocalmap.c"/>
+      <File Name="../../../../idnkit/lib/tr46check.c"/>
+      <File Name="../../../../idnkit/lib/tr46map.c"/>
+      <File Name="../../../../idnkit/lib/utf8.c"/>
+      <File Name="../../../../idnkit/lib/utf32.c"/>
+      <File Name="../../../../idnkit/lib/util.c"/>
+      <File Name="../../../../idnkit/lib/util_winrt.cpp"/>
+      <File Name="../../../../idnkit/lib/version.c"/>
+      <File Name="../../../../idnkit/lib/widthmap.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="man">
+      <File Name="../../../../idnkit/man/Makefile.am"/>
+      <File Name="../../../../idnkit/man/Makefile.in"/>
+      <File Name="../../../../idnkit/man/idn2.conf.5.in"/>
+      <File Name="../../../../idnkit/man/idn_checkname.3"/>
+      <File Name="../../../../idnkit/man/idn_comparenames.3"/>
+      <File Name="../../../../idnkit/man/idn_decodename.3"/>
+      <File Name="../../../../idnkit/man/idn_encodename.3"/>
+      <File Name="../../../../idnkit/man/idn_nameinit.3"/>
+      <File Name="../../../../idnkit/man/idn_result_tostring.3"/>
+      <File Name="../../../../idnkit/man/idn_setlanguage.3"/>
+      <File Name="../../../../idnkit/man/idn_setlocalcheckfile.3"/>
+      <File Name="../../../../idnkit/man/idn_setlocalencoding.3"/>
+      <File Name="../../../../idnkit/man/idn_version_getstring.3"/>
+      <File Name="../../../../idnkit/man/idnalias.conf.5.in"/>
+      <File Name="../../../../idnkit/man/idncheck.1.in"/>
+      <File Name="../../../../idnkit/man/idncmp.1.in"/>
+      <File Name="../../../../idnkit/man/idnconv2.1.in"/>
+      <File Name="../../../../idnkit/man/idnlang.conf.5.in"/>
+      <File Name="../../../../idnkit/man/libidnkit.3"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="map">
+      <File Name="../../../../idnkit/map/Makefile.am"/>
+      <File Name="../../../../idnkit/map/Makefile.in"/>
+      <File Name="../../../../idnkit/map/ja.map"/>
+      <File Name="../../../../idnkit/map/tr.map"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="patch">
+      <File Name="../../../../idnkit/patch/idnkit-1.0fix.patch"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="test">
+      <File Name="../../../../idnkit/test/Makefile.am"/>
+      <File Name="../../../../idnkit/test/Makefile.in"/>
+      <File Name="../../../../idnkit/test/TEST"/>
+      <File Name="../../../../idnkit/test/no_test_support.sh"/>
+      <VirtualDirectory Name="api">
+        <File Name="../../../../idnkit/test/api/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api.def" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0001.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0002.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0003.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0004.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0005.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0006.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0007.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0008.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0009.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0010.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0011.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/api_0012.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_checkname.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_comparenames.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_comparenames2.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_decodename.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_decodename2.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_enable.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_encodename.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_nameinit0.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/api/test_api_nameinit1.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="asclower">
+        <File Name="../../../../idnkit/test/asclower/Makefile.am"/>
+        <File Name="../../../../idnkit/test/asclower/Makefile.in"/>
+        <File Name="../../../../idnkit/test/asclower/asclower.def"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0001.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0002.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0003.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0004.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0005.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0006.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0007.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0008.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0009.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0010.sh"/>
+        <File Name="../../../../idnkit/test/asclower/asclower_0011.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="auto">
+        <File Name="../../../../idnkit/test/auto/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_bidiclass_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_bidiclass_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_cased_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_cased_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_caseignorable_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_caseignorable_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_combiningcharacter_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_combiningcharacter_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_combiningclass_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_combiningclass_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_decomposition_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_decomposition_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_idnacategory_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_idnacategory_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_joiningtype_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_joiningtype_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_lowercase_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_lowercase_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_script_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_script_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_tr46casefold_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_tr46casefold_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_tr46category_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_tr46category_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_width_exp.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/gen_width_out.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_bidiclass.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_cased.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_caseignorable.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_combiningcharacter.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_combiningclass.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_decomposition.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_idnacategory.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_joiningtype.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_lowercase.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_script.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_tr46casefold.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_tr46category.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/auto/test_width.sh" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="bidicheck">
+        <File Name="../../../../idnkit/test/bidicheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/bidicheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck.def"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0014.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0015.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0016.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0017.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0018.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0019.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0020.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0021.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0022.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0023.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0024.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0025.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0026.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0027.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0028.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0029.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0030.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0031.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0032.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0033.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0034.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0035.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0036.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0037.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0038.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0039.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0040.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0041.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0042.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0043.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0044.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0045.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0046.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0047.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0048.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0049.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0050.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0051.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0052.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0053.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0054.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0055.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0056.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0057.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0058.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0059.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0060.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0061.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0062.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0063.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0064.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0065.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0066.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0067.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0068.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0069.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0070.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0071.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0072.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0073.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0074.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0075.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0076.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0077.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0078.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0079.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0080.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0081.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0082.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0083.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0084.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0085.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0086.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0087.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0088.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0089.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0090.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0091.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0092.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0093.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0094.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0095.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0096.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0097.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0098.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0099.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0100.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0101.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0102.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0103.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0104.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0105.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0106.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0107.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0108.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0109.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0110.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0111.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0112.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0113.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0114.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0115.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0116.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0117.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0118.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0119.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0120.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0121.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0122.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0123.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0124.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0125.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0126.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0127.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0128.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0129.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0130.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0131.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0132.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0133.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0134.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0135.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0136.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0137.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0138.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0139.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0140.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0141.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0142.sh"/>
+        <File Name="../../../../idnkit/test/bidicheck/bidicheck_0143.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="checkname">
+        <File Name="../../../../idnkit/test/checkname/Makefile.am"/>
+        <File Name="../../../../idnkit/test/checkname/Makefile.in"/>
+        <File Name="../../../../idnkit/test/checkname/checkname.def"/>
+        <File Name="../../../../idnkit/test/checkname/checkname_0001.sh"/>
+        <File Name="../../../../idnkit/test/checkname/checkname_0002.sh"/>
+        <File Name="../../../../idnkit/test/checkname/checkname_0003.sh"/>
+        <File Name="../../../../idnkit/test/checkname/checkname_0004.sh"/>
+        <File Name="../../../../idnkit/test/checkname/checkname_0005.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="combcheck">
+        <File Name="../../../../idnkit/test/combcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/combcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck.def"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0014.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0015.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0016.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0017.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0018.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0019.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0020.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0021.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0022.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0023.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0024.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0025.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0026.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0027.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0028.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0029.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0030.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0031.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0032.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0033.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0034.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0035.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0036.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0037.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0038.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0039.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0040.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0041.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0042.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0043.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0044.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0045.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0046.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0047.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0048.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0049.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0050.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0051.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0052.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0053.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0054.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0055.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0056.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0057.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0058.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0059.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0060.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0061.sh"/>
+        <File Name="../../../../idnkit/test/combcheck/combcheck_0062.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="command">
+        <File Name="../../../../idnkit/test/command/Makefile.am"/>
+        <File Name="../../../../idnkit/test/command/Makefile.in"/>
+        <File Name="../../../../idnkit/test/command/idncheck.def"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0014.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0015.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0016.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0017.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0018.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0019.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0020.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0021.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0022.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0023.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0024.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0025.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0026.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0027.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0028.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0029.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0030.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0031.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0032.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0033.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0034.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0035.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0036.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0037.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0038.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0039.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0040.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0041.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0042.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0043.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0044.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0045.sh"/>
+        <File Name="../../../../idnkit/test/command/idncheck_0046.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp.def"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0001.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0002.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0003.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0004.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0005.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0006.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0007.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0008.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0009.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0010.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0011.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0012.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0013.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0014.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0015.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0016.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0017.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0018.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0019.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0020.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0021.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0022.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0023.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0024.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0025.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0026.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0027.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0028.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0029.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0030.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0031.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0032.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0033.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0034.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0035.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0036.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0037.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0038.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0039.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0040.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0041.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0042.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0043.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0044.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0045.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0046.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0047.sh"/>
+        <File Name="../../../../idnkit/test/command/idncmp_0048.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2.def"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0001.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0002.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0003.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0004.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0005.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0006.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0007.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0008.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0009.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0010.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0011.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0012.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0013.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0014.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0015.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0016.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0017.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0018.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0019.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0020.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0021.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0022.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0023.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0024.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0025.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0026.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0027.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0028.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0029.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0030.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0031.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0032.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0033.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0034.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0035.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0036.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0037.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0038.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0039.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0040.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0041.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0042.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0043.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0044.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0045.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0046.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0047.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0048.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0049.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0050.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0051.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0052.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0053.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0054.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0055.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0056.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0057.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0058.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0059.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0060.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0061.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0062.sh"/>
+        <File Name="../../../../idnkit/test/command/idnconv2_0063.sh"/>
+        <File Name="../../../../idnkit/test/command/sample.txt"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <File Name="../../../../idnkit/test/common/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_checkname.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_comparenames.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_comparenames2.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_decodename.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_decodename2.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_encodename.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_language.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_localencoding.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_result.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/common/test_version.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="comparenames">
+        <File Name="../../../../idnkit/test/comparenames/Makefile.am"/>
+        <File Name="../../../../idnkit/test/comparenames/Makefile.in"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames.def"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2.def"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0001.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0002.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0003.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0004.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0005.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0006.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames2_0007.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0001.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0002.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0003.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0004.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0005.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0006.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0007.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0008.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0009.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0010.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0011.sh"/>
+        <File Name="../../../../idnkit/test/comparenames/comparenames_0012.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ctxjcheck">
+        <File Name="../../../../idnkit/test/ctxjcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck.def"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/ctxjcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthjoiner.def"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthjoiner_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthjoiner_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthjoiner_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthjoiner_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner.def"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0011.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0012.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0013.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0014.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0015.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0016.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0017.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0018.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0019.sh"/>
+        <File Name="../../../../idnkit/test/ctxjcheck/zerowidthnonjoiner_0020.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ctxocheck">
+        <File Name="../../../../idnkit/test/ctxocheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/ctxocheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0011.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0012.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0013.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0014.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0015.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0016.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0017.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0018.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0019.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0020.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/arabicindicdigits_0021.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxocheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/ctxolitecheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0011.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0012.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0013.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0014.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0015.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0016.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0017.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0018.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0019.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0020.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/extendedarabicindicdigits_0021.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/greeklowernumeralsign_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgeresh_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/hebrewpunctuationgershayim_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0006.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0007.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0008.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0009.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0010.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0011.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0012.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/katakanamiddledot_0013.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot.def"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0001.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0002.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0003.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0004.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0005.sh"/>
+        <File Name="../../../../idnkit/test/ctxocheck/middledot_0006.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="decodename">
+        <File Name="../../../../idnkit/test/decodename/Makefile.am"/>
+        <File Name="../../../../idnkit/test/decodename/Makefile.in"/>
+        <File Name="../../../../idnkit/test/decodename/decodename.def"/>
+        <File Name="../../../../idnkit/test/decodename/decodename2.def"/>
+        <File Name="../../../../idnkit/test/decodename/decodename2_0001.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename2_0002.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename2_0003.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename2_0004.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0001.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0002.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0003.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0004.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0005.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0006.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0007.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0008.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0009.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0010.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0011.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0012.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0013.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0014.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0015.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0016.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0017.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0018.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0019.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0020.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0021.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0022.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0023.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0024.sh"/>
+        <File Name="../../../../idnkit/test/decodename/decodename_0025.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="delimitermap">
+        <File Name="../../../../idnkit/test/delimitermap/Makefile.am"/>
+        <File Name="../../../../idnkit/test/delimitermap/Makefile.in"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap.def"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0001.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0002.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0003.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0004.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0005.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0006.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0007.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0008.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0009.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0010.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0011.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0012.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0013.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0014.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0015.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0016.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0017.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0018.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0019.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0020.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0021.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0022.sh"/>
+        <File Name="../../../../idnkit/test/delimitermap/delimitermap_0023.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="encodename">
+        <File Name="../../../../idnkit/test/encodename/Makefile.am"/>
+        <File Name="../../../../idnkit/test/encodename/Makefile.in"/>
+        <File Name="../../../../idnkit/test/encodename/encodename.def"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0001.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0002.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0003.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0004.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0005.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0006.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0007.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0008.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0009.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0010.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0011.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0012.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0013.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0014.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0015.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0016.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0017.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0018.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0019.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0020.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0021.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0022.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0023.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0024.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0025.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0026.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0027.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0028.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0029.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0030.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0031.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0032.sh"/>
+        <File Name="../../../../idnkit/test/encodename/encodename_0033.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="hyphcheck">
+        <File Name="../../../../idnkit/test/hyphcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/hyphcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck.def"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/hyphcheck/hyphcheck_0014.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="idnconv">
+        <File Name="../../../../idnkit/test/idnconv/Makefile.am"/>
+        <File Name="../../../../idnkit/test/idnconv/Makefile.in"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv.def"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0001.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0002.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0003.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0004.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0005.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0006.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0007.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0008.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0009.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0010.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0011.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0012.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0013.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0014.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0015.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0016.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0017.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0018.sh"/>
+        <File Name="../../../../idnkit/test/idnconv/idnconv_0019.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="language">
+        <File Name="../../../../idnkit/test/language/Makefile.am"/>
+        <File Name="../../../../idnkit/test/language/Makefile.in"/>
+        <File Name="../../../../idnkit/test/language/language.def"/>
+        <File Name="../../../../idnkit/test/language/language_0001.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0002.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0003.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0004.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0005.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0006.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0007.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0008.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0009.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0010.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0011.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0012.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0013.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0014.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0015.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0016.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0017.sh"/>
+        <File Name="../../../../idnkit/test/language/language_0018.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="languagelocal">
+        <File Name="../../../../idnkit/test/languagelocal/Makefile.am"/>
+        <File Name="../../../../idnkit/test/languagelocal/Makefile.in"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal.def"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0001.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0002.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0003.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0004.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0005.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0006.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0007.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0008.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0009.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0010.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0011.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0012.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0013.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0014.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0015.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0016.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0017.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0018.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0019.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0020.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0021.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0022.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0023.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0024.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0025.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0026.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0027.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0028.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0029.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0030.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0031.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0032.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0033.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0034.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0035.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0036.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0037.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0038.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0039.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0040.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0041.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0042.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0043.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0044.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0045.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0046.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0047.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/languagelocal_0048.sh"/>
+        <File Name="../../../../idnkit/test/languagelocal/no-newline.map"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="lencheck">
+        <File Name="../../../../idnkit/test/lencheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/lencheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck.def"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/lencheck/lencheck_0007.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="libidnkitlite">
+        <File Name="../../../../idnkit/test/libidnkitlite/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite.def" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0001.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0002.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0003.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0004.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0005.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0006.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0007.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0008.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/libidnkitlite_0009.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/test_lite_decodename.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/libidnkitlite/test_lite_encodename.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="loadconf">
+        <File Name="../../../../idnkit/test/loadconf/Makefile.am"/>
+        <File Name="../../../../idnkit/test/loadconf/Makefile.in"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf.def"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0001.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0002.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0003.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0004.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0005.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0006.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0007.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0008.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0009.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0010.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0011.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0012.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0013.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0014.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0015.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/loadconf_0016.sh"/>
+        <File Name="../../../../idnkit/test/loadconf/no-newline.conf"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="localcheck">
+        <File Name="../../../../idnkit/test/localcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/localcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck.def"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0014.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0015.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0016.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0017.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0018.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0019.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0020.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0021.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0022.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0023.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0024.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0025.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0026.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0027.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0028.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0029.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0030.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0031.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0032.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0033.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0034.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0035.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0036.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0037.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0038.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0039.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0040.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0041.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0042.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0043.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0044.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0045.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0046.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0047.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0048.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0049.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0050.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0051.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0052.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0053.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0054.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0055.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0056.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0057.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0058.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0059.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0060.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0061.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0062.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0063.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0064.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0065.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0066.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0067.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0068.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/localcheck_0069.sh"/>
+        <File Name="../../../../idnkit/test/localcheck/no-newline.set"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="localencoding">
+        <File Name="../../../../idnkit/test/localencoding/Makefile.am"/>
+        <File Name="../../../../idnkit/test/localencoding/Makefile.in"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding.def"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0001.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0002.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0003.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0004.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0005.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0006.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0007.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0008.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0009.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0010.sh"/>
+        <File Name="../../../../idnkit/test/localencoding/localencoding_0011.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="lowercase">
+        <File Name="../../../../idnkit/test/lowercase/Makefile.am"/>
+        <File Name="../../../../idnkit/test/lowercase/Makefile.in"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri.def"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0003.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0004.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0005.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0006.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0007.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0008.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0009.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0010.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0011.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0012.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0013.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0014.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/afteri_0015.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma.def"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0003.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0004.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0005.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0006.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0007.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0008.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0009.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/finalsigma_0010.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase.def"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0003.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0004.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0005.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/lowercase_0006.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove.def"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0003.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0004.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0005.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0006.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0007.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0008.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0009.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0010.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0011.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0012.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0013.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0014.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0015.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0016.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0017.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0018.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0019.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0020.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0021.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0022.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0023.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0024.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0025.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0026.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0027.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0028.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0029.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/moreabove_0030.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot.def"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0003.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0004.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0005.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0006.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0007.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0008.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0009.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0010.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0011.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0012.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0013.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0014.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0015.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/notbeforedot_0016.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cc.def"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cc_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cc_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cd.def"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cd_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u00cd_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u0128.def"/>
+        <File Name="../../../../idnkit/test/lowercase/u0128_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u0128_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u0130.def"/>
+        <File Name="../../../../idnkit/test/lowercase/u0130_0001.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u0130_0002.sh"/>
+        <File Name="../../../../idnkit/test/lowercase/u0130_0003.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="map">
+        <File Name="../../../../idnkit/test/map/Makefile.am"/>
+        <File Name="../../../../idnkit/test/map/Makefile.in"/>
+        <File Name="../../../../idnkit/test/map/map.def"/>
+        <File Name="../../../../idnkit/test/map/map_0001.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0002.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0003.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0004.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0005.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0006.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0007.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0008.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0009.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0010.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0011.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0012.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0013.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0014.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0015.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0016.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0017.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0018.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0019.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0020.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0021.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0022.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0023.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0024.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0025.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0026.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0027.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0028.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0029.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0030.sh"/>
+        <File Name="../../../../idnkit/test/map/map_0031.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="misc">
+        <File Name="../../../../idnkit/test/misc/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc.def" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0001.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0002.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0003.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0004.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0005.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0006.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/misc_0007.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_decodeapp.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_decodequery.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_decodestored.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_enable.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_encodeapp.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_encodequery.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/misc/test_encodestored.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nfc">
+        <File Name="../../../../idnkit/test/nfc/Makefile.am"/>
+        <File Name="../../../../idnkit/test/nfc/Makefile.in"/>
+        <File Name="../../../../idnkit/test/nfc/nfc.def"/>
+        <File Name="../../../../idnkit/test/nfc/nfc_0001.sh"/>
+        <File Name="../../../../idnkit/test/nfc/nfc_0002.sh"/>
+        <File Name="../../../../idnkit/test/nfc/nfc_0003.sh"/>
+        <File Name="../../../../idnkit/test/nfc/nfc_0004.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nfccheck">
+        <File Name="../../../../idnkit/test/nfccheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/nfccheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck.def"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/nfccheck/nfccheck_0010.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="normalization">
+        <File Name="../../../../idnkit/test/normalization/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/gen_c12345.pl" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/gen_normalization.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/nfc.conf" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/nfkc.conf" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/test_nfc.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/normalization/test_nfkc.sh" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="overflow">
+        <File Name="../../../../idnkit/test/overflow/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_delimitermap.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_delimitermap.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_formc.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_formc.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_formkc.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_formkc.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_idndecode.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_idndecode.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_idnencode.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_idnencode.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_labellist.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_labellist.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_localconverter.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_localconverter.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_lowercasemap.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_lowercasemap.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_tr46map.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_tr46map.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32fromutf8.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32fromutf8.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strcat.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strcat.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strcpy.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strcpy.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strncat.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strncat.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strncpy.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32strncpy.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32toutf8.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_utf32toutf8.sh" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_widthmap.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/test/overflow/test_overflow_widthmap.sh" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="prefcheck">
+        <File Name="../../../../idnkit/test/prefcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/prefcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck.def"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/prefcheck/prefcheck_0013.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="prohcheck">
+        <File Name="../../../../idnkit/test/prohcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/prohcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck.def"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/prohcheck/prohcheck_0012.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="result">
+        <File Name="../../../../idnkit/test/result/Makefile.am"/>
+        <File Name="../../../../idnkit/test/result/Makefile.in"/>
+        <File Name="../../../../idnkit/test/result/expect.txt"/>
+        <File Name="../../../../idnkit/test/result/test_result.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rtconv">
+        <File Name="../../../../idnkit/test/rtconv/Makefile.am"/>
+        <File Name="../../../../idnkit/test/rtconv/Makefile.in"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv.def"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0001.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0002.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0003.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0004.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0005.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0006.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0007.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0008.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0009.sh"/>
+        <File Name="../../../../idnkit/test/rtconv/rtconv_0010.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rtcheck">
+        <File Name="../../../../idnkit/test/rtcheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/rtcheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck.def"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0012.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0013.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0014.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0015.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0016.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0017.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0018.sh"/>
+        <File Name="../../../../idnkit/test/rtcheck/rtcheck_0019.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="tldlocal">
+        <File Name="../../../../idnkit/test/tldlocal/Makefile.am"/>
+        <File Name="../../../../idnkit/test/tldlocal/Makefile.in"/>
+        <File Name="../../../../idnkit/test/tldlocal/no-newline.map"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal.def"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0001.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0002.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0003.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0004.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0005.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0006.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0007.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0008.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0009.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0010.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0011.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0012.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0013.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0014.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0015.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0016.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0017.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0018.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0019.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0020.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0021.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0022.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0023.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0024.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0025.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0026.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0027.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0028.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0029.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0030.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0031.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0032.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0033.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0034.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0035.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0036.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0037.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0038.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0039.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0040.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0041.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0042.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0043.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0044.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0045.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0046.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0047.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0048.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0049.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0050.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0051.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0052.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0053.sh"/>
+        <File Name="../../../../idnkit/test/tldlocal/tldlocal_0054.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="tr46check">
+        <File Name="../../../../idnkit/test/tr46check/Makefile.am"/>
+        <File Name="../../../../idnkit/test/tr46check/Makefile.in"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check.def"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0001.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0002.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0003.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0004.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0005.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0006.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0007.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0008.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0009.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0010.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0011.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0012.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0013.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46check_0014.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation.def"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0001.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0002.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0003.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0004.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0005.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0006.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0007.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0008.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0009.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0010.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0011.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0012.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0013.sh"/>
+        <File Name="../../../../idnkit/test/tr46check/tr46checkdeviation_0014.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="tr46map">
+        <File Name="../../../../idnkit/test/tr46map/Makefile.am"/>
+        <File Name="../../../../idnkit/test/tr46map/Makefile.in"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map.def"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0001.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0002.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0003.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0004.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0005.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0006.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0007.sh"/>
+        <File Name="../../../../idnkit/test/tr46map/tr46map_0008.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="unascheck">
+        <File Name="../../../../idnkit/test/unascheck/Makefile.am"/>
+        <File Name="../../../../idnkit/test/unascheck/Makefile.in"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck.def"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0001.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0002.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0003.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0004.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0005.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0006.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0007.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0008.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0009.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0010.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0011.sh"/>
+        <File Name="../../../../idnkit/test/unascheck/unascheck_0012.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="undoiferr">
+        <File Name="../../../../idnkit/test/undoiferr/Makefile.am"/>
+        <File Name="../../../../idnkit/test/undoiferr/Makefile.in"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr.def"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0001.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0002.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0003.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0004.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0005.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0006.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0007.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0008.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0009.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0010.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0011.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0012.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0013.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0014.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0015.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0016.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0017.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0018.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0019.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0020.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0021.sh"/>
+        <File Name="../../../../idnkit/test/undoiferr/undoiferr_0022.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="unicodeconv">
+        <File Name="../../../../idnkit/test/unicodeconv/Makefile.am"/>
+        <File Name="../../../../idnkit/test/unicodeconv/Makefile.in"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_iso8859_1.def"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_iso8859_1_0001.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_iso8859_1_0002.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_iso8859_1_0003.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_iso8859_1_0004.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis.def"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0001.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0002.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0003.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0004.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0005.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0006.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0007.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0008.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_sjis_0009.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_utf8.def"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_utf8_0001.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_utf8_0002.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_utf8_0003.sh"/>
+        <File Name="../../../../idnkit/test/unicodeconv/unicodeconv_utf8_0004.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="utf8">
+        <File Name="../../../../idnkit/test/utf8/Makefile.am"/>
+        <File Name="../../../../idnkit/test/utf8/Makefile.in"/>
+        <File Name="../../../../idnkit/test/utf8/utf8.def"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0001.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0002.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0003.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0004.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0005.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0006.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0007.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0008.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0009.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0010.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0011.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0012.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0013.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0014.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0015.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0016.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0017.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0018.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0019.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0020.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0021.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0022.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0023.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0024.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0025.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0026.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0027.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0028.sh"/>
+        <File Name="../../../../idnkit/test/utf8/utf8_0029.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="version">
+        <File Name="../../../../idnkit/test/version/Makefile.am"/>
+        <File Name="../../../../idnkit/test/version/Makefile.in"/>
+        <File Name="../../../../idnkit/test/version/test_version.sh"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="width">
+        <File Name="../../../../idnkit/test/width/Makefile.am"/>
+        <File Name="../../../../idnkit/test/width/Makefile.in"/>
+        <File Name="../../../../idnkit/test/width/width.def"/>
+        <File Name="../../../../idnkit/test/width/width_0001.sh"/>
+        <File Name="../../../../idnkit/test/width/width_0002.sh"/>
+        <File Name="../../../../idnkit/test/width/width_0003.sh"/>
+        <File Name="../../../../idnkit/test/width/width_0004.sh"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="tools">
+      <VirtualDirectory Name="idncheck">
+        <File Name="../../../../idnkit/tools/idncheck/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idncheck/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idncheck/idncheck.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="idncmp">
+        <File Name="../../../../idnkit/tools/idncmp/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idncmp/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idncmp/idncmp.c" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="idnconv">
+        <File Name="../../../../idnkit/tools/idnconv/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/idnconv.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/idnslookup.in" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/selectiveencode.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/selectiveencode.h" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/strbuf.c" ExcludeProjConfig="Debug;Release"/>
+        <File Name="../../../../idnkit/tools/idnconv/strbuf.h" ExcludeProjConfig="Debug;Release"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="util">
+      <File Name="../../../../idnkit/util/CprogHash.pm"/>
+      <File Name="../../../../idnkit/util/CprogList.pm"/>
+      <File Name="../../../../idnkit/util/IDNATables.pm"/>
+      <File Name="../../../../idnkit/util/ISO639Tables.pm"/>
+      <File Name="../../../../idnkit/util/Makefile.am"/>
+      <File Name="../../../../idnkit/util/Makefile.in"/>
+      <File Name="../../../../idnkit/util/SparseMap.pm"/>
+      <File Name="../../../../idnkit/util/TR46Tables.pm"/>
+      <File Name="../../../../idnkit/util/UCD.pm"/>
+      <File Name="../../../../idnkit/util/WindowsLCIDTables.pm"/>
+      <File Name="../../../../idnkit/util/generate_bidiclass.pl"/>
+      <File Name="../../../../idnkit/util/generate_cased.pl"/>
+      <File Name="../../../../idnkit/util/generate_caseignorable.pl"/>
+      <File Name="../../../../idnkit/util/generate_combiningcharacter.pl"/>
+      <File Name="../../../../idnkit/util/generate_combiningclass.pl"/>
+      <File Name="../../../../idnkit/util/generate_common.pl"/>
+      <File Name="../../../../idnkit/util/generate_composition.pl"/>
+      <File Name="../../../../idnkit/util/generate_decomposition.pl"/>
+      <File Name="../../../../idnkit/util/generate_idnaall.sh"/>
+      <File Name="../../../../idnkit/util/generate_idnacategory.pl"/>
+      <File Name="../../../../idnkit/util/generate_idnalias.sh"/>
+      <File Name="../../../../idnkit/util/generate_idnaversion.pl"/>
+      <File Name="../../../../idnkit/util/generate_iso639lang.pl"/>
+      <File Name="../../../../idnkit/util/generate_joiningtype.pl"/>
+      <File Name="../../../../idnkit/util/generate_lowercase.pl"/>
+      <File Name="../../../../idnkit/util/generate_script.pl"/>
+      <File Name="../../../../idnkit/util/generate_test.pl"/>
+      <File Name="../../../../idnkit/util/generate_testall.sh"/>
+      <File Name="../../../../idnkit/util/generate_testam.pl"/>
+      <File Name="../../../../idnkit/util/generate_tr46casefold.pl"/>
+      <File Name="../../../../idnkit/util/generate_tr46category.pl"/>
+      <File Name="../../../../idnkit/util/generate_unicodeall.sh"/>
+      <File Name="../../../../idnkit/util/generate_unicodeversion.pl"/>
+      <File Name="../../../../idnkit/util/generate_width.pl"/>
+      <File Name="../../../../idnkit/util/generate_windowslang.pl"/>
+    </VirtualDirectory>
+    <File Name="../../../../idnkit/ChangeLog" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/ChangeLog-1.x" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/INSTALL" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/INSTALL.ja" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/LICENSE.txt" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/Makefile.am" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/Makefile.in" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/NEWS" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/README" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/README.ja" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/UPDATE-TABLES" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/aclocal.m4" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/compile" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/config.guess" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/config.sub" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/configure" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/configure.ac" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/depcomp" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/install-sh" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/ltconfig" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/ltmain.sh" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/missing" ExcludeProjConfig="Debug;Release"/>
+    <File Name="../../../../idnkit/mkinstalldirs" ExcludeProjConfig="Debug;Release"/>
+  </VirtualDirectory>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="../../../../idnkit/include"/>
+        <Preprocessor Value="LIBIDNKITLITE"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="../../../../idnkit/include"/>
+        <Preprocessor Value="LIBIDNKITLITE"/>
+        <Preprocessor Value="NDEBUG=1"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/lib$(ProjectName).a" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
