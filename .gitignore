@@ -5,3 +5,7 @@ projects/android/obj
 [Rr]elease/
 *.opensdf
 *.sdf
+
+#codelite
+projects/linux/codelite/idnkit/*.mk
+projects/linux/codelite/idnkit/*.txt
