@@ -389,7 +389,7 @@ idn__util_strncasecmp(const char *str1, const char *str2, size_t n) {
 	return (0);
 }
 
-#ifndef IDNKIT_WINRT
+#if !defined(IDNKIT_WINRT) && !defined(WIN32_RX64)
 
 /*
  * WIN32 specific utilities.
