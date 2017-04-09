@@ -389,8 +389,8 @@ idn__util_strncasecmp(const char *str1, const char *str2, size_t n) {
 	return (0);
 }
 
-#if !defined(IDNKIT_WINRT) && !defined(WIN32_RX64)
-
+#if !defined(IDNKIT_WINRT)
+#if !defined(WIN32_RX64)
 /*
  * WIN32 specific utilities.
  */
@@ -467,4 +467,23 @@ idn__util_win32getregistrystring(const char *name, char *value, size_t len) {
 
 #endif /* _WIN32 */
 
+#else
+
+/*
+* Get user directory.
+*/
+int
+idn__util_win32getuserdirectory(char *value, size_t len) {
+  return 0;
+}
+
+/*
+* Get SYSCONFDIR from the registry.
+*/
+int
+idn__util_win32getsysconfdir(char *value, size_t len) {
+  return 0;
+}
+
+#endif / * !defined(WIN32_RX64) */
 #endif /* ndef IDNKIT_WINRT */
