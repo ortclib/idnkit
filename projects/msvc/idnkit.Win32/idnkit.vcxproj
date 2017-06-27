@@ -1818,7 +1818,7 @@
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4018;4244</DisableSpecificWarnings>
     </ClCompile>
     <ClCompile Include="..\..\..\idnkit\lib\util.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\util_winrt.cpp" />
+    <ClCompile Include="..\..\..\idnkit\lib\util_winuwp.cpp" />
     <ClCompile Include="..\..\..\idnkit\lib\version.c" />
     <ClCompile Include="..\..\..\idnkit\lib\widthmap.c" />
     <ClCompile Include="..\..\..\idnkit\test\api\test_api_checkname.c">

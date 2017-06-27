@@ -367,9 +367,9 @@ idn__localencoding_getname(idn__localencoding_t ctx) {
   char *env4 = NULL;
   size_t elements = 0;
 #endif /* HAVE_DUPENV_S */
-#if defined(_WIN32) && !defined(IDNKIT_WINRT)
+#if defined(_WIN32) && !defined(IDNKIT_WINUWP)
   char cp_str[40];	/* enough */
-#endif /* defined(_WIN32) && !defined(IDNKIT_WINRT) */
+#endif /* defined(_WIN32) && !defined(IDNKIT_WINUWP) */
 
 	assert(ctx != NULL);
 	TRACE(("idn__localencoding_getname()\n"));
@@ -381,7 +381,7 @@ idn__localencoding_getname(idn__localencoding_t ctx) {
 #elif defined(HAVE_GETENV)
     key = getenv(IDN_LOCALCS_ENV);
 #endif //HAVE_DUPENV_S
-#if defined(_WIN32) && !defined(IDNKIT_WINRT)
+#if defined(_WIN32) && !defined(IDNKIT_WINUWP)
     if (key == NULL) {
 #ifdef HAVE_SPRINTF_S
 			sprintf_s(cp_str, sizeof(cp_str), "CP%u", GetACP());
@@ -390,7 +390,7 @@ idn__localencoding_getname(idn__localencoding_t ctx) {
 #endif /* HAVE_SPRINTF_S */
 			key = cp_str;
 		}
-#endif /* defined(_WIN32) && !defined(IDNKIT_WINRT) */
+#endif /* defined(_WIN32) && !defined(IDNKIT_WINUWP) */
 #if defined(HAVE_NL_LANGINFO) && defined(CODESET)
 		if (key == NULL)
 			key = nl_langinfo(CODESET);

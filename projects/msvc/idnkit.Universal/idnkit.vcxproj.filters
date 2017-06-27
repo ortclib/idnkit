@@ -5159,7 +5159,7 @@
     <ClCompile Include="..\..\..\idnkit\lib\util.c">
       <Filter>idnkit\lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\idnkit\lib\util_winrt.cpp">
+    <ClCompile Include="..\..\..\idnkit\lib\util_winuwp.cpp">
       <Filter>idnkit\lib</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\idnkit\lib\version.c">

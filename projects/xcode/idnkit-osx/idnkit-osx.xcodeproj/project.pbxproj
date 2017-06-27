@@ -73,7 +73,7 @@
 		008A1D0A1DA1AAF700D1664A /* utf32.c in Sources */ = {isa = PBXBuildFile; fileRef = 008A162F1DA1AAF600D1664A /* utf32.c */; };
 		008A1D0B1DA1AAF700D1664A /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 008A16301DA1AAF600D1664A /* utf8.c */; };
 		008A1D0C1DA1AAF700D1664A /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 008A16311DA1AAF600D1664A /* util.c */; };
-		008A1D0D1DA1AAF700D1664A /* util_winrt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 008A16321DA1AAF600D1664A /* util_winrt.cpp */; };
+		008A1D0D1DA1AAF700D1664A /* util_winuwp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 008A16321DA1AAF600D1664A /* util_winuwp.cpp */; };
 		008A1D0E1DA1AAF700D1664A /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 008A16331DA1AAF600D1664A /* version.c */; };
 		008A1D0F1DA1AAF700D1664A /* widthmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 008A16341DA1AAF600D1664A /* widthmap.c */; };
 /* End PBXBuildFile section */
@@ -234,7 +234,7 @@
 		008A162F1DA1AAF600D1664A /* utf32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf32.c; sourceTree = "<group>"; };
 		008A16301DA1AAF600D1664A /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf8.c; sourceTree = "<group>"; };
 		008A16311DA1AAF600D1664A /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
-		008A16321DA1AAF600D1664A /* util_winrt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util_winrt.cpp; sourceTree = "<group>"; };
+		008A16321DA1AAF600D1664A /* util_winuwp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util_winuwp.cpp; sourceTree = "<group>"; };
 		008A16331DA1AAF600D1664A /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		008A16341DA1AAF600D1664A /* widthmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = widthmap.c; sourceTree = "<group>"; };
 		008A16351DA1AAF600D1664A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -2057,7 +2057,7 @@
 				008A162F1DA1AAF600D1664A /* utf32.c */,
 				008A16301DA1AAF600D1664A /* utf8.c */,
 				008A16311DA1AAF600D1664A /* util.c */,
-				008A16321DA1AAF600D1664A /* util_winrt.cpp */,
+				008A16321DA1AAF600D1664A /* util_winuwp.cpp */,
 				008A16331DA1AAF600D1664A /* version.c */,
 				008A16341DA1AAF600D1664A /* widthmap.c */,
 			);
@@ -4219,7 +4219,7 @@
 				008A1D0E1DA1AAF700D1664A /* version.c in Sources */,
 				008A1CDA1DA1AAF700D1664A /* width.c in Sources */,
 				008A1D0C1DA1AAF700D1664A /* util.c in Sources */,
-				008A1D0D1DA1AAF700D1664A /* util_winrt.cpp in Sources */,
+				008A1D0D1DA1AAF700D1664A /* util_winuwp.cpp in Sources */,
 				008A1D0A1DA1AAF700D1664A /* utf32.c in Sources */,
 				008A1D0B1DA1AAF700D1664A /* utf8.c in Sources */,
 				008A1D0F1DA1AAF700D1664A /* widthmap.c in Sources */,

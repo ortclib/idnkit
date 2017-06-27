@@ -73,7 +73,7 @@
 		0001ABB01DA1DDAA00D807DA /* utf32.c in Sources */ = {isa = PBXBuildFile; fileRef = 0001A50C1DA1DDA900D807DA /* utf32.c */; };
 		0001ABB11DA1DDAA00D807DA /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 0001A50D1DA1DDA900D807DA /* utf8.c */; };
 		0001ABB21DA1DDAA00D807DA /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 0001A50E1DA1DDA900D807DA /* util.c */; };
-		0001ABB31DA1DDAA00D807DA /* util_winrt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0001A50F1DA1DDA900D807DA /* util_winrt.cpp */; };
+		0001ABB31DA1DDAA00D807DA /* util_winuwp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0001A50F1DA1DDA900D807DA /* util_winuwp.cpp */; };
 		0001ABB41DA1DDAA00D807DA /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 0001A5101DA1DDA900D807DA /* version.c */; };
 		0001ABB51DA1DDAA00D807DA /* widthmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 0001A5111DA1DDA900D807DA /* widthmap.c */; };
 /* End PBXBuildFile section */
@@ -248,7 +248,7 @@
 		0001A50C1DA1DDA900D807DA /* utf32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf32.c; sourceTree = "<group>"; };
 		0001A50D1DA1DDA900D807DA /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf8.c; sourceTree = "<group>"; };
 		0001A50E1DA1DDA900D807DA /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
-		0001A50F1DA1DDA900D807DA /* util_winrt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util_winrt.cpp; sourceTree = "<group>"; };
+		0001A50F1DA1DDA900D807DA /* util_winuwp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util_winuwp.cpp; sourceTree = "<group>"; };
 		0001A5101DA1DDA900D807DA /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		0001A5111DA1DDA900D807DA /* widthmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = widthmap.c; sourceTree = "<group>"; };
 		0001A5121DA1DDA900D807DA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -2069,7 +2069,7 @@
 				0001A50C1DA1DDA900D807DA /* utf32.c */,
 				0001A50D1DA1DDA900D807DA /* utf8.c */,
 				0001A50E1DA1DDA900D807DA /* util.c */,
-				0001A50F1DA1DDA900D807DA /* util_winrt.cpp */,
+				0001A50F1DA1DDA900D807DA /* util_winuwp.cpp */,
 				0001A5101DA1DDA900D807DA /* version.c */,
 				0001A5111DA1DDA900D807DA /* widthmap.c */,
 			);
@@ -4206,7 +4206,7 @@
 				0001AB9A1DA1DDAA00D807DA /* res_idnconv_encode.c in Sources */,
 				0001AB891DA1DDAA00D807DA /* langalias.c in Sources */,
 				0001AB9C1DA1DDAA00D807DA /* res_lencheck.c in Sources */,
-				0001ABB31DA1DDAA00D807DA /* util_winrt.cpp in Sources */,
+				0001ABB31DA1DDAA00D807DA /* util_winuwp.cpp in Sources */,
 				0001AB741DA1DDAA00D807DA /* caseignorable.c in Sources */,
 				0001ABB51DA1DDAA00D807DA /* widthmap.c in Sources */,
 				0001AB781DA1DDAA00D807DA /* decomposition.c in Sources */,

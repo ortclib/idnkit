@@ -185,10 +185,10 @@
 #include <config.h>
 #include <platform.h>
 
-#ifdef IDNKIT_WINRT
+#ifdef IDNKIT_WINUWP
 
 /*
- * WINRT specific utilities.
+ * WINUWP specific utilities.
  */
 #undef ERROR
 
@@ -197,7 +197,7 @@
 #include <locale>
 #include <codecvt>
 
-static int idn__util_winrt_extractfromstoragefolder(Windows::Storage::StorageFolder ^storageFolder, char *value, size_t len)
+static int idn__util_winuwp_extractfromstoragefolder(Windows::Storage::StorageFolder ^storageFolder, char *value, size_t len)
 {
   if (nullptr == storageFolder) return 0;
   auto path = storageFolder->Path;
@@ -215,18 +215,18 @@ static int idn__util_winrt_extractfromstoragefolder(Windows::Storage::StorageFol
   return 1;
 }
 
-static int idn__util_winrt_getlocalappfolder(char *value, size_t len)
+static int idn__util_winuwp_getlocalappfolder(char *value, size_t len)
 {
   auto current = Windows::Storage::ApplicationData::Current;
   if (nullptr == current) return 0;
-  return idn__util_winrt_extractfromstoragefolder(current->LocalFolder, value, len);
+  return idn__util_winuwp_extractfromstoragefolder(current->LocalFolder, value, len);
 }
 
-static int idn__util_winrt_getinstalledappfolder(char *value, size_t len)
+static int idn__util_winuwp_getinstalledappfolder(char *value, size_t len)
 {
   auto current = Windows::ApplicationModel::Package::Current;
   if (nullptr == current) return 0;
-  return idn__util_winrt_extractfromstoragefolder(current->InstalledLocation, value, len);
+  return idn__util_winuwp_extractfromstoragefolder(current->InstalledLocation, value, len);
 }
 
 extern "C" {
@@ -237,7 +237,7 @@ extern "C" {
 
 int
 idn__util_win32getuserdirectory(char *value, size_t len) {
-  return idn__util_winrt_getlocalappfolder(value, len);
+  return idn__util_winuwp_getlocalappfolder(value, len);
 }
 
 /*
@@ -245,9 +245,9 @@ idn__util_win32getuserdirectory(char *value, size_t len) {
  */
 int
 idn__util_win32getsysconfdir(char *value, size_t len) {
-  return idn__util_winrt_getinstalledappfolder(value, len);
+  return idn__util_winuwp_getinstalledappfolder(value, len);
 }
 
 } /* extern "C" */
 
-#endif /* ndef IDNKIT_WINRT */
+#endif /* ndef IDNKIT_WINUWP */

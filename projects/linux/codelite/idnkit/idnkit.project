@@ -165,7 +165,7 @@
       <File Name="../../../../idnkit/lib/utf8.c"/>
       <File Name="../../../../idnkit/lib/utf32.c"/>
       <File Name="../../../../idnkit/lib/util.c"/>
-      <File Name="../../../../idnkit/lib/util_winrt.cpp"/>
+      <File Name="../../../../idnkit/lib/util_winuwp.cpp"/>
       <File Name="../../../../idnkit/lib/version.c"/>
       <File Name="../../../../idnkit/lib/widthmap.c"/>
     </VirtualDirectory>
