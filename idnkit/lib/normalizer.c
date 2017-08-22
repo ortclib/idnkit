@@ -576,7 +576,7 @@ workbuf_compose(workbuf_t *wb) {
 
 static idn_result_t
 workbuf_flushbeforecur(workbuf_t *wb, unsigned long **top, size_t *tolenp) {
-	if (*tolenp < wb->cur)
+	if (*tolenp < (size_t)wb->cur)
 		return (idn_buffer_overflow);
 
 	memcpy(*top, wb->utf32, sizeof(**top) * wb->cur);
