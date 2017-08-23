@@ -720,7 +720,7 @@ localconverter_uescape_convfromutf8(idn__localconverter_t ctx, void *privdata,
       (void)sprintf(tmp, "\\u{%lx}", v);
 #endif /* HAVE_SPRINTF_S */
 			len = strlen(tmp);
-			if (tolen < len) {
+			if (tolen < (size_t)len) {
 				r = idn_buffer_overflow;
 				goto ret;
 			}

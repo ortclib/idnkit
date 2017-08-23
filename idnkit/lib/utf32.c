@@ -478,7 +478,7 @@ idn__utf32_toutf8(const unsigned long *utf32, char *utf8, size_t tolen) {
 			goto ret;
 		}
 
-		if (tolen < width) {
+		if (tolen < (size_t)width) {
 			r = idn_buffer_overflow;
 			goto ret;
 		}
