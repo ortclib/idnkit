@@ -287,7 +287,7 @@ idn__punycode_decode(void *privdata, const unsigned long *from,
 	while (fidx < fromlen) {
 		int len;
 		unsigned long delta;
-		int i;
+		size_t i; //int i;//vmir
 
 		len = punycode_getwc(from + fidx, fromlen - fidx, bias, &delta);
 		if (len == 0) {
@@ -382,7 +382,7 @@ idn__punycode_encode(void *privdata, const unsigned long *from,
 	/*
 	 * First, pick up basic code points and copy them to 'to'.
 	 */
-	for (uidx = 0; uidx < fromlen; uidx++) {
+	for (uidx = 0; (size_t)uidx < fromlen; uidx++) {
 		if (from[uidx] < 0x80) {
 			if (toidx >= tolen) {
 				r = idn_buffer_overflow;
@@ -423,7 +423,7 @@ idn__punycode_encode(void *privdata, const unsigned long *from,
 		 * last occurence of the code point.
 		 */
 		next_code = UTF32_MAX;
-		for (uidx = fromlen - 1; uidx >= 0; uidx--) {
+		for (uidx = fromlen - 1; uidx >= 0 ; uidx--) {
 			if (from[uidx] >= cur_code &&
 			    (limit < 0 || from[uidx] < next_code)) {
 				next_code = from[uidx];
@@ -511,7 +511,7 @@ punycode_getwc(const unsigned long *s, size_t len, int bias,
 
 		v += c * w;
 
-		if (c < t) {
+		if (c < (unsigned long)t) {
 			*vp = v;
 			return (orglen - len);
 		}
@@ -533,7 +533,7 @@ punycode_putwc(unsigned long *s, size_t len, unsigned long delta, int bias) {
 		int t = (k < PUNYCODE_TMIN) ? PUNYCODE_TMIN :
 			(k > PUNYCODE_TMAX) ? PUNYCODE_TMAX : k;
 
-		if (delta < t)
+		if (delta < (unsigned long)t)
 			break;
 		if (len < 1)
 			return (0);

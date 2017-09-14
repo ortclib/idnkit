@@ -316,7 +316,7 @@ idn__utf8_wctomb(char *s, size_t len, unsigned long v) {
 		return (0);
 	}
 
-	if (len < l)
+	if (len < (size_t)l)
 		return (0);
 
 	off = 6 * (l - 1);

@@ -233,7 +233,7 @@ static char *result_string[] = {
 
 char *
 idn_result_tostring(idn_result_t result) {
-	if (result < 0 || result > idn_failure)
+	if (/*result < 0 ||*/ result > idn_failure)
 		return ("unknown result code");
 
 	return (result_string[result]);

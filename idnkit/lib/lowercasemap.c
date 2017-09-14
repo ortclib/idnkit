@@ -344,7 +344,8 @@ idn__casecontext_moreabove(const unsigned long *s, size_t idx) {
 int
 idn__casecontext_afteri(const unsigned long *s, size_t idx) {
 	int ccc;
-	int i;
+	//int i;
+	size_t i; //vmir
 
 	if (s[idx] == '\0')
 		return (0);
@@ -365,7 +366,8 @@ idn__casecontext_afteri(const unsigned long *s, size_t idx) {
  */
 int
 idn__casecontext_finalsigma(const unsigned long *s, size_t idx) {
-	int i;
+	//int i;
+	size_t i; //vmir
 	int result_before = 0;
 	int result_after = 1;
 
