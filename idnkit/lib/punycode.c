@@ -287,7 +287,7 @@ idn__punycode_decode(void *privdata, const unsigned long *from,
 	while (fidx < fromlen) {
 		int len;
 		unsigned long delta;
-		size_t i; //int i;//vmir
+		size_t i; //int i;
 
 		len = punycode_getwc(from + fidx, fromlen - fidx, bias, &delta);
 		if (len == 0) {
