@@ -150,7 +150,7 @@ static_library("idnkit") {
     "UNICODE",
   ]
 
-  if  (is_win) {
+  if  (is_winuwp) {
     defines += [ "IDNKIT_WINUWP" ]
   }
 
