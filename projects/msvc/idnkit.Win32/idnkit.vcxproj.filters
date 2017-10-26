@@ -4835,6 +4835,7 @@
     <Text Include="..\..\..\idnkit\test\result\expect.txt">
       <Filter>idnkit\test\result</Filter>
     </Text>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\..\idnkit\data\idna-tables.xml">
