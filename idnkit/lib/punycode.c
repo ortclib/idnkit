@@ -299,7 +299,7 @@ idn__punycode_decode(void *privdata, const unsigned long *from,
 		bias = punycode_update_bias(delta, ucslen + 1, first);
 		first = 0;
 		idx += delta;
-		c += idx / (ucslen + 1);
+		c += idx / (unsigned long)(ucslen + 1);
 		uidx = idx % (ucslen + 1);
 
 		/* Insert 'c' at uidx. */
@@ -316,7 +316,7 @@ idn__punycode_decode(void *privdata, const unsigned long *from,
 		to[uidx] = c;
 
 		ucslen++;
-		idx = uidx + 1;
+		idx = (unsigned long)uidx + 1;
 	}
 
 	/* Terminate with NUL. */
@@ -423,7 +423,7 @@ idn__punycode_encode(void *privdata, const unsigned long *from,
 		 * last occurence of the code point.
 		 */
 		next_code = UTF32_MAX;
-		for (uidx = fromlen - 1; uidx >= 0 ; uidx--) {
+		for (uidx = (int)fromlen - 1; uidx >= 0 ; uidx--) {
 			if (from[uidx] >= cur_code &&
 			    (limit < 0 || from[uidx] < next_code)) {
 				next_code = from[uidx];
@@ -437,7 +437,7 @@ idn__punycode_encode(void *privdata, const unsigned long *from,
 			goto ret;
 		}
 
-		delta += (next_code - cur_code) * (ucsdone + 1);
+		delta += (next_code - cur_code) * ((unsigned long)ucsdone + 1);
 		cur_code = next_code;
 
 		/*
@@ -445,7 +445,7 @@ idn__punycode_encode(void *privdata, const unsigned long *from,
 		 * whose code point is 'cur_code'.  Use 'limit' to avoid
 		 * unnecessary scan.
 		 */
-		for (uidx = 0, rest = ucsdone; uidx <= limit; uidx++) {
+		for (uidx = 0, rest = (int)ucsdone; uidx <= limit; uidx++) {
 			if (from[uidx] < cur_code) {
 				delta++;
 				rest--;
@@ -513,7 +513,7 @@ punycode_getwc(const unsigned long *s, size_t len, int bias,
 
 		if (c < (unsigned long)t) {
 			*vp = v;
-			return (orglen - len);
+			return (int)(orglen - len);
 		}
 
 		w *= (PUNYCODE_BASE - t);
@@ -552,7 +552,7 @@ punycode_update_bias(unsigned long delta, size_t npoints, int first) {
 	int k = 0;
 
 	delta /= first ? PUNYCODE_DAMP : 2;
-	delta += delta / npoints;
+	delta += delta / (unsigned long)npoints;
 
 	while (delta > ((PUNYCODE_BASE - PUNYCODE_TMIN) * PUNYCODE_TMAX) / 2) {
 		delta /= PUNYCODE_BASE - PUNYCODE_TMIN;

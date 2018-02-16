@@ -384,7 +384,7 @@ idn__langalias_addfromfile(idn__langalias_t ctx, const char *file) {
 		if (*p == '#' || *p == '\n' || *p == '\0')
 			continue;
 #ifdef HAVE_SSCANF_S
-		if (sscanf_s((char *)p, "%s %s", alias, sizeof(alias), real, sizeof(real)) == 2) {
+		if (sscanf_s((char *)p, "%s %s", alias, (unsigned int) sizeof(alias), real, (unsigned int) sizeof(real)) == 2) {
 #else
     if (sscanf((char *)p, "%s %s", alias, real) == 2) {
 #endif /* HAVE_SSCANF_S */

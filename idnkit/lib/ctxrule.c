@@ -342,7 +342,7 @@ idn__ctxrule_zerowidthnonjoiner(const unsigned long *s, size_t idx) {
 
 	if (s[idx] == '\0')
 		return (0);
-	for (passed = 0, i = idx + 1; s[i] != '\0'; i++) {
+	for (passed = 0, i = (int) idx + 1; s[i] != '\0'; i++) {
 		jt = idn__sparsemap_getjoiningtype(s[i]);
 		if (jt == idn__joiningtype_R || jt == idn__joiningtype_D) {
 			passed = 1;
@@ -354,7 +354,7 @@ idn__ctxrule_zerowidthnonjoiner(const unsigned long *s, size_t idx) {
 	if (!passed)
 		return (0);
 
-	for (passed = 0, i = idx - 1; i >= 0; i--) {
+	for (passed = 0, i = (int) idx - 1; i >= 0; i--) {
 		jt = idn__sparsemap_getjoiningtype(s[i]);
 		if (jt == idn__joiningtype_L || jt == idn__joiningtype_D) {
 			passed = 1;
