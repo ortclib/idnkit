@@ -4,7 +4,7 @@
 
 config("idnkit_config") {
     if  (is_win) {
-        cflags = [ "/WX-" ]
+#        cflags = [ "/WX-" ]
     }
     include_dirs = [ 
         "idnkit/include",

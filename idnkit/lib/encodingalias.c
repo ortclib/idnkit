@@ -343,7 +343,7 @@ idn__encodingalias_addfromfile(idn__encodingalias_t ctx, const char *file) {
 		if (*p == '#' || *p == '\n' || *p == '\0')
 			continue;
 #ifdef HAVE_SSCANF_S
-		if (sscanf_s((char *)p, "%s %s", pattern, sizeof(pattern), encoding, sizeof(encoding)) == 2) {
+		if (sscanf_s((char *)p, "%s %s", pattern, (unsigned int) sizeof(pattern), encoding, (unsigned int) sizeof(encoding)) == 2) {
 #else
     if (sscanf((char *)p, "%s %s", pattern, encoding) == 2) {
 #endif /* HAVE_SSCANF_S */
