@@ -415,7 +415,7 @@ static int	idn__util_win32getregistrystring(const char *name,
  */
 int
 idn__util_win32getuserdirectory(char *value, size_t len) {
-	DWORD l = len;
+	DWORD l = (DWORD)len;
 	HANDLE hToken;
 
 	if (!OpenProcessToken(GetCurrentProcess(), TOKEN_READ, &hToken))
