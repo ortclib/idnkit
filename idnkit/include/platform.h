@@ -55,5 +55,10 @@
 
 #endif /* _WIN32 */
 
+#if defined(ANDROID) && defined(__LP64__) 
+
+#undef HAVE_NL_LANGINFO
+
+#endif
 
 #endif /* IDNKIT_PLATFORM_H */
