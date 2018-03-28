@@ -167,7 +167,7 @@ static_library("idnkit") {
     "UNICODE",
   ]
 
-  if  (is_target_winuwp) {
+  if (current_os == "winuwp") {
     defines += [ "IDNKIT_WINUWP" ]
   }
 
