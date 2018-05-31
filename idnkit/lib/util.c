@@ -449,7 +449,7 @@ idn__util_win32getregistrystring(const char *name, char *value, size_t len) {
 
 	assert(name != NULL && value != NULL);
 
-	for (i = 0; i < sizeof(keys) / sizeof(HKEY); i++) {
+	for (i = 0; i < (int)(sizeof(keys) / sizeof(HKEY)); i++) {
 		stat = RegOpenKeyExA(keys[i], REGISTRY_SUBKEY, 0, KEY_READ,
 				    &hk);
 		if (stat != ERROR_SUCCESS)

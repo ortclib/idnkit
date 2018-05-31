@@ -652,7 +652,7 @@ open_userconffile(FILE **fpp) {
 		sprintf_s(filepath, sizeof(filepath), "%s\\%s", dir, USER_CONF_FILE);
 #else
     sprintf(filepath, "%s\\%s", dir, USER_CONF_FILE);
-#endif / * HAVE_SPRINTF_S */
+#endif /* HAVE_SPRINTF_S */
 	}
 #else
 	{
