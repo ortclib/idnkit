@@ -389,7 +389,7 @@ idn__util_strncasecmp(const char *str1, const char *str2, size_t n) {
 	return (0);
 }
 
-#ifndef IDNKIT_WINUWP
+#ifndef WINUWP
 
 /*
  * WIN32 specific utilities.
@@ -467,4 +467,4 @@ idn__util_win32getregistrystring(const char *name, char *value, size_t len) {
 
 #endif /* _WIN32 */
 
-#endif /* ndef IDNKIT_WINUWP */
+#endif /* ndef WINUWP */

@@ -185,7 +185,7 @@
 #include <config.h>
 #include <platform.h>
 
-#ifdef IDNKIT_WINUWP
+#ifdef WINUWP
 
 /*
  * WINUWP specific utilities.
@@ -257,4 +257,4 @@ idn__util_win32getsysconfdir(char *value, size_t len) {
 
 } /* extern "C" */
 
-#endif /* ndef IDNKIT_WINUWP */
+#endif /* ndef WINUWP */

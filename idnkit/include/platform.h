@@ -3,12 +3,6 @@
 
 #ifdef _WIN32
 
-#ifdef __cplusplus_winrt
-#ifndef IDNKIT_WINUWP
-#define IDNKIT_WINUWP 1
-#endif /* IDNKIT_WINUWP */
-#endif /* __cplusplus_winrt */
-
 /* remove overriden */
 #undef HAVE_STRCPY_S
 #undef HAVE_FOPEN_S
@@ -37,13 +31,13 @@
 #undef HAVE_SYS_PARAM_H
 #undef HAVE_VSNPRINTF
 
-#ifdef IDNKIT_WINUWP
+#ifdef WINUWP
 
 /* these are not allowed */
 #undef HAVE_USERENV_H
 #undef HAVE_DUPENV_S
 
-#endif /* IDNKIT_WINUWP */
+#endif /* WINUWP */
 
 #else /* _WIN32 */
 
