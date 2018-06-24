@@ -185,7 +185,7 @@
 #include <config.h>
 #include <platform.h>
 
-#ifdef IDNKIT_WINUWP
+#ifdef WINUWP
 
 /*
  * WINUWP specific utilities.
@@ -194,8 +194,6 @@
 
 #include <windows.h>
 #include <string>
-#include <locale>
-#include <codecvt>
 
 static int idn__util_winuwp_extractfromstoragefolder(Windows::Storage::StorageFolder ^storageFolder, char *value, size_t len)
 {
@@ -207,11 +205,20 @@ static int idn__util_winuwp_extractfromstoragefolder(Windows::Storage::StorageFo
   if (NULL == data) return 0;
 
   std::wstring wstr(data);
-  std::wstring_convert< std::codecvt_utf8<wchar_t>, wchar_t> converter;
 
-  std::string str = converter.to_bytes(wstr);
+  std::string str;
+
+  // get length (cc) of the new multibyte string excluding the \0 terminator first
+  int cc = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, NULL, 0, 0, 0) - 1;
+  if (cc < 0) return 0;
+
+  str.resize(cc);
+
+  cc = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, const_cast<std::string::value_type *>(str.c_str()), 0, 0, 0) - 1;
+  if (cc < 0) return 0;
 
   strcpy_s(value, len, str.c_str());
+
   return 1;
 }
 
@@ -250,4 +257,4 @@ idn__util_win32getsysconfdir(char *value, size_t len) {
 
 } /* extern "C" */
 
-#endif /* ndef IDNKIT_WINUWP */
+#endif /* ndef WINUWP */

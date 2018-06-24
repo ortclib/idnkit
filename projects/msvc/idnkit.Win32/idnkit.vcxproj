@@ -1718,63 +1718,28 @@
     <ClCompile Include="..\..\..\idnkit\lib\auto\tr46casefold.c" />
     <ClCompile Include="..\..\..\idnkit\lib\auto\tr46category.c" />
     <ClCompile Include="..\..\..\idnkit\lib\auto\width.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\ctxrule.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4267</DisableSpecificWarnings>
-    </ClCompile>
-    <ClCompile Include="..\..\..\idnkit\lib\debug.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4244</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\ctxrule.c" />
+    <ClCompile Include="..\..\..\idnkit\lib\debug.c" />
     <ClCompile Include="..\..\..\idnkit\lib\delimitermap.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\encodingalias.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4477</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\encodingalias.c" />
     <ClCompile Include="..\..\..\idnkit\lib\foreignmap.c" />
     <ClCompile Include="..\..\..\idnkit\lib\foreignset.c" />
     <ClCompile Include="..\..\..\idnkit\lib\labellist.c" />
     <ClCompile Include="..\..\..\idnkit\lib\lang.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\langalias.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4477</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4477</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\langalias.c" />
     <ClCompile Include="..\..\..\idnkit\lib\langlocalmap.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\localconverter.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4018;4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4018;4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4244;4018;4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4244;4018;4267</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\localconverter.c" />
     <ClCompile Include="..\..\..\idnkit\lib\localencoding.c" />
     <ClCompile Include="..\..\..\idnkit\lib\log.c" />
-    <ClCompile Include="..\..\..\idnkit\lib\lowercasemap.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4267</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4267</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\lowercasemap.c" />
     <ClCompile Include="..\..\..\idnkit\lib\maplist.c" />
     <ClCompile Include="..\..\..\idnkit\lib\normalizer.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4018;4244</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4100;4244;4457</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4100;4244;4457</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4100;4244;4457</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4100;4244;4457</DisableSpecificWarnings>
     </ClCompile>
-    <ClCompile Include="..\..\..\idnkit\lib\punycode.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4018;4267;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4018;4267;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4018;4267;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4018;4267;4244</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\punycode.c" />
     <ClCompile Include="..\..\..\idnkit\lib\res.c" />
     <ClCompile Include="..\..\..\idnkit\lib\resconf.c" />
     <ClCompile Include="..\..\..\idnkit\lib\result.c" />
@@ -1806,17 +1771,12 @@
     <ClCompile Include="..\..\..\idnkit\lib\tr46check.c" />
     <ClCompile Include="..\..\..\idnkit\lib\tr46map.c" />
     <ClCompile Include="..\..\..\idnkit\lib\utf32.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4018;4244</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4100;4244;4702</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4100;4244;4702</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4100;4244;4702</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4100;4244;4702</DisableSpecificWarnings>
     </ClCompile>
-    <ClCompile Include="..\..\..\idnkit\lib\utf8.c">
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4018;4244</DisableSpecificWarnings>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4018;4244</DisableSpecificWarnings>
-    </ClCompile>
+    <ClCompile Include="..\..\..\idnkit\lib\utf8.c" />
     <ClCompile Include="..\..\..\idnkit\lib\util.c" />
     <ClCompile Include="..\..\..\idnkit\lib\util_winuwp.cpp" />
     <ClCompile Include="..\..\..\idnkit\lib\version.c" />
@@ -2204,7 +2164,7 @@
     <ProjectGuid>{83E1DF0D-525A-4BEE-8E22-09B77CFAAD27}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>idnkit</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -2272,11 +2232,15 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;LIBIDNKITLITE;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\idnkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100;4244</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -2289,11 +2253,15 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;LIBIDNKITLITE;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\idnkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100;4244</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -2304,7 +2272,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
@@ -2313,6 +2281,10 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;LIBIDNKITLITE;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\idnkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100;4244</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -2325,7 +2297,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
@@ -2334,6 +2306,10 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;LIBIDNKITLITE;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\idnkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100;4244</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
